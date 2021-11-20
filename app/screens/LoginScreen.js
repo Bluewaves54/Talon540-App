@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import SelectDropdown from 'react-native-select-dropdown';
 import {
     StyleSheet,
     ImageBackground,
@@ -11,8 +12,29 @@ import {
 import MainScreen from './MainScreen';
 import DeviceInfo from 'react-native-device-info';
 import { NavigationContainer } from '@react-navigation/native';
+import { tsSymbolKeyword } from '@babel/types';
 
-let id = DeviceInfo.getUniqueId()
+let id = DeviceInfo.getUniqueId();
+let resp = null;
+
+const subgroups = [
+    "Programming",
+    "Mechanical",
+    "Electrical",
+    "CAD",
+    "Financial",
+    "Strategy",
+    "Outreach",
+    "Public Relations"]
+
+
+class DropdownMenu {
+    constructor(top) {
+        this.top = top;
+        this.borderRadius = 8;
+
+    }
+}
 
 class TextInputBox {
     constructor(top) {
@@ -29,13 +51,7 @@ class TextInputBox {
     }
 }
 
-// function SwitchScreen() {
-//     return (
-//         <MainScreen />
-//     )
-// }
-
-function LoginScreen(props) {
+function LoginScreen(props)  {
     const [data, setData] = useState([]);
     const [subgroup, onChangeText] = React.useState(null);
     const [status, onChangeText2] = React.useState(null);
@@ -48,67 +64,68 @@ function LoginScreen(props) {
                 <ImageBackground
                 style={styles.background}
                 source={require('../assets/Talon540Logo.webp')}>
-                    <Text
-                    style={styles.signInText}
-                    >
-                        Enter the Information Below
-                    </Text>
+                <Text
+                style={styles.signInText}
+                >
+                    Enter the Information Below
+                </Text>
 
-                    <TextInput
-                        style={styles.subgroupInput}
-                        onChangeText={onChangeText}
-                        value={subgroup}
-                        placeholder="Programming, Mechanical, etc."
-                    />
-                    <TextInput
-                        style={styles.statusInput}
-                        onChangeText={onChangeText2}
-                        value={status}
-                        placeholder="Rookie/Veteran"
-                    />
-                    <TextInput
-                        style={styles.gradYearInput}
-                        onChangeText={onChangeNumber}
-                        value={gradYear}
-                        placeholder="Year"
-                    />
-                    <Button
-                    style={styles.nextButton}
-                    onPress={() => {
-                        fetch('http://127.0.0.1:5000/'
-                        + subgroup + '/' + status + '/'
-                        + gradYear + '/' + id
-                        ,{
-                        headers : { 
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
+                <TextInput
+                    style={styles.subgroupInput}
+                    onChangeText={onChangeText}
+                    value={subgroup}
+                    placeholder="Programming, Mechanical, etc."
+                />
+                <TextInput
+                    style={styles.statusInput}
+                    onChangeText={onChangeText2}
+                    value={status}
+                    placeholder="Rookie/Veteran"
+                />
+                <TextInput
+                    style={styles.gradYearInput}
+                    onChangeText={onChangeNumber}
+                    value={gradYear}
+                    placeholder="Year"
+                />
+                <Button
+                style={styles.nextButton}
+                onPress={() => {
+                    fetch('http://127.0.0.1:5000/'
+                    + subgroup + '/' + status + '/'
+                    + gradYear + '/' + id
+                    ,
+                        {
+                            headers : { 
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            }
                         }
-                        }
-                        )
-                        .then(function(response){
-                            return response.json();
-                        })
-                        .then(function(myJson){
-                            setData(myJson)
-                        });
-                        }}
-                    title="Finish"/>
-                </ImageBackground>
+                    )
+                    .then(function(response){
+                        resp = response.json();
+                        console.log(resp)
+                        return resp
+                    })
+                    .then(function(myJson){
+                        setData(myJson)
+                        console.log(myJson)
+                    });
+                    if (resp == null) {
+                        success = false;
+                        console.log(success)
+                    }
+                    else {
+                        success = true;
+                        console.log(success)
+                        resp = null;
+                    }}}
+                title="Finish"/>
+            </ImageBackground>
             </SafeAreaView>
         </NavigationContainer>
     );
 }
-
-// console.log(data)
-
-// if (data == 'True') {
-//     () => {
-//     return (
-//         <MainScreen />
-//     )
-//     }
-// }
-
 
 export default LoginScreen;
 

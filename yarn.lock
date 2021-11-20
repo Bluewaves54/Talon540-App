@@ -1197,6 +1197,11 @@
   dependencies:
     "nanoid" "^3.1.23"
 
+"@redmin_delishaj/react-native-select@^1.0.6":
+  "integrity" "sha512-YEpA8wEaOWTjkF5VkNXB7k+yuqxzlqQczlL8kaKtV30AS2uURV+0gk7ZPrKrSOEroc8xoWsTv5V4nJcYYiBfZw=="
+  "resolved" "https://registry.npmjs.org/@redmin_delishaj/react-native-select/-/react-native-select-1.0.6.tgz"
+  "version" "1.0.6"
+
 "@sideway/address@^4.1.0":
   "integrity" "sha512-idTz8ibqWFrPU8kMirL0CoPH/A29XOzzAzpyN3zQ4kAWnzmNfFmRaoMNN6VI8ske5M73HZyhIaW4OuSFIdM4oA=="
   "resolved" "https://registry.npmjs.org/@sideway/address/-/address-4.1.2.tgz"
@@ -5303,7 +5308,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@^15.7.2":
+"prop-types@^15.5.10", "prop-types@^15.5.9", "prop-types@^15.7.2":
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -5387,6 +5392,50 @@
   "resolved" "https://registry.npmjs.org/react-native-device-info/-/react-native-device-info-8.4.5.tgz"
   "version" "8.4.5"
 
+"react-native-material-buttons@^0.5.0":
+  "integrity" "sha1-qys+P8P1AMpxP1Hp11l4r/YCFSo="
+  "resolved" "https://registry.npmjs.org/react-native-material-buttons/-/react-native-material-buttons-0.5.0.tgz"
+  "version" "0.5.0"
+  dependencies:
+    "prop-types" "^15.5.9"
+    "react-native-material-ripple" "^0.7.0"
+
+"react-native-material-dropdown@^0.11.1":
+  "integrity" "sha1-wP5DSo5heUHvkQukTS8HyPN1hP4="
+  "resolved" "https://registry.npmjs.org/react-native-material-dropdown/-/react-native-material-dropdown-0.11.1.tgz"
+  "version" "0.11.1"
+  dependencies:
+    "prop-types" "^15.5.9"
+    "react-native-material-buttons" "^0.5.0"
+    "react-native-material-ripple" "^0.8.0"
+    "react-native-material-textfield" "^0.12.0"
+
+"react-native-material-ripple@^0.7.0":
+  "integrity" "sha1-4q9REGgFMvFK6jw6Q4JHvi/+9lk="
+  "resolved" "https://registry.npmjs.org/react-native-material-ripple/-/react-native-material-ripple-0.7.5.tgz"
+  "version" "0.7.5"
+  dependencies:
+    "prop-types" "^15.5.10"
+
+"react-native-material-ripple@^0.8.0":
+  "integrity" "sha1-uMJOb96iryoh6EaLH0CzVIMBni8="
+  "resolved" "https://registry.npmjs.org/react-native-material-ripple/-/react-native-material-ripple-0.8.0.tgz"
+  "version" "0.8.0"
+  dependencies:
+    "prop-types" "^15.5.10"
+
+"react-native-material-textfield@^0.12.0":
+  "integrity" "sha1-P7oZ12q4n2cFLIHgghUvwkPYKj8="
+  "resolved" "https://registry.npmjs.org/react-native-material-textfield/-/react-native-material-textfield-0.12.0.tgz"
+  "version" "0.12.0"
+  dependencies:
+    "prop-types" "^15.5.9"
+
+"react-native-picker@^4.3.7":
+  "integrity" "sha1-mELoxi/w2LZ26VFNn5FyQTwFGKg="
+  "resolved" "https://registry.npmjs.org/react-native-picker/-/react-native-picker-4.3.7.tgz"
+  "version" "4.3.7"
+
 "react-native-safe-area-context@^3.3.2", "react-native-safe-area-context@>= 3.0.0":
   "integrity" "sha512-yOwiiPJ1rk+/nfK13eafbpW6sKW0jOnsRem2C1LPJjM3tfTof6hlvV5eWHATye3XOpu2cJ7N+HdkUvUDGwFD2Q=="
   "resolved" "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-3.3.2.tgz"
@@ -5399,6 +5448,11 @@
   dependencies:
     "react-freeze" "^1.0.0"
     "warn-once" "^0.1.0"
+
+"react-native-select-dropdown@^1.3.0":
+  "integrity" "sha512-smrRro240/id5kIWd1ozBuXfvS45BHiRz4fJiPQ7mZPkKMG5OPYn6DKFUkknzW+iqgLjtrSsv2zw0pkJAS7K2g=="
+  "resolved" "https://registry.npmjs.org/react-native-select-dropdown/-/react-native-select-dropdown-1.3.0.tgz"
+  "version" "1.3.0"
 
 "react-native@*", "react-native@0.66.2":
   "integrity" "sha512-d5Kp23kqAH0EmcyxyfjAr4rhVVzyK/J0cZ/JuopX16CBD4Nkad65KcJi1pyOpbhpP9L1aUUs+mRyK5kg0uLqJQ=="
