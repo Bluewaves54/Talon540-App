@@ -5,7 +5,7 @@ import {
     StyleSheet,
 }
 from 'react-native';
-function MainScreen(props) {
+const MainScreen = ({ navigation, route }) => {
     return (
         <SafeAreaView>
             <Text
