@@ -16,9 +16,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainStack from '../stacks/MainStack';
 
-const Stack = createNativeStackNavigator();
-
-let id = DeviceInfo.getUniqueId();
+var id = DeviceInfo.getUniqueId();
+var subgroup = null
+var status = null
+var gradYear = null
 
 const subgroups = [
     "Programming",
@@ -28,21 +29,25 @@ const subgroups = [
     "Financial",
     "Strategy",
     "Outreach",
-    "Public Relations"]
+    "Public Relations",
+]
 
+const statuses = [
+    "Rookie",
+    "Veteran",
+]
 
-class DropdownMenu {
+const gradYears = [
+    2022,
+    2023,
+    2024,
+    2025,
+]
+
+class DropdownStyle {
     constructor(top) {
         this.top = top;
-        this.borderRadius = 8;
-
-    }
-}
-
-class TextInputBox {
-    constructor(top) {
-        this.top = top;
-        this.left = '35%';
+        // this.left = '35%';
         this.width = 250;
         this.height = 50;
         this.margin = 10;
@@ -57,22 +62,17 @@ class TextInputBox {
 const UnfinishedFieldsAlert = () =>
     Alert.alert(
       "Error",
-      "Make sure all fields are filled out correctly",
+      "Make sure all options are selected",
       [
-        {
-          text: "Cancel",
-          onPress: () => { return null },
-          style: "cancel"
-        },
         { text: "OK", onPress: () => { return null } }
       ]
     );
 
 const LoginScreen = ({ navigation, route }) =>  {
     const [isLoading, setLoading] = useState(true);
-    const [subgroup, onChangeText] = React.useState(null);
-    const [status, onChangeText2] = React.useState(null);
-    const [gradYear, onChangeNumber] = React.useState(null);
+    // const [subgroup, onChangeText] = React.useState(null);
+    // const [status, onChangeText2] = React.useState(null);
+    // const [gradYear, onChangeNumber] = React.useState(null);
     const fetchDataAndNavigate = async () => {
         const response = await fetch('http://127.0.0.1:5000/'
                                       + subgroup + '/' + status + '/'
@@ -104,25 +104,38 @@ const LoginScreen = ({ navigation, route }) =>  {
             >
                 Enter the Information Below
             </Text>
-
-            <TextInput
-                style={styles.subgroupInput}
-                onChangeText={onChangeText}
-                value={subgroup}
-                placeholder="Programming, Mechanical, etc."
-            />
-            <TextInput
-                style={styles.statusInput}
-                onChangeText={onChangeText2}
-                value={status}
-                placeholder="Rookie/Veteran"
-            />
-            <TextInput
-                style={styles.gradYearInput}
-                onChangeText={onChangeNumber}
-                value={gradYear}
-                placeholder="Year"
-            />
+            <SafeAreaView style={{
+                justifyContent: 'center',
+                flex: 1,
+            }}>
+                <SelectDropdown
+                    data={subgroups}
+                    onSelect={(selectedSubgroup) => { subgroup = selectedSubgroup }}
+                    buttonTextAfterSelection={(selectedSubgroup) => { return selectedSubgroup }}
+                    rowTextForSelection={(item) => { return item }}
+                    defaultButtonText={'Select Subgroup'}
+                    buttonStyle={styles.subgroupMenu}
+                    dropdownStyle={{ borderRadius: 20 }}
+                />
+                <SelectDropdown
+                    data={statuses}
+                    onSelect={(selectedStatus) => { status = selectedStatus }}
+                    buttonTextAfterSelection={(selectedStatus) => { return selectedStatus }}
+                    rowTextForSelection={(item) => { return item }}
+                    defaultButtonText={'Select Status'}
+                    buttonStyle={styles.statusMenu}
+                    dropdownStyle={{ borderRadius: 20 }}
+                />
+                <SelectDropdown
+                    data={gradYears}
+                    onSelect={(selectedGradYear) => { gradYear = selectedGradYear }}
+                    buttonTextAfterSelection={(selectedGradYear) => { return selectedGradYear }}
+                    rowTextForSelection={(item) => { return item }}
+                    defaultButtonText={'Select Graduation Year'}
+                    buttonStyle={styles.gradYearMenu}
+                    dropdownStyle={{ borderRadius: 20 }}
+                />
+            </SafeAreaView>
             <View
             style={styles.nextButton}>
             <Button
@@ -155,7 +168,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         top: 20,
-        left: 40,
+        left: '7%',
     },
     signInText: {
         flex: 1,
@@ -172,13 +185,13 @@ const styles = StyleSheet.create({
         flex: 1,
         position: 'absolute',
         top: '800%',
-        left: '150%',
+        left: '180%',
         width: 70,
         height: 40,
         color: '#fff',
     },
 
-    subgroupInput: new TextInputBox('350%'),
-    statusInput: new TextInputBox('500%'),
-    gradYearInput: new TextInputBox('650%'),
+    subgroupMenu: new DropdownStyle('350%'),
+    statusMenu: new DropdownStyle('500%'),
+    gradYearMenu: new DropdownStyle('650%'),
 })

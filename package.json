@@ -17,6 +17,7 @@
     "react": "17.0.2",
     "react-native": "0.66.2",
     "react-native-device-info": "^8.4.5",
+    "react-native-dropdown-picker": "^5.2.3",
     "react-native-material-dropdown": "^0.11.1",
     "react-native-picker": "^4.3.7",
     "react-native-restart": "^0.0.22",
