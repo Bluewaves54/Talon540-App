@@ -3,8 +3,14 @@ import {
     SafeAreaView,
     Text,
     StyleSheet,
+    Button,
 }
 from 'react-native';
+
+import DeviceInfo from 'react-native-device-info';
+
+let id = DeviceInfo.getUniqueId()
+
 const MainScreen = ({ navigation, route }) => {
     return (
         <SafeAreaView>

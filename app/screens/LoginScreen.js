@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
     StyleSheet,
     ImageBackground,
@@ -11,16 +10,15 @@ import {
     View,
     Alert,
 } from 'react-native';
-import MainScreen from './MainScreen';
 import DeviceInfo from 'react-native-device-info';
+import LoggedInStack from '../stacks/LoggedInStack'
 import { NavigationContainer } from '@react-navigation/native';
-import { tsSymbolKeyword } from '@babel/types';
-
-let id = DeviceInfo.getUniqueId();
-
-let goToMainScreen = false;
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import MainStack from '../stacks/MainStack';
 
 const Stack = createNativeStackNavigator();
+
+let id = DeviceInfo.getUniqueId();
 
 const subgroups = [
     "Programming",
@@ -55,25 +53,45 @@ class TextInputBox {
         this.backgroundColor = 'lightgrey';
     }
 }
-const LoginScreen = ({ navigation, route }) =>  {
-    const [data, setData] = useState([]);
-    const [subgroup, onChangeText] = React.useState(null);
-    const [status, onChangeText2] = React.useState(null);
-    const [gradYear, onChangeNumber] = React.useState(null);
-    const ErrorAlert = () =>
+
+const UnfinishedFieldsAlert = () =>
     Alert.alert(
       "Error",
-      "Make sure all fields are filled out",
+      "Make sure all fields are filled out correctly",
       [
         {
           text: "Cancel",
-          onPress: () => console.log("Cancel Pressed"),
+          onPress: () => { return null },
           style: "cancel"
         },
-        { text: "OK", onPress: () => console.log("OK Pressed") }
+        { text: "OK", onPress: () => { return null } }
       ]
     );
-    while (!goToMainScreen) {
+
+const LoginScreen = ({ navigation, route }) =>  {
+    const [isLoading, setLoading] = useState(true);
+    const [subgroup, onChangeText] = React.useState(null);
+    const [status, onChangeText2] = React.useState(null);
+    const [gradYear, onChangeNumber] = React.useState(null);
+    const fetchDataAndNavigate = async () => {
+        const response = await fetch('http://127.0.0.1:5000/'
+                                      + subgroup + '/' + status + '/'
+                                      + gradYear + '/' + id
+                                    ,
+                                      {
+                                        headers : { 
+                                          'Content-Type': 'application/json',
+                                          'Accept': 'application/json'
+                                        }
+                                      }
+                                    );
+    const json = await response.json()
+    if (Object.values(json)[0]) {
+        navigation.navigate('LoggedInStack')
+    } else {
+        UnfinishedFieldsAlert()
+    }
+    }
     return (
         <SafeAreaView style={{
             backgroundColor: '#1f2129',
@@ -108,55 +126,21 @@ const LoginScreen = ({ navigation, route }) =>  {
             <View
             style={styles.nextButton}>
             <Button
-            onPress={() => {
-                if (subgroup && status && gradYear && id) {
-                    fetch('http://127.0.0.1:5000/'
-                + subgroup + '/' + status + '/'
-                + gradYear + '/' + id
-                ,
+            onPress={() => 
                     {
-                        headers : { 
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
+                    if (subgroup && status && gradYear && id) {
+                        fetchDataAndNavigate()
+                    } else {
+                        UnfinishedFieldsAlert();
                         }
                     }
-                )
-                .then(function(response){
-                    resp = response.json();
-                    return resp
-                })
-                .then(function(myJson){
-                    setData(myJson)
-                });
-                console.log(data)
-                if (Object.values(data)) {
-                    return (
-                        goToMainScreen = true
-                    )
-                } else {
-                    console.log('failed')
-                    ErrorAlert();
-                }
-                } else {
-                    ErrorAlert();
-                }}}
+            }
                 
             title="Finish"/>
             </View>
         </ImageBackground>
         </SafeAreaView>
     );
-}
-    return (
-        <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="MainScreen"
-          component={MainScreen}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-    )
 }
 
 export default LoginScreen;
