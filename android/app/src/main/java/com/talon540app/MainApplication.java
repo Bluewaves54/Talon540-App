@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.reactnativegooglesignin.RNGoogleSigninPackage;
+import com.novadart.reactnativenfc.ReactNativeNFCPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;

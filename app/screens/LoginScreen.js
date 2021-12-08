@@ -3,7 +3,6 @@ import SelectDropdown from 'react-native-select-dropdown';
 import {
     StyleSheet,
     ImageBackground,
-    TextInput,
     SafeAreaView,
     Text,
     Button,
@@ -11,10 +10,7 @@ import {
     Alert,
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
-import LoggedInStack from '../stacks/LoggedInStack'
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import MainStack from '../stacks/MainStack';
+import RNRestart from 'react-native-restart';
 
 var id = DeviceInfo.getUniqueId();
 var subgroup = null
@@ -70,9 +66,6 @@ const UnfinishedFieldsAlert = () =>
 
 const LoginScreen = ({ navigation, route }) =>  {
     const [isLoading, setLoading] = useState(true);
-    // const [subgroup, onChangeText] = React.useState(null);
-    // const [status, onChangeText2] = React.useState(null);
-    // const [gradYear, onChangeNumber] = React.useState(null);
     const fetchDataAndNavigate = async () => {
         const response = await fetch('http://127.0.0.1:5000/'
                                       + subgroup + '/' + status + '/'
@@ -86,8 +79,9 @@ const LoginScreen = ({ navigation, route }) =>  {
                                       }
                                     );
     const json = await response.json()
+    console.log(json)
     if (Object.values(json)[0]) {
-        navigation.navigate('LoggedInStack')
+        RNRestart.Restart();
     } else {
         UnfinishedFieldsAlert()
     }
@@ -150,6 +144,11 @@ const LoginScreen = ({ navigation, route }) =>  {
             }
                 
             title="Finish"/>
+            </View>
+            <View style={{position: 'absolute'}}>
+                <Button
+                onPress={() => navigation.navigate('GoogleSignInScreen')}
+                title='Back' />
             </View>
         </ImageBackground>
         </SafeAreaView>

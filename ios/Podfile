@@ -1,7 +1,7 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '11.0'
+platform :ios, '13.0'
 
 target 'Talon540App' do
   config = use_native_modules!
@@ -13,6 +13,10 @@ target 'Talon540App' do
   )
 
   pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+
+  pod 'RNGoogleSignin', :path => '../node_modules/@react-native-google-signin/google-signin'
+
+  pod 'GoogleSignIn', '~> 6.0.0'
 
   target 'Talon540AppTests' do
     inherit! :complete

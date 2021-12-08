@@ -11,14 +11,6 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-            name='LoadScreen'
-            component={LoadScreen}
-            options={{
-              gestureEnabled: false,
-              headerShown: false
-            }}
-          />
-        <Stack.Screen
           name='MainStack'
           component={MainStack}
           options={{

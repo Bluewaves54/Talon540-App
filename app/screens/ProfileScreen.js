@@ -6,7 +6,8 @@ import {
     Alert,
 
 } from 'react-native';
-import { id } from './LoadScreen';
+// import { username } from './GoogleSignInScreen';
+import { data } from './LoadScreen';
 
 const ConfirmDeletionAlert = ({ navigation }) => {
     Alert.alert(
@@ -22,7 +23,7 @@ const ConfirmDeletionAlert = ({ navigation }) => {
                 text: 'Confirm',
                 onPress: () => 
                 {
-                fetch('http://127.0.0.1:5000/deleteAccount/' + id
+                fetch('http://127.0.0.1:5000/deleteAccount/' + data.deviceID
                 ,
                     {
                         headers : { 
@@ -39,28 +40,26 @@ const ConfirmDeletionAlert = ({ navigation }) => {
                     setData(myJson);
                     console.log(data);
                 })
-                navigation.navigate("LoginScreen")
+                navigation.navigate("GoogleSignInScreen")
                 } 
-                // onPress: () => { return true }
             },
         ]
     );
 }
 
 const ProfileScreen = ({ navigation }) => {
-    const [data, setData] = useState([]);
     return (
-        <SafeAreaView><Text>
-                Welcome, {id}
-            </Text>
-            <Button
-            title={'Delete Account'}
-            onPress={() => {
-                ConfirmDeletionAlert({navigation});
-                }} />
-            </SafeAreaView>
-            
-    );
-}
+            <SafeAreaView>
+                <Text>
+                    Welcome, {data.name}
+                </Text>
+                <Button
+                title={'Delete Account'}
+                onPress={() => {
+                    ConfirmDeletionAlert({navigation});
+                    }} />
+            </SafeAreaView> 
+    )
+    }
 
 export default ProfileScreen;

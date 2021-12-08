@@ -10,12 +10,12 @@ let id = DeviceInfo.getUniqueId()
 export { id };
 
 let verified = false;
+let data
 
 function LoadScreen({ navigation, route }) {
-  console.log(navigation)
   const [accountExistsData, setData] = useState([]);
   if (!verified) {
-    fetch('http://127.0.0.1:5000/verifyDeviceID/' + id
+    fetch('http://127.0.0.1:5000/fetchInformation/' + id
     ,
       {
           headers : { 
@@ -33,10 +33,13 @@ function LoadScreen({ navigation, route }) {
       verified = true;
     })
   }
-  if (Object.values(accountExistsData)[0]) {
-      navigation.navigate(
-        'LoggedInStack'
-      )
+  if (Object.values(accountExistsData)[0] == id) {
+    data = accountExistsData
+    verified = false
+    console.log(data)
+    navigation.navigate(
+      'LoggedInStack'
+    )
       return null
   } else {
       navigation.navigate(
@@ -46,6 +49,8 @@ function LoadScreen({ navigation, route }) {
   }
   
 };
+
+export { data }
 
 const styles = StyleSheet.create({
   container: {
