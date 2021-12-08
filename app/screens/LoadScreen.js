@@ -44,7 +44,7 @@ function LoadScreen({ navigation, route }) {
       return null
   } else {
       navigation.navigate(
-        'LoginScreen'
+        'GoogleSignInScreen'
       )
       return null
   }

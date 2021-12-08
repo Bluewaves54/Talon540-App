@@ -92,15 +92,12 @@ export default class GoogleSignInScreen extends Component {
                 >
                     Sign into Google with your HCPS account
                 </Text>
-                <SafeAreaView style={{
-                    justifyContent: 'center',
-                    flex: 1,
-                }}>
-                </SafeAreaView>
               {!this.state.loggedIn && this.props.navigation.navigate('GoogleSignInScreen')}
-              {this.state.loggedIn && <View>
-                    <Button onPress={this.saveUserName} title='next'/>
-                </View>}
+              {this.state.loggedIn &&
+                  <View style={styles.nextButton}>
+                    <Button onPress={this.saveUserName} title='Next'/>
+                  </View>
+                }
             </ImageBackground>
             </SafeAreaView>
     );
@@ -157,18 +154,24 @@ const styles = StyleSheet.create({
     title: {
     fontSize: 18,
     fontWeight: 'bold',
-    paddingTop: 10
+    paddingTop: 10,
+    color: 'white'
     },
     message: {
     fontSize: 14,
     paddingBottom: 15,
-    borderBottomColor: "#ccc",
-    borderBottomWidth: 1
+    borderBottomColor: "white",
+    borderBottomWidth: 1,
+    color: 'white',
+    
     },
-    dp:{
+    pfp: {
     marginTop: 32,
     paddingHorizontal: 24,
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    flex: 1,
     },
 });
