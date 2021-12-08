@@ -30,6 +30,7 @@ function LoadScreen({ navigation, route }) {
     })
     .then(function(myJson){
       setData(myJson)
+      console.log(myJson)
       verified = true;
     })
   }
@@ -43,7 +44,7 @@ function LoadScreen({ navigation, route }) {
       return null
   } else {
       navigation.navigate(
-        'MainStack'
+        'LoginScreen'
       )
       return null
   }
