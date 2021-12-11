@@ -3,6 +3,8 @@ import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Im
 import { Header, LearnMoreLinks, Colors, DebugInstructions, ReloadInstructions,} from 'react-native/Libraries/NewAppScreen';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 
+let username
+
 export default class GoogleSignInScreen extends Component {
   constructor(props) {
     super(props);
@@ -54,23 +56,24 @@ export default class GoogleSignInScreen extends Component {
   };
 
 
-  saveUserName = async () => {
-    const response = await fetch('http://127.0.0.1:5000/addName/' + this.state.userInfo.user.name
+  // saveUserName = async () => {
+  //   const response = await fetch('https://talon540appbackend.herokuapp.com/addName/' + this.state.userInfo.user.name
                                   
-                                ,
-                                  {
-                                    headers : { 
-                                      'Content-Type': 'application/json',
-                                      'Accept': 'application/json'
-                                    }
-                                  }
-                                );
-    const json = await response.json()
-    console.log(json)
-    if (Object.values(json)[0]) {
-        this.props.navigation.navigate('LoginScreen')
-    }
-    }
+  //                               ,
+  //                                 {
+  //                                   headers : { 
+  //                                     'Content-Type': 'application/json',
+  //                                     'Accept': 'application/json'
+  //                                   }
+  //                                 }
+  //                               );
+  //   const json = await response.json()
+  //   console.log(json)
+  //   if (Object.values(json)[0]) {
+  //       this.props.navigation.navigate('LoginScreen')
+  //   }
+  //   }
+
   render() {
     return (
             <SafeAreaView style={{
@@ -95,7 +98,10 @@ export default class GoogleSignInScreen extends Component {
               {!this.state.loggedIn && this.props.navigation.navigate('GoogleSignInScreen')}
               {this.state.loggedIn &&
                   <View style={styles.nextButton}>
-                    <Button onPress={this.saveUserName} title='Next'/>
+                    <Button onPress={() => {
+                      username = this.state.userInfo.user.name;
+                      this.props.navigation.navigate('LoginScreen')
+                      }} title='Next'/>
                   </View>
                 }
             </ImageBackground>
@@ -103,6 +109,8 @@ export default class GoogleSignInScreen extends Component {
     );
   }
 }
+
+export { username }
 
 const styles = StyleSheet.create({
   sectionContainer: {

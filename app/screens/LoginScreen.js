@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import RNRestart from 'react-native-restart';
+import { username } from './GoogleSignInScreen';
 
 var id = DeviceInfo.getUniqueId();
 var subgroup = null
@@ -67,7 +68,7 @@ const UnfinishedFieldsAlert = () =>
 const LoginScreen = ({ navigation, route }) =>  {
     const [isLoading, setLoading] = useState(true);
     const fetchDataAndNavigate = async () => {
-        const response = await fetch('http://127.0.0.1:5000/'
+        const response = await fetch('https://talon540appbackend.herokuapp.com/' + username + '/'
                                       + subgroup + '/' + status + '/'
                                       + gradYear + '/' + id
                                     ,

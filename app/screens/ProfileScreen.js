@@ -23,7 +23,7 @@ const ConfirmDeletionAlert = ({ navigation }) => {
                 text: 'Confirm',
                 onPress: () => 
                 {
-                fetch('http://127.0.0.1:5000/deleteAccount/' + data.deviceID
+                fetch('https://talon540appbackend.herokuapp.com/deleteAccount/' + data.deviceID
                 ,
                     {
                         headers : { 

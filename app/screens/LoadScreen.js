@@ -15,7 +15,7 @@ let data
 function LoadScreen({ navigation, route }) {
   const [accountExistsData, setData] = useState([]);
   if (!verified) {
-    fetch('http://127.0.0.1:5000/fetchInformation/' + id
+    fetch('https://talon540appbackend.herokuapp.com/fetchInformation/' + id
     ,
       {
           headers : { 
