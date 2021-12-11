@@ -1,0 +1,6 @@
+
+Yarn upgrade
+Yarn install
+Cd iOS
+Pod update
+Pod install
