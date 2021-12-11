@@ -61,11 +61,11 @@ const ProfileScreen = ({ navigation }) => {
                 <Image
                     style={styles.pfp}
                     source={{
-                    uri: 'https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg',
+                    uri: data.pfp,
                     }}
                 />
                 <Text>Name: {data.name} </Text>
-                <Text>Email: {} </Text>
+                <Text>Email: {data.email} </Text>
                 <Text>Subgroup: {data.subgroup} </Text>
                 <Text>Status: {data.status} </Text>
                 <Text>Graduation Year: {data.gradYear} </Text>
