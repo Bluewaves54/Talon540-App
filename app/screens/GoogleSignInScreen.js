@@ -3,7 +3,9 @@ import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Im
 import { Header, LearnMoreLinks, Colors, DebugInstructions, ReloadInstructions,} from 'react-native/Libraries/NewAppScreen';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 
-let username
+let googlename
+let googlepfpurl
+let googleemail
 
 export default class GoogleSignInScreen extends Component {
   constructor(props) {
@@ -15,6 +17,7 @@ export default class GoogleSignInScreen extends Component {
   }
   componentDidMount() {
     GoogleSignin.configure({
+      scopes: ['profile', 'email'],
       webClientId: '295965277576-ld8k2htnhon67o6ih7a7e7f3l0c4t47m.apps.googleusercontent.com', 
       offlineAccess: true, 
       hostedDomain: 'henricostudents.org', 
@@ -96,12 +99,18 @@ export default class GoogleSignInScreen extends Component {
                 </Text>
               {!this.state.loggedIn && this.props.navigation.navigate('GoogleSignInScreen')}
               {this.state.loggedIn &&
+                
                   <View style={styles.nextButton}>
+                    <Text style={{ textAlign: 'center', width: 150, right: 40, color: '#fff', fontWeight: 'bold'  }}> 
+                    You Are Signed in and can procced
+                    
+                    </Text>
                     <Button onPress={() => {
-                      username = this.state.userInfo.user.name;
+                      googlename = this.state.userInfo.user.name;
+                      googleemail = this.state.userInfo.user.email; //Add database column
+                      googlepfpurl = this.state.userInfo.user.photo; //Add database column
                       this.props.navigation.navigate('LoginScreen')
                       }} title='Next'/>
-                      <Text></Text>
                   </View>
 
                 }
@@ -111,7 +120,7 @@ export default class GoogleSignInScreen extends Component {
   }
 }
 
-export { username }
+export { googlename, googleemail, googlepfpurl }
 
 const styles = StyleSheet.create({
   sectionContainer: {

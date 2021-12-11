@@ -12,9 +12,7 @@ target 'Talon540App' do
     :hermes_enabled => false
   )
 
-  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
 
-  pod 'RNGoogleSignin', :path => '../node_modules/@react-native-google-signin/google-signin'
 
   pod 'GoogleSignIn', '~> 6.0.0'
 

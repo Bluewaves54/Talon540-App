@@ -2,27 +2,23 @@ import React from 'react';
 import {
     SafeAreaView,
     Text,
+    View,
     StyleSheet,
     Button,
+    ImageBackground,
 }
 from 'react-native';
 
-import DeviceInfo from 'react-native-device-info';
-
-let id = DeviceInfo.getUniqueId()
+const image = { uri: "https://cdn.discordapp.com/attachments/892936500747075624/919297354170003466/unknown.png" };
 
 const MainScreen = ({ navigation, route }) => {
     return (
-        <SafeAreaView>
-            <Text
-            styles={styles.mainPage}>
-                Main Page
-            </Text>
-        </SafeAreaView>
+        <View style={styles.container}>
+            <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+            </ImageBackground>
+        </View>
     );
 }
-
-export default MainScreen;
 
 const styles = StyleSheet.create({
     mainPage: {
@@ -30,5 +26,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
         color: '#fff'
-    }
+    },
+    container: {
+        flex: 1,
+    },
+    image: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+
 })
+
+export default MainScreen;
+

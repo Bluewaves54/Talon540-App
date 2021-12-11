@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import RNRestart from 'react-native-restart';
-import { username } from './GoogleSignInScreen';
+import { googlename } from './GoogleSignInScreen';
 
 var id = DeviceInfo.getUniqueId();
 var subgroup = null
@@ -65,7 +65,7 @@ class DropdownStyle {
 
 const UnfinishedFieldsAlert = () =>
     Alert.alert(
-      "Error",
+      "Blank Fields",
       "Make sure all options are selected",
       [
         { text: "OK", onPress: () => { return null } }
@@ -75,7 +75,7 @@ const UnfinishedFieldsAlert = () =>
 const LoginScreen = ({ navigation, route }) =>  {
     const [isLoading, setLoading] = useState(true);
     const fetchDataAndNavigate = async () => {
-        const response = await fetch('https://talon540appbackend.herokuapp.com/' + username + '/'
+        const response = await fetch('https://talon540appbackend.herokuapp.com/' + googlename + '/'
                                       + subgroup + '/' + status + '/'
                                       + gradYear + '/' + id
                                     ,
@@ -153,10 +153,10 @@ const LoginScreen = ({ navigation, route }) =>  {
                 
             title="Finish"/>
             </View>
-            <View style={{position: 'absolute'}}>
+            <View style={styles.backButton}>
                 <Button
                 onPress={() => navigation.navigate('GoogleSignInScreen')}
-                title='Back' />
+                title='Go Back to Login' />
             </View>
         </ImageBackground>
         </SafeAreaView>
@@ -196,6 +196,15 @@ const styles = StyleSheet.create({
         width: 70,
         height: 40,
         color: '#fff',
+    },
+    backButton: {
+        flex: 1,
+        position: 'absolute',
+        top: '850%',
+        left: '120%',
+        width: 160,
+        height: 40,
+        color: '#fff',      
     },
 
     subgroupMenu: new DropdownStyle('350%'),
