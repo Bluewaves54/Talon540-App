@@ -142,13 +142,13 @@ const styles = StyleSheet.create({
     },
     signInText: {
         flex: 1,
-        width: 1000,
-        left: '10%',
-        top: '130%',
-        position: 'absolute',
+        alignText: 'center',
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 15,
+        width: 300,
+        left: 200,
+        top: 30 ,
         
     },
     nextButton: {
