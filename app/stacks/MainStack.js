@@ -60,4 +60,3 @@ const MainStack = () => {
 
 
 export default MainStack
-// sriman is a dumbass

@@ -91,9 +91,8 @@ export default class GoogleSignInScreen extends Component {
                         disabled={this.state.isSigninInProgress} />
                 </View>
                 <Text
-                style={styles.signInText}
-                >
-                    Sign into Google with your HCPS account
+                style={styles.signInText}>
+                    Verify your account with Google
                 </Text>
               {!this.state.loggedIn && this.props.navigation.navigate('GoogleSignInScreen')}
               {this.state.loggedIn &&
@@ -102,7 +101,9 @@ export default class GoogleSignInScreen extends Component {
                       username = this.state.userInfo.user.name;
                       this.props.navigation.navigate('LoginScreen')
                       }} title='Next'/>
+                      <Text></Text>
                   </View>
+
                 }
             </ImageBackground>
             </SafeAreaView>
