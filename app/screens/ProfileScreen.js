@@ -61,7 +61,7 @@ const ProfileScreen = ({ navigation }) => {
                 <Image
                     style={styles.pfp}
                     source={{
-                    uri: data.pfp,
+                    uri: 'https://lh3.googleusercontent.com/a-/' + data.pfp,
                     }}
                 />
                 <Text>Name: {data.name} </Text>
