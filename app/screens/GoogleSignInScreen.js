@@ -108,7 +108,7 @@ export default class GoogleSignInScreen extends Component {
                     <Button onPress={() => {
                       googlename = this.state.userInfo.user.name;
                       googleemail = this.state.userInfo.user.email; //Add database column
-                      googlepfpurl = this.state.userInfo.user.photo; //Add database column
+                      googlepfpurl = this.state.userInfo.user.photo.split('https://lh3.googleusercontent.com/a-/')[1];
                       this.props.navigation.navigate('LoginScreen')
                       }} title='Next'/>
                   </View>
