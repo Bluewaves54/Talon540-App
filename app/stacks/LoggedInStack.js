@@ -14,6 +14,7 @@ const LoggedInStack = () => {
                     tabBarStyle: {
                         backgroundColor: '#1f2129'
                     },
+                    tabBarActiveTintColor: 'lightblue',
                 })}
             >
                 <Tab.Screen
