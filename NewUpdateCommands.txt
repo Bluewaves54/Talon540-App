@@ -1,5 +1,5 @@
-
-Yarn upgrade
+Yarn install
+yarn upgrade
 Yarn install
 Cd iOS
 Pod update
