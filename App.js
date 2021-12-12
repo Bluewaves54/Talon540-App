@@ -9,7 +9,9 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    
+    <InternetConnectionAlert
+      onChange={(connectionState) => {  
+    }}>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -22,6 +24,7 @@ function App() {
           />
       </Stack.Navigator>
     </NavigationContainer>
+    </InternetConnectionAlert>
     
   )
 }
