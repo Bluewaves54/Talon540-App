@@ -1,11 +1,21 @@
 import React, { Component, Fragment } from "react";
-import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Image, ImageBackground} from 'react-native';
+import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Image, ImageBackground, Alert} from 'react-native';
 import { Header, LearnMoreLinks, Colors, DebugInstructions, ReloadInstructions,} from 'react-native/Libraries/NewAppScreen';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 
 let googlename
 let googlepfpurl
 let googleemail
+
+const invalidDomainAlert = () => {
+  Alert.alert(
+    "Invalid Domain",
+    "Your email is not registered with HCPS.",
+    [
+      { text: "Cancel", onPress: () => { return null }, style: 'cancel'}
+    ]
+)
+}
 
 export default class GoogleSignInScreen extends Component {
   constructor(props) {
@@ -58,25 +68,6 @@ export default class GoogleSignInScreen extends Component {
     }
   };
 
-
-  // saveUserName = async () => {
-  //   const response = await fetch('https://talon540appbackend.herokuapp.com/addName/' + this.state.userInfo.user.name
-                                  
-  //                               ,
-  //                                 {
-  //                                   headers : { 
-  //                                     'Content-Type': 'application/json',
-  //                                     'Accept': 'application/json'
-  //                                   }
-  //                                 }
-  //                               );
-  //   const json = await response.json()
-  //   console.log(json)
-  //   if (Object.values(json)[0]) {
-  //       this.props.navigation.navigate('LoginScreen')
-  //   }
-  //   }
-
   render() {
     return (
             <SafeAreaView style={{
@@ -102,10 +93,13 @@ export default class GoogleSignInScreen extends Component {
                 
                   <View style={styles.nextButton}>
                     <Text style={{ textAlign: 'center', width: 150, right: 40, color: '#fff', fontWeight: 'bold'  }}> 
-                    You Are Signed in and can procced
+                    You Are Signed in and can proceed
                     
                     </Text>
                     <Button onPress={() => {
+                      if (this.state.userInfo.user.email.split('@')[1] != 'henricostudents.org') {
+                          return (invalidDomainAlert())
+                      }
                       googlename = this.state.userInfo.user.name;
                       googleemail = this.state.userInfo.user.email; //Add database column
                       googlepfpurl = this.state.userInfo.user.photo.split('https://lh3.googleusercontent.com/a-/')[1];
