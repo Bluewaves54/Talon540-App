@@ -16,6 +16,8 @@ target 'Talon540App' do
 
   pod 'GoogleSignIn', '~> 6.0.0'
 
+  pod 'react-native-netinfo', :path => '../node_modules/@react-native-community/netinfo'
+
   target 'Talon540AppTests' do
     inherit! :complete
     # Pods for testing
