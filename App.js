@@ -9,21 +9,19 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <InternetConnectionAlert
-      onChange={(connectionState) => {  
-    }}>
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name='MainStack'
-          component={MainStack}
-          options={{
-            gestureEnabled: false,
-            headerShown: false
-          }}
-          />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <InternetConnectionAlert>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name='MainStack'
+            component={MainStack}
+            options={{
+              gestureEnabled: false,
+              headerShown: false
+            }}
+            />
+        </Stack.Navigator>
+      </NavigationContainer>
     </InternetConnectionAlert>
     
   )

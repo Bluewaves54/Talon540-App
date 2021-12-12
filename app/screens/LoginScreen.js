@@ -73,26 +73,32 @@ const UnfinishedFieldsAlert = () =>
     );
 
 const LoginScreen = ({ navigation, route }) =>  {
-    const [isLoading, setLoading] = useState(true);
     const fetchDataAndNavigate = async () => {
-        const response = await fetch('https://talon540appbackend.herokuapp.com/' + googlename + '/'
-                                      + subgroup + '/' + status + '/'
-                                      + gradYear + '/' + id + '/' + googlepfpurl + '/' + googleemail
-                                    ,
-                                      {
-                                        headers : { 
-                                          'Content-Type': 'application/json',
-                                          'Accept': 'application/json'
-                                        }
-                                      }
-                                    );
-    const json = await response.json()
-    //console.log(json)
-    if (Object.values(json)[0]) {
-        RNRestart.Restart();
-    } else {
-        UnfinishedFieldsAlert()
-    }
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                'deviceID': id,
+                'name': googlename,
+                'subgroup': subgroup,
+                'status': status,
+                'gradYear': gradYear,
+                'pfp': googlepfpurl,
+                'email': googleemail,
+
+            })
+        };
+        const response = await fetch('https://talon540appbackend.herokuapp.com/createNewAccount', requestOptions);
+        const json = await response.json()
+        console.log(json)
+        if (Object.values(json)[0]) {
+            RNRestart.Restart();
+        } else {
+            UnfinishedFieldsAlert()
+        }
     }
     return (
         <SafeAreaView style={{
