@@ -12,7 +12,7 @@ const LoggedInStack = () => {
                 screenOptions={({ route }) => ({
                     headerShown: false,
                     tabBarStyle: {
-                        backgroundColor: 'yellow'
+                        backgroundColor: '#1f2129'
                     },
                 })}
             >
@@ -21,7 +21,7 @@ const LoggedInStack = () => {
                     component={MainScreen}
                 />
                 <Tab.Screen
-                    name="Profile"
+                    name="User Information"
                     component={ProfileStack}
                     options={{
                         headerShown: false,

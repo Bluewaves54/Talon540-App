@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-
+    
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen

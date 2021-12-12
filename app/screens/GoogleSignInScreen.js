@@ -14,7 +14,7 @@ const invalidDomainAlert = () => {
     [
       { text: "Cancel", onPress: () => { return null }, style: 'cancel'}
     ]
-)
+  )
 }
 
 export default class GoogleSignInScreen extends Component {
