@@ -61,7 +61,7 @@ const ProfileScreen = ({ navigation }) => {
                 <Image
                     style={styles.pfp}
                     source={{
-                    uri: data.pfp,
+                    uri: data.pfp, //a
                     }}
                 />
                 <Text>Name: {data.name} </Text>
