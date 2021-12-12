@@ -136,7 +136,6 @@ const styles = StyleSheet.create({
     },
     signInText: {
         flex: 1,
-        alignText: 'center',
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 15,

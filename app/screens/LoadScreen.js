@@ -30,14 +30,14 @@ function LoadScreen({ navigation, route }) {
     })
     .then(function(myJson){
       setData(myJson)
-      console.log(myJson)
+      //console.log(myJson)
       verified = true;
     })
   }
   if (Object.values(accountExistsData)[0] == id) {
     data = accountExistsData
     verified = false
-    console.log(data)
+    //console.log(data)
     navigation.navigate(
       'LoggedInStack'
     )

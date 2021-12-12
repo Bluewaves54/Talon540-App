@@ -42,7 +42,7 @@ const ConfirmDeletionAlert = ({ navigation }) => {
                 })
                 .then(function(myJson){
                     setData(myJson);
-                    console.log(data);
+                    //console.log(data);
                 })
                 navigation.navigate("GoogleSignInScreen")
                 } 
