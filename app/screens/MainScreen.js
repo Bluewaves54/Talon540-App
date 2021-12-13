@@ -24,13 +24,11 @@ function NotifyUser(Location, Status) { //figure out notifications
     ]
     if(!Location) {
         var place = 'null'
+    } else if(locations.includes(location)) {
+        var place = string(location)
     } else {
-        if(locations.includes(location)) {
-            var place = string(location)
-        } else {
-            var place = 'null'
-        }
-    }
+        var place = 'null'
+      }
     //Notify User of Sucsessful Signin
     switch(string(method.toLowerCase())) {
         case 'vibrate': //simple buzz
@@ -40,7 +38,7 @@ function NotifyUser(Location, Status) { //figure out notifications
                 } else if(Platform.OS === "ios") {
                     state = true
                     Vibration.vibrate([150,150,150],state)
-                    setTimeout(function(){ Vibration.cancel(); }, 3000);
+                    setTimeout(function(){ Vibration.cancel(); }, 1600);
                 }
             }
             notifyVibrate()
