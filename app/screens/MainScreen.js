@@ -7,13 +7,15 @@ import {
     Button,
     ImageBackground,
     Vibration,
+    Alerts,
+    Platform,
 }
 from 'react-native';
+import { method } from './ProfileScreen';
 
-function NotifyUser(Method, Location, Status) { //figure out notifications
+function NotifyUser(Location, Status) { //figure out notifications
     const d = new Date()
     var datetime = d.toLocaleString('en-GB')
-    const vibratepattern = [500, 500, 500]; //Three short 1/2 vibrations
     const locations = [
         'main room', //Room 31
         'photo room', //Room 32
@@ -30,18 +32,30 @@ function NotifyUser(Method, Location, Status) { //figure out notifications
         }
     }
     //Notify User of Sucsessful Signin
-    switch(string(Method)) {
+    switch(string(method.toLowerCase())) {
         case 'vibrate': //simple buzz
-            Vibration.vibrate(vibratepattern)
+            function notifyVibrate() {
+                if (Platform.OS === "android") {
+                    Vibration.vibrate(500)
+                } else if(Platform.OS === "ios") {
+                    state = true
+                    Vibration.vibrate([150,150,150],state)
+                    setTimeout(function(){ Vibration.cancel(); }, 3000);
+                }
+            }
+            notifyVibrate()
         break;
         case 'notification': // You signed in at the _ at _
-            if(status == 'in') {
-            console.log("You signed in on "+datetime+" at "+place)
-            } else if(status == 'out') {
-                console.log("You signed out on "+datetime)
+            function notifyPush(where, why) {
             }
-            //Test but not with push notifications yet
+            //if(status == 'in') {
+            //console.log("You signed in on "+datetime+" at "+place)
+            //} else if(status == 'out') {
+            //    console.log("You signed out on "+datetime)
+            //}
         break;
+        default: 
+            notifyVibrate()
 
     }
 }

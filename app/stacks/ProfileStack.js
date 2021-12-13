@@ -9,7 +9,7 @@ const ProfileStack = () => {
     return (
         <Stack.Navigator>
           <Stack.Screen
-            name="Profile"
+            name="Profile" 
             component={ProfileScreen}
           />
         </Stack.Navigator>

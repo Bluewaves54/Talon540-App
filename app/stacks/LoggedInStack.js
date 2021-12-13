@@ -1,7 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native'
 import MainScreen from '../screens/MainScreen';
 import ProfileStack from './ProfileStack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -26,9 +25,9 @@ export default function App() {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           headerShown: false,
-                    tabBarStyle: {
-                        backgroundColor: '#1f2129'
-                    },
+          tabBarStyle: {
+            backgroundColor: '#1f2129'
+          },
           tabBarActiveTintColor: 'lightblue',
         })}>
 

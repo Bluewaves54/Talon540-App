@@ -16,8 +16,8 @@ const MainStack = () => {
                 name='LoadScreen'
                 component={LoadScreen}
                 options={{
-                gestureEnabled: false,
-                headerShown: false
+                    gestureEnabled: false,
+                    headerShown: false
                 }}
             />
             <Stack.Screen 

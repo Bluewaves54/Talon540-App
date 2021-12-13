@@ -9,10 +9,10 @@ import {
     View,
 
 } from 'react-native';
-// import { username } from './GoogleSignInScreen';
+import SelectDropdown from 'react-native-select-dropdown';
 import { data } from './LoadScreen';
 
-
+var method = null
 const ConfirmDeletionAlert = ({ navigation }) => {
     Alert.alert(
         'Confirm',
@@ -71,6 +71,25 @@ const ProfileScreen = ({ navigation }) => {
                 <Text>Graduation Year: {data.gradYear} </Text>
                 <Text>Unique Id: {data.deviceID}</Text>
             </View>
+            <View style={{alignText: 'center',justifyContent: 'center', alignItems: 'center',bottom: 200,}}>
+                <Text style={{fontWeight: 'bold'}}> How would you like to be notified when you sign in?</Text>
+            </View>
+            <View style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                position: 'static',
+                bottom: 190,
+            }}>
+                <SelectDropdown
+                    data={['Vibrate','Notification','Both',]}
+                    onSelect={(selectedMethod) => { method = selectedMethod }}
+                    buttonTextAfterSelection={(selectedMethod) => { return selectedMethod }}
+                    rowTextForSelection={(item) => { return item }}
+                    defaultButtonText={'Select Method'}
+                    buttonStyle={styles.notifyDropdown}
+                    dropdownStyle={{ borderRadius: 20 }}
+                />
+            </View>
             <View style={styles.deleteButton}>
                 <Button
                     title={'Delete Account'}
@@ -81,6 +100,21 @@ const ProfileScreen = ({ navigation }) => {
         // Change googleemail and googlepfpurl to data.email and data.pfp when columns are added
     )
     }
+export { method };
+class DropdownStyle {
+    constructor(top) {
+        this.top = top;
+        // this.left = '35%';
+        this.width = 250;
+        this.height = 50;
+        this.margin = 10;
+        this.borderWidth = 5;
+        this.borderRadius = 20;
+        this.padding = 10;
+        this.position = 'absolute';
+        this.backgroundColor = 'lightblue';
+    }
+}
 
 const styles = StyleSheet.create({
     pfp: {
@@ -97,7 +131,8 @@ const styles = StyleSheet.create({
     },
     displayData: {
         alignItems: 'center',
-        bottom: 250, //275 with no pfp
-    }
+        bottom: 225, //275 with no pfp
+    },
+    notifyDropdown: new DropdownStyle('350%'),
 })
 export default ProfileScreen;
