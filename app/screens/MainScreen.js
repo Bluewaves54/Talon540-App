@@ -22,10 +22,11 @@ function NotifyUser(Location, Status) { //figure out notifications
         'library', //Library
         'woodshop', //Room 33
     ]
-    if(!Location) {
+    var location
+    if(lLocation) {
         var place = 'null'
     } else if(locations.includes(location)) {
-        var place = string(location)
+        var place = String(location)
     } else {
         var place = 'null'
       }
