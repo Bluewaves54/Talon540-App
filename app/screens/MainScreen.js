@@ -7,12 +7,14 @@ import {
     Button,
     ImageBackground,
     Vibration,
-    Alerts,
+    Alert,
     Platform,
 }
 from 'react-native';
 import { method } from './ProfileScreen';
 
+
+//Notify user of signin or sign out with timestamp
 function NotifyUser(Location, Status) { //figure out notifications
     const d = new Date()
     var datetime = d.toLocaleString('en-GB')
@@ -21,16 +23,16 @@ function NotifyUser(Location, Status) { //figure out notifications
         'photo room', //Room 32
         'library', //Library
         'woodshop', //Room 33
-    ]
+        'signout', //Signing out
+        ]
+    var location
     if(!Location) {
         var place = 'null'
+    } else if(locations.includes(location)) {
+        var place = String(location)
     } else {
-        if(locations.includes(location)) {
-            var place = string(location)
-        } else {
-            var place = 'null'
-        }
-    }
+        var place = 'null'
+      }
     //Notify User of Sucsessful Signin
     switch(string(method.toLowerCase())) {
         case 'vibrate': //simple buzz
@@ -40,7 +42,7 @@ function NotifyUser(Location, Status) { //figure out notifications
                 } else if(Platform.OS === "ios") {
                     state = true
                     Vibration.vibrate([150,150,150],state)
-                    setTimeout(function(){ Vibration.cancel(); }, 3000);
+                    setTimeout(function(){ Vibration.cancel(); }, 1600);
                 }
             }
             notifyVibrate()
@@ -59,12 +61,38 @@ function NotifyUser(Location, Status) { //figure out notifications
 
     }
 }
+function talonSignIn(NFCDATA) {
+    if(!sn) {
+        const sn = new Map() //creates new map
+    }
+    if(!NFCDATA) {
+        Alert.alert(
+            'No NFC Data Found',
+            'This is most likely a development error',
+        )
+        return
+    }
+    
+    if(sn.has("entried")) { //if  map run alert
+        Alert.alert(
+        'Signin has been registered',
+        'Please wait one minute before sending another',)
+    } else { //if no limit set limit 
+        sn.set("entried") //setting limit
+        setTimeout(() => { sn.delete("entried") }, 60000); //clear limit after 1 min
+        //rest of code:
+            //Send Location, Time, Name, and Status to backend
+            //Notify User NotifyUser()
+
+    }
+    // Send to data table >> google spreadsheet
+    // Take in NFC Data >> Parse out Location and status
+}
 
 const MainScreen = ({ navigation, route }) => {
-    const image = { uri: "https://cdn.discordapp.com/attachments/892936500747075624/919297354170003466/unknown.png" };
     return (
         <View style={styles.container}>
-            <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+            <ImageBackground source={require('../assets/JesusH.png')} resizeMode="cover" style={styles.image}>
             </ImageBackground>
         </View>
     );
