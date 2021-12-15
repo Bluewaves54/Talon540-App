@@ -106,7 +106,6 @@ export default class GoogleSignInScreen extends Component {
                       this.props.navigation.navigate('LoginScreen')
                       }} title='Next'/>
                   </View>
-
                 }
             </ImageBackground>
             </SafeAreaView>
