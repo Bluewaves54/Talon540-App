@@ -4,3 +4,8 @@ Yarn install
 Cd iOS
 Pod update
 Pod install
+
+
+Pods:
+Flipper-Folly
+libevents
