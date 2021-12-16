@@ -68,7 +68,6 @@ const ProfileScreen = ({ navigation }) => {
                 <Text>Email: {data.email} </Text>
                 <Text>Subgroup: {data.subgroup} </Text>
                 <Text>Status: {data.status} </Text>
-                <Text>Graduation Year: {data.gradYear} </Text>
                 <Text>Unique Id: {data.deviceID}</Text>
             </View>
             <View style={{alignText: 'center',justifyContent: 'center', alignItems: 'center',bottom: 200,}}>
@@ -99,7 +98,7 @@ const ProfileScreen = ({ navigation }) => {
                     }}
                     buttonTextAfterSelection={(selectedMethod) => { return selectedMethod }}
                     rowTextForSelection={(item) => { return item }}
-                    defaultButtonText={'Select Method'}
+                    defaultButtonText={data.notifmethod}
                     buttonStyle={styles.notifyDropdown}
                     dropdownStyle={{ borderRadius: 20 }}
                 />

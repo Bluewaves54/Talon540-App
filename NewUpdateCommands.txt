@@ -4,3 +4,14 @@ npm install
 cd ios
 pod update
 cd ..
+Yarn install
+yarn upgrade
+Yarn install
+Cd iOS
+Pod update
+Pod install
+
+
+Pods:
+Flipper-Folly
+libevents
