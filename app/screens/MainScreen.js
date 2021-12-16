@@ -75,7 +75,7 @@ function talonSignIn(NFCDATA) {
     
     if(sn.has("entried")) { //if  map run alert
         Alert.alert(
-        'Signin has been registered',
+        'Your Signin has been registered',
         'Please wait one minute before sending another',)
     } else { //if no limit set limit 
         sn.set("entried") //setting limit
