@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import MainStack from './app/stacks/MainStack';
 import React from 'react'
 import InternetConnectionAlert from "react-native-internet-connection-alert";
@@ -6,7 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+export default function App() {
   return (
     <InternetConnectionAlert>
       <NavigationContainer>
@@ -25,5 +26,3 @@ function App() {
     
   )
 }
-
-export default App

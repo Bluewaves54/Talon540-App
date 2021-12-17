@@ -1,23 +1,23 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Alert } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import CovidSheetsScreen from './AdminToolsScreens/CovidSheetsScreen'
+import ScoutingScreen from './AdminToolsScreens/ScoutingScreen'
+import SubgroupSigninScreen from './AdminToolsScreens/SubgroupSigninScreen'
+import { data } from '../screens/LoadScreen'
 
-const HelloWorldApp = () => {
+const Drawer = createDrawerNavigator();
+export default function AdminTools() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
-      }}>
-      <Text>Hey Talon Admins and Leads!</Text>
-      <Text>Open the Drawer on the Right for stuff</Text>
-      <Image source={require('../assets/construction.gif')}/>
-    </View>
+      <Drawer.Navigator screenOptions={{drawerPosition: "right",}}>
+        <Drawer.Screen name="Covid Data & Sign in Times" component={CovidSheetsScreen} />
+        <Drawer.Screen name="Subgroup Signin Sheet" component={SubgroupSigninScreen} />
+        <Drawer.Screen name="Scouting" component={ScoutingScreen} />
+      </Drawer.Navigator>
   )
 }
-export default HelloWorldApp;
 //Drawer View
     //Supgroup signin
     //Scouting
     //CovidSheets
-    //

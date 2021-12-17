@@ -7,6 +7,7 @@ import {
     Alert,
     StyleSheet,
     View,
+    StatusBar,
 
 } from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
@@ -61,9 +62,7 @@ const ProfileScreen = ({ navigation }) => {
             <View style={styles.displayData}>
                 <Image
                     style={styles.pfp}
-                    source={{
-                    uri: 'https://lh3.googleusercontent.com/a-/' + data.pfp,
-                    }}
+                    source={{ uri: 'https://lh3.googleusercontent.com/a-/' + data.pfp}}
                 />
                 <Text>Name: {data.name} </Text>
                 <Text>Email: {data.email} </Text>
@@ -72,14 +71,14 @@ const ProfileScreen = ({ navigation }) => {
                 <Text>Unique Id: {data.deviceID}</Text>
                 <Text>Notify Method: {data.notifmethod} </Text>
             </View>
-            <View style={{alignText: 'center',justifyContent: 'center', alignItems: 'center',bottom: 200,}}>
+            <View style={{alignText: 'center',justifyContent: 'center', alignItems: 'center',bottom: 130,}}>
                 <Text style={{fontWeight: 'bold'}}> How would you like to be notified when you sign in?</Text>
             </View>
             <View style={{
                 justifyContent: 'center',
                 alignItems: 'center',
                 position: 'static',
-                bottom: 190,
+                bottom: 125,
             }}>
                 <SelectDropdown
                     data={['Vibrate','Notification','Both',]}
@@ -107,10 +106,17 @@ const ProfileScreen = ({ navigation }) => {
                 />
             </View>
             <SafeAreaView style={styles.fatty}>
-                <Button
+                {/* <Button
                     title="Click for Admin & Subgroup Tools"
                     color="#f194ff"
-                    onPress={() => navigation.navigate("Admin")}/>
+                    onPress={() => {
+                        if(data.status === 'Developer' || data.status==='Admin' || data.status==='Lead' ) {
+                            navigation.navigate("Admin")
+                        } else {
+                            Alert.alert("You are not an Admin")
+                        }
+                    
+                }}/> */}
             </SafeAreaView>
             <View style={styles.deleteButton}>
                 <Button
@@ -129,18 +135,22 @@ class DropdownStyle {
         this.width = 250;
         this.height = 50;
         this.margin = 10;
-        this.borderWidth = 5;
+        this.borderWidth = 3;
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = 'lightblue';
+        this.backgroundColor = 'pink';
     }
 }
 
 const styles = StyleSheet.create({
     pfp: {
-        width: 50, //change
-        height: 50,
+        width: 150,
+        height: 150,
+        borderRadius: 150 / 2,
+        overflow: "hidden",
+        borderWidth: 3,
+        borderColor: "pink"
     },
     deleteButton: {
         flex: 1,
@@ -152,7 +162,7 @@ const styles = StyleSheet.create({
     },
     displayData: {
         alignItems: 'center',
-        bottom: 225, //275 with no pfp
+        bottom: 175, //275 with no pfp
     },
     fatty: {
         justifyContent: 'center',

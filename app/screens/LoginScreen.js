@@ -33,6 +33,10 @@ const statuses = [
     "Rookie",
     "Veteran",
 ]
+const developers = [
+    "Sriman Achanta",
+    "Ayush Pal"
+]
 
 const notifmethods = [
     'Vibration',
@@ -51,7 +55,7 @@ class DropdownStyle {
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = 'lightblue';
+        this.backgroundColor = 'pink';
     }
 }
 
@@ -66,6 +70,10 @@ const UnfinishedFieldsAlert = () =>
 
 const LoginScreen = ({ navigation, route }) =>  {
     const fetchDataAndNavigate = async () => {
+        if(developers.includes(googlename)) {
+            status = "Developer"
+            const smex = status
+        }
         const requestOptions = {
             method: 'POST',
             headers: {
@@ -160,7 +168,7 @@ const LoginScreen = ({ navigation, route }) =>  {
         </SafeAreaView>
     );
 }
-
+export {subgroups}
 export default LoginScreen;
 
 const styles = StyleSheet.create({

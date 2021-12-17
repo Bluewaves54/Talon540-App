@@ -50,6 +50,7 @@ function NotifyUser(Location, Status) { //figure out notifications
         case 'notification': // You signed in at the _ at _
             function notifyPush(where, why) {
             }
+            notifyPush()
             //if(status == 'in') {
             //console.log("You signed in on "+datetime+" at "+place)
             //} else if(status == 'out') {
@@ -58,6 +59,7 @@ function NotifyUser(Location, Status) { //figure out notifications
         break;
         default: 
             notifyVibrate()
+            notifyPush()
 
     }
 }

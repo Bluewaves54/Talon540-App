@@ -80,7 +80,7 @@ export default class GoogleSignInScreen extends Component {
                     <GoogleSigninButton
                         style={{ width: 192, height: 48 }}
                         size={GoogleSigninButton.Size.Wide}
-                        color={GoogleSigninButton.Color.Light}
+                        color={GoogleSigninButton.Color.Dark}
                         onPress={this._signIn}
                         disabled={this.state.isSigninInProgress} />
                 </View>
@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
     signInText: {
         flex: 1,
         color: '#fff',
+        textAlign: 'center',
         fontWeight: 'bold',
         fontSize: 15,
         width: 300,

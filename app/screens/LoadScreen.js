@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import {
   StyleSheet
@@ -12,11 +12,11 @@ export { id };
 let verified = false;
 let data
 
-function LoadScreen({ navigation, route }) {
+export default function LoadScreen({ navigation, route }) {
+  
   const [accountExistsData, setData] = useState([]);
   if (!verified) {
-    fetch('https://talon540appbackend.herokuapp.com/fetchInformation/' + id
-    ,
+    fetch('https://talon540appbackend.herokuapp.com/fetchInformation/' + id,
       {
           headers : { 
               'Content-Type': 'application/json',
@@ -60,5 +60,3 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 })
-
-export default LoadScreen
