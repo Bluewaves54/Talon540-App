@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 15,
         width: 300,
-        left: 200,
+        left: 170,
         top: 30 ,
         
     },
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
         flex: 1,
         position: 'absolute',
         top: '800%',
-        left: '180%',
+        left: '190%',
         width: 70,
         height: 40,
         color: '#fff',
