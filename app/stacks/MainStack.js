@@ -58,5 +58,4 @@ const MainStack = () => {
     );
   }
 
-
 export default MainStack
