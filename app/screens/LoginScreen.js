@@ -34,22 +34,10 @@ const statuses = [
     "Veteran",
 ]
 
-// var date = new Date()
-// var yearArray = []
-// if(date.getMonth() > 6) {
-//     var InitalGradYear = date.getFullYear()+1
-// } else {
-//     var InitalGradYear = date.getFullYear()
-// }
-// yearArray.push(InitalGradYear)
-
-// for(var i = 1; i<4; i++) {
-//     yearArray.push(InitalGradYear+i)
-// }
 const notifmethods = [
     'Vibration',
     'Notification',
-    'Both'
+    'Both',
 ]
 
 class DropdownStyle {

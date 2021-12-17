@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 import { data } from './LoadScreen';
+//import RNRestart from 'react-native-restart';
 
 var method = null
 const ConfirmDeletionAlert = ({ navigation }) => {
@@ -69,6 +70,7 @@ const ProfileScreen = ({ navigation }) => {
                 <Text>Subgroup: {data.subgroup} </Text>
                 <Text>Status: {data.status} </Text>
                 <Text>Unique Id: {data.deviceID}</Text>
+                <Text>Notify Method: {data.notifmethod} </Text>
             </View>
             <View style={{alignText: 'center',justifyContent: 'center', alignItems: 'center',bottom: 200,}}>
                 <Text style={{fontWeight: 'bold'}}> How would you like to be notified when you sign in?</Text>
@@ -95,6 +97,7 @@ const ProfileScreen = ({ navigation }) => {
                         }
                         const response = await fetch('https://talon540appbackend.herokuapp.com/changeNotifMethod', requestOptions)
                         const json = response.json()
+                        //RNRestart.Restart(); Refresh for text to update
                     }}
                     buttonTextAfterSelection={(selectedMethod) => { return selectedMethod }}
                     rowTextForSelection={(item) => { return item }}
@@ -103,6 +106,12 @@ const ProfileScreen = ({ navigation }) => {
                     dropdownStyle={{ borderRadius: 20 }}
                 />
             </View>
+            <SafeAreaView style={styles.fatty}>
+                <Button
+                    title="Click for Admin & Subgroup Tools"
+                    color="#f194ff"
+                    onPress={() => navigation.navigate("Admin")}/>
+            </SafeAreaView>
             <View style={styles.deleteButton}>
                 <Button
                     title={'Delete Account'}
@@ -110,7 +119,6 @@ const ProfileScreen = ({ navigation }) => {
                     }}/>
             </View>
         </SafeAreaView>
-        // Change googleemail and googlepfpurl to data.email and data.pfp when columns are added
     )
     }
 export { method };
@@ -146,6 +154,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         bottom: 225, //275 with no pfp
     },
+    fatty: {
+        justifyContent: 'center',
+        marginHorizontal: 16,
+        alignSelf: 'center',
+      },
     notifyDropdown: new DropdownStyle('350%'),
 })
 export default ProfileScreen;
