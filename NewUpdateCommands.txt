@@ -1,3 +1,9 @@
+npm install
+npm update
+npm install
+cd ios
+pod update
+cd ..
 Yarn install
 yarn upgrade
 Yarn install

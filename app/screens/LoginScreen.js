@@ -16,7 +16,7 @@ import { googlename, googleemail, googlepfpurl } from './GoogleSignInScreen';
 var id = DeviceInfo.getUniqueId();
 var subgroup = null
 var status = null
-var gradYear = null
+var notifmethod = null
 
 const subgroups = [
     "Programming",
@@ -34,19 +34,23 @@ const statuses = [
     "Veteran",
 ]
 
-var date = new Date()
-var yearArray = []
-if(date.getMonth() > 6) {
-    var InitalGradYear = date.getFullYear()+1
-} else {
-    var InitalGradYear = date.getFullYear()
-}
-yearArray.push(InitalGradYear)
+// var date = new Date()
+// var yearArray = []
+// if(date.getMonth() > 6) {
+//     var InitalGradYear = date.getFullYear()+1
+// } else {
+//     var InitalGradYear = date.getFullYear()
+// }
+// yearArray.push(InitalGradYear)
 
-for(var i = 1; i<4; i++) {
-    yearArray.push(InitalGradYear+i)
-}
-const gradYears = yearArray
+// for(var i = 1; i<4; i++) {
+//     yearArray.push(InitalGradYear+i)
+// }
+const notifmethods = [
+    'Vibration',
+    'Notification',
+    'Both'
+]
 
 class DropdownStyle {
     constructor(top) {
@@ -59,7 +63,7 @@ class DropdownStyle {
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = 'lightgrey';
+        this.backgroundColor = 'lightblue';
     }
 }
 
@@ -85,7 +89,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                 'name': googlename,
                 'subgroup': subgroup,
                 'status': status,
-                'gradYear': gradYear,
+                'notifmethod': notifmethod,
                 'pfp': googlepfpurl,
                 'email': googleemail,
 
@@ -135,12 +139,12 @@ const LoginScreen = ({ navigation, route }) =>  {
                     dropdownStyle={{ borderRadius: 20 }}
                 />
                 <SelectDropdown
-                    data={gradYears}
-                    onSelect={(selectedGradYear) => { gradYear = selectedGradYear }}
-                    buttonTextAfterSelection={(selectedGradYear) => { return selectedGradYear }}
+                    data={notifmethods}
+                    onSelect={(SelectedNotifMethod) => { notifmethod = SelectedNotifMethod }}
+                    buttonTextAfterSelection={(selectedNotifMethod) => { return selectedNotifMethod }}
                     rowTextForSelection={(item) => { return item }}
-                    defaultButtonText={'Select Graduation Year'}
-                    buttonStyle={styles.gradYearMenu}
+                    defaultButtonText={'Select Notification Method'}
+                    buttonStyle={styles.notifMethodMenu}
                     dropdownStyle={{ borderRadius: 20 }}
                 />
             </SafeAreaView>
@@ -149,7 +153,7 @@ const LoginScreen = ({ navigation, route }) =>  {
             <Button
             onPress={() => 
                     {
-                    if (subgroup && status && gradYear && id) {
+                    if (subgroup && status && notifmethod && id) {
                         fetchDataAndNavigate()
                     } else {
                         UnfinishedFieldsAlert();
@@ -215,5 +219,5 @@ const styles = StyleSheet.create({
 
     subgroupMenu: new DropdownStyle('350%'),
     statusMenu: new DropdownStyle('500%'),
-    gradYearMenu: new DropdownStyle('650%'),
+    notifMethodMenu: new DropdownStyle('650%'),
 })

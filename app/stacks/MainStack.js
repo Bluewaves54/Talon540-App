@@ -5,6 +5,7 @@ import LoggedInStack from './LoggedInStack';
 import LoginScreen from '../screens/LoginScreen';
 import GoogleSignInScreen from '../screens/GoogleSignInScreen';
 import LoadScreen from '../screens/LoadScreen';
+import AccountsScreen from '../screens/AccountsScreen'
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -12,6 +13,7 @@ const Stack = createNativeStackNavigator();
 const MainStack = () => {
     return (
         <Stack.Navigator>
+
             <Stack.Screen
                 name='LoadScreen'
                 component={LoadScreen}

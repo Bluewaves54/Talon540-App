@@ -68,7 +68,6 @@ const ProfileScreen = ({ navigation }) => {
                 <Text>Email: {data.email} </Text>
                 <Text>Subgroup: {data.subgroup} </Text>
                 <Text>Status: {data.status} </Text>
-                <Text>Graduation Year: {data.gradYear} </Text>
                 <Text>Unique Id: {data.deviceID}</Text>
             </View>
             <View style={{alignText: 'center',justifyContent: 'center', alignItems: 'center',bottom: 200,}}>
@@ -82,10 +81,24 @@ const ProfileScreen = ({ navigation }) => {
             }}>
                 <SelectDropdown
                     data={['Vibrate','Notification','Both',]}
-                    onSelect={(selectedMethod) => { method = selectedMethod }}
+                    onSelect={async (selectedMethod) => {
+                        const requestOptions = {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                'deviceid': data.deviceID,
+                                'notifMethod': selectedMethod
+                            })
+                        }
+                        const response = await fetch('https://talon540appbackend.herokuapp.com/changeNotifMethod', requestOptions)
+                        const json = response.json()
+                    }}
                     buttonTextAfterSelection={(selectedMethod) => { return selectedMethod }}
                     rowTextForSelection={(item) => { return item }}
-                    defaultButtonText={'Select Method'}
+                    defaultButtonText={data.notifmethod}
                     buttonStyle={styles.notifyDropdown}
                     dropdownStyle={{ borderRadius: 20 }}
                 />
