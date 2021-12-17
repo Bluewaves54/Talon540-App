@@ -11,7 +11,7 @@ import {
     Platform,
 }
 from 'react-native';
-import { method } from './ProfileScreen';
+import { data } from './LoadScreen';
 
 
 //Notify user of signin or sign out with timestamp
@@ -34,8 +34,8 @@ function NotifyUser(Location, Status) { //figure out notifications
         var place = 'null'
       }
     //Notify User of Sucsessful Signin
-    switch(string(method.toLowerCase())) {
-        case 'vibrate': //simple buzz
+    switch(string(data.notifmethod.toLowerCase())) {
+        case 'vibration': //simple buzz
             function notifyVibrate() {
                 if (Platform.OS === "android") {
                     Vibration.vibrate(500)
@@ -75,7 +75,7 @@ function talonSignIn(NFCDATA) {
         return
     }
     
-    if(sn.has("entried")) { //if  map run alert
+    if(sn.has("entried")) { //if map run alert
         Alert.alert(
         'Your Signin has been registered',
         'Please wait one minute before sending another',)
