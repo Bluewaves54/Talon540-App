@@ -12,10 +12,16 @@ const ProfileStack = () => {
           <Stack.Screen
             name="Profile" 
             component={ProfileScreen}
+            options={{
+              headerShown: false
+            }}
           />
           <Stack.Screen
             name="Admin"
             component={AdminScreen}
+            options={{
+              headerShown: false
+            }}
           />
         </Stack.Navigator>
     );
