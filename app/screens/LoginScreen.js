@@ -150,7 +150,21 @@ const LoginScreen = ({ navigation, route }) =>  {
             onPress={() => 
                     {
                     if (subgroup && status && notifmethod && id) {
-                        fetchDataAndNavigate()
+                        Alert.alert(
+                            'Double Check',
+                            'Make Sure all information is correct',
+                            [
+                                {
+                                    text: 'Go Back',
+                                    onPress: () => { return null },
+                                    style: 'cancel'
+                                },
+                                {
+                                    text: 'Next',
+                                    onPress: () => { fetchDataAndNavigate()},
+                                },
+                            ]
+                        )
                     } else {
                         UnfinishedFieldsAlert();
                         }

@@ -34,7 +34,7 @@ function AdminTabNavigator() {
         component={ProfileStack}
         options={{ 
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ios-settings" color={color} size={size} />
+            <Ionicons name="person" color={color} size={size} />
           ),
           headerShown: false
         }}/>
