@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "295965277576",
+    "project_id": "talon540app-381bc",
+    "storage_bucket": "talon540app-381bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295965277576:android:b481dac135e0177e180e3d",
+        "android_client_info": {
+          "package_name": "com.talon540app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295965277576-1ht1d76a267fb8nsb0rote28mp5c14o6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.talon540app",
+            "certificate_hash": "caeb4e9056f6c5cb20c06ae049da44bef8534a2a"
+          }
+        },
+        {
+          "client_id": "295965277576-ld8k2htnhon67o6ih7a7e7f3l0c4t47m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCENpjQCP96CxIngy2nltcPCACi5gIs3Xo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295965277576-ld8k2htnhon67o6ih7a7e7f3l0c4t47m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "295965277576-lbqc4ikhlqqbq9rquq5vbqpbrdls5rkj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Talon540"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
