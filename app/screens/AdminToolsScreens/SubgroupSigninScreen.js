@@ -6,8 +6,8 @@ function SubgroupSigninScreen({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView}>
-                <Text style={{textAlign: 'center'}}>Hey Talon Admins and Leads!</Text>
-                <Text style={{textAlign: 'center'}}>Open the Drawer on the Right for stuff</Text>
+                <Text style={{textAlign: 'center', color: 'white'}}>Hey Talon Admins and Leads!</Text>
+                <Text style={{textAlign: 'center', color: 'white'}}>Open the Drawer on the Right for stuff</Text>
                 <Image 
                     style = {styles.image}
                     source={require('../../assets/construction.gif')}
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     },
     scrollView: {
         paddingTop: 10,
-        backgroundColor: 'pink',
+        backgroundColor: '#1f2129',
     },
     image: {
         alignItems: 'center',

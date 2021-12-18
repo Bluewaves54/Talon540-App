@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 import { data } from './LoadScreen';
-//import RNRestart from 'react-native-restart';
+import RNRestart from 'react-native-restart';
 
 var method = null
 const ConfirmDeletionAlert = ({ navigation }) => {
@@ -58,27 +58,31 @@ const ProfileScreen = ({ navigation }) => {
         <SafeAreaView style={{
                 justifyContent: 'center',
                 flex: 1,
+                backgroundColor: '#1f2129',
             }}>
-            <View style={styles.displayData}>
-                <Image
+            <View style={styles.displayName}>
+            <Text style={{ color: 'lightblue', fontWeight: 'bold', fontSize: 32 }}>{data.name} </Text>
+            </View>
+            <View style={styles.displayPfp}>
+            <Image
                     style={styles.pfp}
                     source={{ uri: 'https://lh3.googleusercontent.com/a-/' + data.pfp}}
                 />
-                <Text>Name: {data.name} </Text>
-                <Text>Email: {data.email} </Text>
-                <Text>Subgroup: {data.subgroup} </Text>
-                <Text>Status: {data.status} </Text>
-                <Text>Unique Id: {data.deviceID}</Text>
-                <Text>Notify Method: {data.notifmethod} </Text>
             </View>
-            <View style={{alignText: 'center',justifyContent: 'center', alignItems: 'center',bottom: 130,}}>
-                <Text style={{fontWeight: 'bold'}}> How would you like to be notified when you sign in?</Text>
+            <View style={styles.displayInfo}>
+                <Text style={{ color: 'lightgray', fontSize: 15, fontWeight: 'bold'}}>{data.status} in {data.subgroup}</Text>
+            </View>
+            <View style={{ right: -10, bottom: 80}}>
+            <Text style={{ color: 'lightgray' }}>Contact: {data.email}</Text>
+            </View>
+            <View style={{alignText: 'center',justifyContent: 'center', alignItems: 'center',bottom: 0,}}>
+                <Text style={{fontWeight: 'bold', color: 'white'}}> How would you like to be notified when you sign in?</Text>
             </View>
             <View style={{
                 justifyContent: 'center',
                 alignItems: 'center',
                 position: 'static',
-                bottom: 125,
+                bottom: -5,
             }}>
                 <SelectDropdown
                     data={['Vibrate','Notification','Both',]}
@@ -96,7 +100,8 @@ const ProfileScreen = ({ navigation }) => {
                         }
                         const response = await fetch('https://talon540appbackend.herokuapp.com/changeNotifMethod', requestOptions)
                         const json = response.json()
-                        //RNRestart.Restart(); Refresh for text to update
+                        // RNRestart.Restart();
+                        // navigation.navigate('Settings')
                     }}
                     buttonTextAfterSelection={(selectedMethod) => { return selectedMethod }}
                     rowTextForSelection={(item) => { return item }}
@@ -139,18 +144,18 @@ class DropdownStyle {
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = 'pink';
+        this.backgroundColor = 'lightblue';
     }
 }
 
 const styles = StyleSheet.create({
     pfp: {
-        width: 150,
-        height: 150,
+        width: 100,
+        height: 100,
         borderRadius: 150 / 2,
         overflow: "hidden",
         borderWidth: 3,
-        borderColor: "pink"
+        borderColor: "black"
     },
     deleteButton: {
         flex: 1,
@@ -160,9 +165,19 @@ const styles = StyleSheet.create({
         width: 160,
         height: 40,
     },
-    displayData: {
-        alignItems: 'center',
-        bottom: 175, //275 with no pfp
+    displayName: {
+        bottom: 245, //275 with no pfp,
+        right: -30
+    },
+    displayPfp: {
+        alignItems: 'flex-end',
+        position: 'absolute',
+        top: 100,
+        left: 250
+    },
+    displayInfo: {
+        right: -40,
+        bottom: 230,
     },
     fatty: {
         justifyContent: 'center',

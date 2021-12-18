@@ -27,6 +27,7 @@ function AdminTabNavigator() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-home" color={color} size={size} />
           ),
+          headerShown: false
         }}/>
       <Tab.Screen 
         name="Settings" 
@@ -35,6 +36,7 @@ function AdminTabNavigator() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-settings" color={color} size={size} />
           ),
+          headerShown: false
         }}/>
       <Tab.Screen 
         name="Admin" 
@@ -43,7 +45,8 @@ function AdminTabNavigator() {
           tabBarBadge: 4,
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="empire" color={color} size={size} />
-          ), 
+          ),
+          headerShown: false
         }}/>
     </Tab.Navigator>
 );
@@ -66,6 +69,7 @@ function NotAdminTabNavigator() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-home" color={color} size={size} />
           ),
+          headerShown: false
         }}/>
       <Tab.Screen 
         name="Settings" 
@@ -74,6 +78,7 @@ function NotAdminTabNavigator() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-settings" color={color} size={size} />
           ),
+          headerShown: false
         }}/>
     </Tab.Navigator>
 );
