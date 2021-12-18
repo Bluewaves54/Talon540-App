@@ -72,8 +72,8 @@ const ProfileScreen = ({ navigation }) => {
             <View style={styles.displayInfo}>
                 <Text style={{ color: 'lightgray', fontSize: 15, fontWeight: 'bold'}}>{data.status} in {data.subgroup}</Text>
             </View>
-            <View style={{ right: -10, bottom: 80}}>
-            <Text style={{ color: 'lightgray' }}>Contact: {data.email}</Text>
+            <View style={{ alignItems: 'center', bottom: 180}}>
+            <Text style={{ color: 'lightgray', fontSize: 12}}>Contact: {data.email}</Text>
             </View>
             <View style={{alignText: 'center',justifyContent: 'center', alignItems: 'center',bottom: 0,}}>
                 <Text style={{fontWeight: 'bold', color: 'white'}}> How would you like to be notified when you sign in?</Text>
@@ -125,6 +125,7 @@ const ProfileScreen = ({ navigation }) => {
             </SafeAreaView>
             <View style={styles.deleteButton}>
                 <Button
+                    color='red'
                     title={'Delete Account'}
                     onPress={() => { ConfirmDeletionAlert({navigation});
                     }}/>
@@ -160,24 +161,22 @@ const styles = StyleSheet.create({
     deleteButton: {
         flex: 1,
         position: 'absolute',
-        top: 615,
-        left: 115,
+        top: 700,
+        left: 110,
         width: 160,
         height: 40,
     },
     displayName: {
         bottom: 245, //275 with no pfp,
-        right: -30
+        alignItems: 'center'
     },
     displayPfp: {
-        alignItems: 'flex-end',
-        position: 'absolute',
-        top: 100,
-        left: 250
+        top: -180,
+        alignItems: 'center',
     },
     displayInfo: {
-        right: -40,
-        bottom: 230,
+        bottom: 330,
+        alignItems: 'center'
     },
     fatty: {
         justifyContent: 'center',
