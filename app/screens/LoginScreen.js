@@ -55,7 +55,7 @@ class DropdownStyle {
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = 'pink';
+        this.backgroundColor = 'lightblue';
     }
 }
 
