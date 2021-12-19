@@ -116,14 +116,20 @@ function Hscreen() {
 const Drawer = createDrawerNavigator(); 
 const MainScreen = ({ navigation, route }) => {
     return (
-        <Drawer.Navigator initialRouteName="Home Screen" 
+        <Drawer.Navigator 
+            initialRouteName="Home Screen" 
             screenOptions={{
                 drawerPosition: "left",
                 drawerStyle: {
-                backgroundColor: '#1f2129',
+                    backgroundColor: '#1f2129',
+                },
+                headerTitleStyle: {
+                    color: 'white',
+                    fontWeight: 'bold'
                 },
                 headerStyle: {
                     height: 80,
+                    backgroundColor: '#1f2129',
                 },
             drawerInactiveTintColor: 'white',
             drawerActiveTintColor: 'lightblue',

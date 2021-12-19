@@ -72,11 +72,11 @@ function NotAdminTabNavigator() {
           headerShown: false
         }}/>
       <Tab.Screen 
-        name="Settings" 
+        name="Profile" 
         component={ProfileStack}
         options={{ 
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ios-settings" color={color} size={size} />
+            <Ionicons name="person" color={color} size={size} />
           ),
           headerShown: false
         }}/>

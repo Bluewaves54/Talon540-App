@@ -161,7 +161,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                                     style: 'cancel'
                                 },
                                 {
-                                    text: 'Next',
+                                    text: 'Its Correct',
                                     onPress: () => { fetchDataAndNavigate()},
                                 },
                             ]

@@ -16,6 +16,8 @@ import { data } from './LoadScreen';
 import RNRestart from 'react-native-restart';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import bugReportScreen from './MainScreenScreens/BugReportScreen'
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 
 var method = null
 const ConfirmDeletionAlert = ({ navigation }) => {
@@ -55,8 +57,7 @@ const ConfirmDeletionAlert = ({ navigation }) => {
         ]
     );
 }
-
-const ProfileScreen = ({ navigation }) => {
+function ProfileScreenContents({navigation}) {
     return (
         <SafeAreaView style={{
                 justifyContent: 'center',
@@ -129,8 +130,42 @@ const ProfileScreen = ({ navigation }) => {
             </View>
         </SafeAreaView>
     )
-    }
+}
+function ChangeUserInformation() {
+    return (
+        <View>
+            <Text>Hi!</Text>
+        </View>
+    )
+}
+const Drawer = createDrawerNavigator(); 
+const ProfileScreen = ({ navigation }) => {
+    return (
+        <Drawer.Navigator initialRouteName="Home Screen" 
+            screenOptions={{
+                drawerPosition: "left",
+                drawerStyle: {
+                backgroundColor: '#1f2129',
+                },
+            headerTransparent: true,
+            headerTitleStyle: {
+                fontSize: 0.1 //hehehehehehhe
+              },
+            
+            drawerInactiveTintColor: 'white',
+            drawerActiveTintColor: 'lightblue',
+            labelStyle:{
+                marginLeft:5
+            }
+    
+        }}>
+            <Drawer.Screen name="Profile Screen" component={ProfileScreenContents}/>
+            <Drawer.Screen name="Update User Info" component={ChangeUserInformation}/>
+        </Drawer.Navigator>
+    )
+}
 export { method };
+
 class DropdownStyle {
     constructor(top) {
         this.top = top;
