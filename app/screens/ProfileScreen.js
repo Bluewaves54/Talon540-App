@@ -8,11 +8,13 @@ import {
     StyleSheet,
     View,
     StatusBar,
+    TouchableHighlight,
 
 } from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 import { data } from './LoadScreen';
 import RNRestart from 'react-native-restart';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 var method = null
 const ConfirmDeletionAlert = ({ navigation }) => {
@@ -111,18 +113,12 @@ const ProfileScreen = ({ navigation }) => {
                 />
             </View>
             <SafeAreaView style={styles.fatty}>
-                {/* <Button
-                    title="Click for Admin & Subgroup Tools"
-                    color="#f194ff"
-                    onPress={() => {
-                        if(data.status === 'Developer' || data.status==='Admin' || data.status==='Lead' ) {
-                            navigation.navigate("Admin")
-                        } else {
-                            Alert.alert("You are not an Admin")
-                        }
-                    
-                }}/> */}
             </SafeAreaView>
+            <TouchableHighlight onPress={() => Alert.alert('Hi!')}>
+                <View style={{left: 300, top: 220}}>
+                    <Ionicons name="bug" color={'lightgreen'} size={40} />     
+                </View>
+            </TouchableHighlight>
             <View style={styles.deleteButton}>
                 <Button
                     color='red'

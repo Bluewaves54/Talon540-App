@@ -12,6 +12,8 @@ import {
 }
 from 'react-native';
 import { data } from './LoadScreen';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 //Notify user of signin or sign out with timestamp
@@ -90,14 +92,62 @@ function talonSignIn(NFCDATA) {
     // Send to data table >> google spreadsheet
     // Take in NFC Data >> Parse out Location and status
 }
-
-const MainScreen = ({ navigation, route }) => {
+function subgroupToolsScreen() {
+    return (
+        <View
+          style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center"
+          }}>
+          <Text>Hello, world!</Text>
+        </View>
+      )
+}
+export function bugReportScreen() {
+    return (
+        <View
+          style={{
+                flex: 1,
+                justifyContent: "center",
+            alignItems: "center"
+          }}>
+          <Text>Hello, world!</Text>
+        </View>
+      )
+}
+function Hscreen() {
     return (
         <View style={styles.container}>
             <ImageBackground source={require('../assets/JesusH.png')} resizeMode="cover" style={styles.image}>
             </ImageBackground>
         </View>
     );
+}
+const Drawer = createDrawerNavigator(); 
+const MainScreen = ({ navigation, route }) => {
+    return (
+        <Drawer.Navigator initialRouteName="Home Screen" 
+            screenOptions={{
+                drawerPosition: "left",
+                drawerStyle: {
+                backgroundColor: '#1f2129',
+                },
+                headerStyle: {
+                    height: 80,
+                },
+            drawerInactiveTintColor: 'white',
+            drawerActiveTintColor: 'lightblue',
+            labelStyle:{
+                marginLeft:5
+            }
+        
+        }}>
+            <Drawer.Screen name="Home Screen" component={Hscreen}/>
+            <Drawer.Screen name="Subgroup Tools" component={subgroupToolsScreen}/>
+            <Drawer.Screen name="Report a Bug" component={bugReportScreen}/>
+        </Drawer.Navigator>
+    )
 }
 
 const styles = StyleSheet.create({ //styles
