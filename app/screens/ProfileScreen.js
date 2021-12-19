@@ -15,6 +15,7 @@ import SelectDropdown from 'react-native-select-dropdown';
 import { data } from './LoadScreen';
 import RNRestart from 'react-native-restart';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import bugReportScreen from './MainScreenScreens/BugReportScreen'
 
 var method = null
 const ConfirmDeletionAlert = ({ navigation }) => {
@@ -114,9 +115,9 @@ const ProfileScreen = ({ navigation }) => {
             </View>
             <SafeAreaView style={styles.fatty}>
             </SafeAreaView>
-            <TouchableHighlight onPress={() => Alert.alert('Hi!')}>
+            <TouchableHighlight onPress={() => navigation.jumpTo('Home', {screen: 'Report a Bug' })}>
                 <View style={{left: 300, top: 220}}>
-                    <Ionicons name="bug" color={'lightgreen'} size={40} />     
+                    <Ionicons name="bug" color={'yellow'} size={40} />     
                 </View>
             </TouchableHighlight>
             <View style={styles.deleteButton}>

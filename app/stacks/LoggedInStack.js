@@ -30,7 +30,7 @@ function AdminTabNavigator() {
           headerShown: false
         }}/>
       <Tab.Screen 
-        name="Settings" 
+        name="Profile" 
         component={ProfileStack}
         options={{ 
           tabBarIcon: ({ color, size }) => (

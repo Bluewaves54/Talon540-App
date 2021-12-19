@@ -14,7 +14,7 @@ from 'react-native';
 import { data } from './LoadScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-
+import bugReportScreen from './MainScreenScreens/BugReportScreen'
 
 //Notify user of signin or sign out with timestamp
 function NotifyUser(Location, Status) { //figure out notifications
@@ -104,18 +104,7 @@ function subgroupToolsScreen() {
         </View>
       )
 }
-export function bugReportScreen() {
-    return (
-        <View
-          style={{
-                flex: 1,
-                justifyContent: "center",
-            alignItems: "center"
-          }}>
-          <Text>Hello, world!</Text>
-        </View>
-      )
-}
+
 function Hscreen() {
     return (
         <View style={styles.container}>

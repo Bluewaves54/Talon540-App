@@ -38,6 +38,7 @@ const developers = [
     "Ayush Pal"
 ]
 
+
 const notifmethods = [
     'Vibration',
     'Notification',
@@ -182,7 +183,7 @@ const LoginScreen = ({ navigation, route }) =>  {
         </SafeAreaView>
     );
 }
-export {subgroups}
+export { subgroups, developers }
 export default LoginScreen;
 
 const styles = StyleSheet.create({
