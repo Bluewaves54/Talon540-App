@@ -33,16 +33,22 @@ const statuses = [
     "Rookie",
     "Veteran",
 ]
-const developers = [
-    "Sriman Achanta",
-    "Ayush Pal"
-]
-
 
 const notifmethods = [
     'Vibration',
     'Notification',
     'Both',
+]
+
+const developers = [
+    "Sriman Achanta",
+    "Ayush Pal"
+]
+const Admins = [
+
+]
+const Leads = [
+
 ]
 
 class DropdownStyle {
@@ -71,9 +77,14 @@ const UnfinishedFieldsAlert = () =>
 
 const LoginScreen = ({ navigation, route }) =>  {
     const fetchDataAndNavigate = async () => {
-        if(developers.includes(googlename)) {
+        if(developers.includes(data.name)) {
             status = "Developer"
-            const smex = status
+        }
+        if(Admins.includes(data.name)) {
+            status = "Admin"
+        }
+        if(Leads.includes(data.name)) {
+            staus = "Lead"
         }
         const requestOptions = {
             method: 'POST',
@@ -183,7 +194,7 @@ const LoginScreen = ({ navigation, route }) =>  {
         </SafeAreaView>
     );
 }
-export { subgroups, developers }
+export { subgroups, developers, notifmethods, statuses }
 export default LoginScreen;
 
 const styles = StyleSheet.create({

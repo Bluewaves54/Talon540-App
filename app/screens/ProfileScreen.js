@@ -18,8 +18,12 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import bugReportScreen from './MainScreenScreens/BugReportScreen'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-
+import { developers, subgroups, notifmethods, statuses, Admins, Leads } from './LoginScreen'
 var method = null
+var status = null
+var subgroup = null
+var notifmethod = null
+
 const ConfirmDeletionAlert = ({ navigation }) => {
     Alert.alert(
         'Confirm',
@@ -57,7 +61,7 @@ const ConfirmDeletionAlert = ({ navigation }) => {
         ]
     );
 }
-function ProfileScreenContents({navigation}) {
+function ProfileScreenContents({navigation}) { //main profile screen
     return (
         <SafeAreaView style={{
                 justifyContent: 'center',
@@ -131,12 +135,35 @@ function ProfileScreenContents({navigation}) {
         </SafeAreaView>
     )
 }
-function ChangeUserInformation() {
+function updateUserInfo(newmethod, newsubgroup, newstatus) {
+    if(developers.includes(data.name)) {
+        status = "Developer"
+    }
+    if(Admins.includes(data.name)) {
+        status = "Admin"
+    }
+    if(Leads.includes(data.name)) {
+        status = "Lead"
+    }
+    if(!newmethod) {
+        newmethod = data.notifmethod
+    }
+    if(!newsubgroup) {
+        newsubgroup = data.subgroup
+    }
+    if(!newstatus) {
+        newstatus = data.status
+    }
+    //update method, subgroup, and status with newmethod, newsubgroup, and newstatus
+}
+function ChangeUserInformation() { //change user info screen
     return (
-        <View>
-            <Text>Hi!</Text>
-        </View>
-    )
+        <SafeAreaView>
+            <View style={{left: 30, top: 50}}>
+                <Text style={{width: 300}}>Hey Talon member, made a mistake while making your account or changing to a new subgroup? Use this screen to change your informtion.</Text>
+            </View>
+        </SafeAreaView>
+      )
 }
 const Drawer = createDrawerNavigator(); 
 const ProfileScreen = ({ navigation }) => {
@@ -214,7 +241,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginHorizontal: 16,
         alignSelf: 'center',
-      },
+    },
+    changeuserinfodropdowns: {
+        justifyContent: 'center',
+    },
     notifyDropdown: new DropdownStyle('350%'),
 })
 export default ProfileScreen;

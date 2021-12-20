@@ -97,7 +97,7 @@ export default class GoogleSignInScreen extends Component {
                     
                     </Text>
                     <Button onPress={() => {
-                      if (this.state.userInfo.user.email.split('@')[1] != 'henricostudents.org') {
+                      if (this.state.userInfo.user.email.split('@')[1] != 'henricostudents.org' || this.state.userInfo.user.email.split('@')[1] != 'henrico.k12.va.us') {
                           return (invalidDomainAlert())
                       }
                       googlename = this.state.userInfo.user.name;
