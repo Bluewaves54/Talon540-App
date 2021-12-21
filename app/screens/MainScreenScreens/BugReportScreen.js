@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
-import { Text, View, Button, Alert } from 'react-native';
+import React, {Component, useState} from 'react';
+import { Text, View, Button, Alert, TextInput } from 'react-native';
 import developers from '../LoginScreen'
 import MakeItRain from 'react-native-make-it-rain';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { sendEmail } from '../../functions/send-email'
 
 // function rightChoice() {
 //     return (
@@ -18,6 +19,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 //     );
 // }
 function bugReportScreen() {
+    const [text, onChangeText] = useState(null);
     return (
         <View
           style={{
@@ -27,6 +29,10 @@ function bugReportScreen() {
           }}>
           <Text>Found any Bugs?</Text>
           <Text>Email them to: {'Ayush Pal and Sriman Achanta'}</Text>
+          <TextInput
+            onChangeText={onChangeText}
+            value={text}
+          />
           <Button 
             title={"Click for a Suprise"}
             onPress={() => {

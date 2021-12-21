@@ -17,7 +17,7 @@ function AdminTabNavigator() {
         tabBarStyle: {
           backgroundColor: '#1f2129'
         },
-        tabBarActiveTintColor: 'pink',
+        tabBarActiveTintColor: 'lightblue',
         tabBarInactiveTintColor: 'gray',
       })}>
       <Tab.Screen 
@@ -59,7 +59,7 @@ function NotAdminTabNavigator() {
         tabBarStyle: {
           backgroundColor: '#1f2129'
         },
-        tabBarActiveTintColor: 'pink',
+        tabBarActiveTintColor: 'lightblue',
         tabBarInactiveTintColor: 'gray',
       })}>
       <Tab.Screen 

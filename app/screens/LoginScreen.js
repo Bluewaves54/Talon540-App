@@ -38,6 +38,15 @@ const developers = [
     "Ayush Pal"
 ]
 
+const admin = [
+    "Shraddha Anup",
+    "Earl H. Hurlburt, II",
+    "Jusmun Shokar"
+]
+
+const leads = [
+
+]
 
 const notifmethods = [
     'Vibration',
@@ -74,6 +83,9 @@ const LoginScreen = ({ navigation, route }) =>  {
         if(developers.includes(googlename)) {
             status = "Developer"
             const smex = status
+        }
+        if (admin.includes(googlename)) {
+            status = 'Admin'
         }
         const requestOptions = {
             method: 'POST',
