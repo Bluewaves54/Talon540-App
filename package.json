@@ -33,6 +33,7 @@
     "react-native-device-info": "^8.4.8",
     "react-native-dropdown-picker": "^5.2.3",
     "react-native-dropdownalert": "^4.3.0",
+    "react-native-email": "^1.1.0",
     "react-native-gesture-handler": "~2.1.0",
     "react-native-internet-connection-alert": "^0.1.6",
     "react-native-make-it-rain": "^1.1.1",
