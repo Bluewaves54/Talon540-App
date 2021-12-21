@@ -22,6 +22,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import bugReportScreen from './MainScreenScreens/BugReportScreen'
 import { globalColor } from '../../App'
 import {developers} from './LoginScreen'
+import creditsScreen from './MainScreenScreens/CreditsScreen'
 
 //Notify user of signin or sign out with timestamp
 function NotifyUser(Location, Status) { //figure out notifications
@@ -111,26 +112,6 @@ function subgroupToolsScreen() {
         </View>
       )
 }
-function creditsScreen() {
-    return (
-        <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.scrollView}>
-                <TouchableHighlight onPress={() => Linking.openURL('https://www.team540.com/') }>
-                    <Image style={styles.cimage} source={require('../assets/540Logo.png')}/>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={() => Linking.openURL('https://www.youtube.com/channel/UCmFYaqYPF0VVNm2AFWu_OKQ') }>
-                    <Image style={styles.cimage} source={require('../assets/youtubeLogo.png')}/>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={() => Linking.openURL('https://www.twitch.tv/talon540') }>
-                    <Image style={styles.cimage} source={require('../assets/twitchLogo.png')}/>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={() => Linking.openURL('https://discord.gg/qhhv78XuYg') }>
-                    <Image style={styles.cimage} source={require('../assets/discordLogo.png')}/>
-                </TouchableHighlight>
-            </ScrollView>
-        </SafeAreaView>
-      )
-}
 function Hscreen() {
     return (
         <View style={styles.container}>
@@ -198,6 +179,13 @@ const styles = StyleSheet.create({ //styles
         width: 75,
         height: 75,
         left: 20
+    },
+    ctext: {
+        color: 'white', 
+        fontWeight: 'bold',
+        width: 260,
+        fontSize: 15
+
     }
 
 })
