@@ -19,7 +19,9 @@ import bugReportScreen from './MainScreenScreens/BugReportScreen'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { developers, subgroups, notifmethods, statuses, Admins, Leads } from './LoginScreen'
-import { globalColor } from '../../App'
+import { AppSettings } from './settings.json'
+var globalColor = AppSettings.globalColor
+
 var method = null
 var status = null
 var subgroup = null
@@ -156,8 +158,8 @@ function updateUserInfo(newmethod, newsubgroup, newstatus) {
 }
 function ChangeUserInformation() { //change user info screen
     return (
-        <SafeAreaView>
-            <View style={{left: 30, top: 50}}>
+        <SafeAreaView style={{backgroundColor: 'white',flex:1}}>
+            <View style={{left: 30, top: 50, backgroundColor: 'white',}}>
                 <Text style={{width: 300}}>Hey Talon member, made a mistake while making your account or changing to a new subgroup? Use this screen to change your informtion.</Text>
             </View>
         </SafeAreaView>

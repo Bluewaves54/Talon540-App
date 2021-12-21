@@ -20,7 +20,9 @@ import { data } from './LoadScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import bugReportScreen from './MainScreenScreens/BugReportScreen'
-import { globalColor } from '../../App'
+import { AppSettings } from './settings.json'
+var globalColor = AppSettings.globalColor
+
 import {developers} from './LoginScreen'
 import creditsScreen from './MainScreenScreens/CreditsScreen'
 
@@ -147,7 +149,7 @@ const MainScreen = ({ navigation, route }) => {
         }}>
             <Drawer.Screen name="Home Screen" component={Hscreen}/>
             <Drawer.Screen name= {data.subgroup+" Subgroup Chat"} component={subgroupToolsScreen}/>
-            <Drawer.Screen name="Credits & Links" component={creditsScreen}/>
+            <Drawer.Screen name={"Credits & Links"} component={creditsScreen}/>
             <Drawer.Screen name="Report a Bug" component={bugReportScreen}/>
         </Drawer.Navigator>
     )

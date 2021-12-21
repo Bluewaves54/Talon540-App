@@ -33,19 +33,22 @@ function creditsScreen() {
                 <TouchableHighlight onPress={() => Linking.openURL('https://discord.gg/qhhv78XuYg') }>
                     <Image style={styles.cimage} source={require('../../assets/discordLogo.png')}/>
                 </TouchableHighlight>
-                <View style={{left: 120, bottom: 275}}>
+                <TouchableHighlight onPress={() => Linking.openURL('https://www.instagram.com/talon540/') }>
+                    <Image style={styles.cimage} source={require('../../assets/instagramLogo.png')}/>
+                </TouchableHighlight>
+                <View style={{left: 120, bottom: 350}}>
                     <Text style={styles.ctext}>Visit the Talon540 website designed by the PR subgroup!{"\n\n"}</Text>
-                    <Text style={styles.ctext}>Visit the Talon540 YouTube channel!{"\n\n"}</Text>
-                    <Text style={styles.ctext}>Visit the Talon540 Twitch channel!{"\n\n\n\n"}</Text>
-                    <Text style={styles.ctext}>Join the Talon540 Discord Server!{"\n\n\n\n"}</Text>
+                    <Text style={styles.ctext}>Visit the Talon540 YouTube channel!{"\n\n\n"}</Text>
+                    <Text style={styles.ctext}>Visit the Talon540 Twitch channel!{"\n\n\n"}</Text>
+                    <Text style={styles.ctext}>Join the Talon540 Discord Server!{"\n\n\n"}</Text>
+                    <Text style={styles.ctext}>Check out the Talon540 Instagram Page!{"\n\n\n\n"}</Text>
                 </View>
                 <View
                 style={{
-                    flex: 1,
                     justifyContent: "center",
                     alignItems: "center"
                 }}>
-                    <Text style={{width: 260, bottom: 30, fontSize: 15, fontWeight: "bold", color: 'white', textAlign: 'center'}}>App designed by Sriman Achanta, Ayush Pal, and the Programming Subgroup</Text>
+                    <Text style={{width: 260, bottom: 200, fontSize: 15, fontWeight: "bold", color: 'white', textAlign: 'center'}}>App designed by Sriman Achanta, Ayush Pal, and the Programming Subgroup</Text>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({ //styles
         paddingTop: StatusBar.currentHeight,
     },
     scrollView: {
-        paddingTop: 10,
+        paddingTop: 20,
         backgroundColor: '#1f2129',
     },
     cimage: {

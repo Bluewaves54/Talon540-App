@@ -7,7 +7,10 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import AdminTools from '../screens/AdminToolsScreen';
 import { data } from '../screens/LoadScreen'
-import { globalColor } from '../../App'
+import { AppSettings } from '../screens/settings.json'
+var globalColor = AppSettings.globalColor
+
+
 let adminbadgecount = 10
 const Tab = createBottomTabNavigator();
 function AdminTabNavigator() {
@@ -31,7 +34,7 @@ function AdminTabNavigator() {
           headerShown: false
         }}/>
       <Tab.Screen 
-        name="Profile" 
+        name={"Profile & Settings"}
         component={ProfileStack}
         options={{ 
           tabBarIcon: ({ color, size }) => (

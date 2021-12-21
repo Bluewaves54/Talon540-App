@@ -12,7 +12,9 @@ import {
 import DeviceInfo from 'react-native-device-info';
 import RNRestart from 'react-native-restart';
 import { googlename, googleemail, googlepfpurl } from './GoogleSignInScreen';
-import { globalColor } from '../../App'
+import { AppSettings } from './settings.json'
+var globalColor = AppSettings.globalColor
+
 
 var id = DeviceInfo.getUniqueId();
 var subgroup = null
@@ -77,14 +79,14 @@ const UnfinishedFieldsAlert = () =>
     );
 
 const LoginScreen = ({ navigation, route }) =>  {
-    const fetchDataAndNavigate = async () => {
-        if(developers.includes(data.name)) {
+    async function fetchDataAndNavigate() {
+        if(developers.includes(googlename)) {
             status = "Developer"
         }
-        if(Admins.includes(data.name)) {
+        if(Admins.includes(googlename)) {
             status = "Admin"
         }
-        if(Leads.includes(data.name)) {
+        if(Leads.includes(googlename)) {
             staus = "Lead"
         }
         const requestOptions = {
@@ -174,7 +176,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                                 },
                                 {
                                     text: 'Its Correct',
-                                    onPress: () => { fetchDataAndNavigate()},
+                                    onPress: () => { fetchDataAndNavigate() },
                                 },
                             ]
                         )

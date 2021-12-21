@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import { Text, View, Button, Alert } from 'react-native';
 import developers from '../LoginScreen'
-import MakeItRain from 'react-native-make-it-rain';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import email from 'react-native-email'
 
 generateBugReport = () => {
@@ -20,6 +18,7 @@ function bugReportScreen() {
           style={{
                 flex: 1,
                 justifyContent: "center",
+                backgroundColor: 'white',
             alignItems: "center"
           }}>
           <Text>Found any Bugs?</Text>
