@@ -19,6 +19,7 @@ import bugReportScreen from './MainScreenScreens/BugReportScreen'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { developers, subgroups, notifmethods, statuses, Admins, Leads } from './LoginScreen'
+import { globalColor } from '../../App'
 var method = null
 var status = null
 var subgroup = null
@@ -69,7 +70,7 @@ function ProfileScreenContents({navigation}) { //main profile screen
                 backgroundColor: '#1f2129',
             }}>
             <View style={styles.displayName}>
-            <Text style={{ color: 'lightblue', fontWeight: 'bold', fontSize: 32 }}>{data.name} </Text>
+            <Text style={{ color: globalColor, fontWeight: 'bold', fontSize: 32 }}>{data.name} </Text>
             </View>
             <View style={styles.displayPfp}>
             <Image
@@ -122,12 +123,11 @@ function ProfileScreenContents({navigation}) { //main profile screen
             </SafeAreaView>
             <TouchableHighlight onPress={() => navigation.jumpTo('Home', {screen: 'Report a Bug' })}>
                 <View style={{left: 300, top: 220}}>
-                    <Ionicons name="bug" color={'yellow'} size={40} />     
+                    <Ionicons name="bug" color={globalColor} size={40} />     
                 </View>
             </TouchableHighlight>
             <View style={styles.deleteButton}>
                 <Button
-                    color='red'
                     title={'Delete Account'}
                     onPress={() => { ConfirmDeletionAlert({navigation});
                     }}/>
@@ -180,7 +180,7 @@ const ProfileScreen = ({ navigation }) => {
               },
             
             drawerInactiveTintColor: 'white',
-            drawerActiveTintColor: 'lightblue',
+            drawerActiveTintColor: globalColor,
             labelStyle:{
                 marginLeft:5
             }
@@ -204,7 +204,7 @@ class DropdownStyle {
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = 'lightblue';
+        this.backgroundColor = globalColor;
     }
 }
 

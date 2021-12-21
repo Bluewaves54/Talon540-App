@@ -7,17 +7,18 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import AdminTools from '../screens/AdminToolsScreen';
 import { data } from '../screens/LoadScreen'
-
+import { globalColor } from '../../App'
+let adminbadgecount = 10
 const Tab = createBottomTabNavigator();
 function AdminTabNavigator() {
-  return (
+  return (  
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarStyle: {
           backgroundColor: '#1f2129'
         },
-        tabBarActiveTintColor: 'pink',
+        tabBarActiveTintColor: globalColor,
         tabBarInactiveTintColor: 'gray',
       })}>
       <Tab.Screen 
@@ -42,7 +43,7 @@ function AdminTabNavigator() {
         name="Admin" 
         component={AdminTools}
         options={{ 
-          tabBarBadge: 4,
+          tabBarBadge: adminbadgecount,
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="empire" color={color} size={size} />
           ),
@@ -59,7 +60,7 @@ function NotAdminTabNavigator() {
         tabBarStyle: {
           backgroundColor: '#1f2129'
         },
-        tabBarActiveTintColor: 'pink',
+        tabBarActiveTintColor: globalColor,
         tabBarInactiveTintColor: 'gray',
       })}>
       <Tab.Screen 

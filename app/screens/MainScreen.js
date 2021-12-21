@@ -15,6 +15,7 @@ import { data } from './LoadScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import bugReportScreen from './MainScreenScreens/BugReportScreen'
+import { globalColor } from '../../App'
 
 //Notify user of signin or sign out with timestamp
 function NotifyUser(Location, Status) { //figure out notifications
@@ -132,7 +133,7 @@ const MainScreen = ({ navigation, route }) => {
                     backgroundColor: '#1f2129',
                 },
             drawerInactiveTintColor: 'white',
-            drawerActiveTintColor: 'lightblue',
+            drawerActiveTintColor: globalColor,
             labelStyle:{
                 marginLeft:5
             }

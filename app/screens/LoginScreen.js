@@ -12,6 +12,7 @@ import {
 import DeviceInfo from 'react-native-device-info';
 import RNRestart from 'react-native-restart';
 import { googlename, googleemail, googlepfpurl } from './GoogleSignInScreen';
+import { globalColor } from '../../App'
 
 var id = DeviceInfo.getUniqueId();
 var subgroup = null
@@ -62,7 +63,7 @@ class DropdownStyle {
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = 'lightblue';
+        this.backgroundColor = globalColor;
     }
 }
 

@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import CovidSheetsScreen from './AdminToolsScreens/CovidSheetsScreen'
 import ScoutingScreen from './AdminToolsScreens/ScoutingScreen'
 import SubgroupSigninScreen from './AdminToolsScreens/SubgroupSigninScreen'
+import { globalColor } from '../../App'
 
 import { data } from '../screens/LoadScreen'
 
@@ -18,7 +19,7 @@ export default function AdminTools() {
             backgroundColor: '#1f2129',
           },
           drawerInactiveTintColor: 'white',
-          drawerActiveTintColor: 'lightblue',
+          drawerActiveTintColor: globalColor,
           labelStyle:{
             marginLeft:5
           }

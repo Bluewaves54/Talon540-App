@@ -4,13 +4,14 @@ import React from 'react'
 import InternetConnectionAlert from "react-native-internet-connection-alert";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+export { globalColor }
 const Stack = createNativeStackNavigator();
+const globalColor = '#FF5349'
 
 export default function App() {
   return (
     <InternetConnectionAlert>
-      <NavigationContainer>
+      <NavigationContainer theme={{colors: {notification: 'indigo',}}}>
         <Stack.Navigator>
           <Stack.Screen
             name='MainStack'
@@ -24,5 +25,5 @@ export default function App() {
       </NavigationContainer>
     </InternetConnectionAlert>
     
-  )
+  ) 
 }
