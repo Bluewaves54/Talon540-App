@@ -121,10 +121,8 @@ function ProfileScreenContents({navigation}) { //main profile screen
             </View>
             <SafeAreaView style={styles.fatty}>
             </SafeAreaView>
-            <TouchableHighlight onPress={() => navigation.jumpTo('Home', {screen: 'Report a Bug' })}>
-                <View style={{left: 300, top: 220}}>
-                    <Ionicons name="bug" color={globalColor} size={40} />     
-                </View>
+            <TouchableHighlight style={{left: 300, top: 220, width: 50}} onPress={() => navigation.jumpTo('Home', {screen: 'Report a Bug' })}>
+                <Ionicons name="bug" color={globalColor} size={40} />     
             </TouchableHighlight>
             <View style={styles.deleteButton}>
                 <Button

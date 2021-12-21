@@ -9,6 +9,11 @@ import {
     Vibration,
     Alert,
     Platform,
+    TouchableHighlight,
+    StatusBar,
+    ScrollView,
+    Image,
+    Linking,
 }
 from 'react-native';
 import { data } from './LoadScreen';
@@ -16,6 +21,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import bugReportScreen from './MainScreenScreens/BugReportScreen'
 import { globalColor } from '../../App'
+import {developers} from './LoginScreen'
 
 //Notify user of signin or sign out with timestamp
 function NotifyUser(Location, Status) { //figure out notifications
@@ -105,7 +111,26 @@ function subgroupToolsScreen() {
         </View>
       )
 }
-
+function creditsScreen() {
+    return (
+        <SafeAreaView style={styles.container}>
+            <ScrollView style={styles.scrollView}>
+                <TouchableHighlight onPress={() => Linking.openURL('https://www.team540.com/') }>
+                    <Image style={styles.cimage} source={require('../assets/540Logo.png')}/>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={() => Linking.openURL('https://www.youtube.com/channel/UCmFYaqYPF0VVNm2AFWu_OKQ') }>
+                    <Image style={styles.cimage} source={require('../assets/youtubeLogo.png')}/>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={() => Linking.openURL('https://www.twitch.tv/talon540') }>
+                    <Image style={styles.cimage} source={require('../assets/twitchLogo.png')}/>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={() => Linking.openURL('https://discord.gg/qhhv78XuYg') }>
+                    <Image style={styles.cimage} source={require('../assets/discordLogo.png')}/>
+                </TouchableHighlight>
+            </ScrollView>
+        </SafeAreaView>
+      )
+}
 function Hscreen() {
     return (
         <View style={styles.container}>
@@ -140,7 +165,8 @@ const MainScreen = ({ navigation, route }) => {
         
         }}>
             <Drawer.Screen name="Home Screen" component={Hscreen}/>
-            <Drawer.Screen name="Subgroup Tools" component={subgroupToolsScreen}/>
+            <Drawer.Screen name= {data.subgroup+" Subgroup Chat"} component={subgroupToolsScreen}/>
+            <Drawer.Screen name="Credits & Links" component={creditsScreen}/>
             <Drawer.Screen name="Report a Bug" component={bugReportScreen}/>
         </Drawer.Navigator>
     )
@@ -160,6 +186,19 @@ const styles = StyleSheet.create({ //styles
         flex: 1,
         justifyContent: 'center',
     },
+    container: {
+        flex: 1,
+        paddingTop: StatusBar.currentHeight,
+    },
+    scrollView: {
+        paddingTop: 10,
+        backgroundColor: '#1f2129',
+    },
+    cimage: {
+        width: 75,
+        height: 75,
+        left: 20
+    }
 
 })
 
