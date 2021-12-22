@@ -23,7 +23,7 @@ async function fetchData() {
     }
   )
   json = await response.json()
-  console.log('json', json)
+  //console.log('json', json)
   verified = true;
 }
 
@@ -39,7 +39,7 @@ export default function LoadScreen({ navigation, route }) {
           }
         );
         const json = await response.json();
-        console.log('json', json);
+        //console.log('json', json);
         verified = true;
         if (Object.values(json)[0] == id) {
           data = json;
