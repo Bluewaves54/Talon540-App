@@ -14,7 +14,7 @@ import SelectDropdown from 'react-native-select-dropdown';
 import { data } from '../LoadScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AppSettings } from '../../settings.json'
-var globalColor = AppSettings.globalColor
+var globalRed = AppSettings.globalRed
 
 var method = null
 var status = null
@@ -66,7 +66,7 @@ function ProfileScreen({navigation}) { //main profile screen
                 backgroundColor: '#1f2129',
             }}>
             <View style={styles.displayName}>
-            <Text style={{ color: globalColor, fontWeight: 'bold', fontSize: 32 }}>{data.name} </Text>
+            <Text style={{ color: globalRed, fontWeight: 'bold', fontSize: 32 }}>{data.name} </Text>
             </View>
             <View style={styles.displayPfp}>
             <Image
@@ -118,7 +118,7 @@ function ProfileScreen({navigation}) { //main profile screen
             <SafeAreaView style={styles.fatty}>
             </SafeAreaView>
             <TouchableHighlight style={{left: 300, top: 220, width: 50}} onPress={() => navigation.jumpTo('Home', {screen: 'Report a Bug' })}>
-                <Ionicons name="bug" color={globalColor} size={40} />     
+                <Ionicons name="bug" color={globalRed} size={40} />     
             </TouchableHighlight>
             <View style={styles.deleteButton}>
                 <Button
@@ -142,7 +142,7 @@ class DropdownStyle {
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = globalColor;
+        this.backgroundColor = globalRed;
     }
 }
 

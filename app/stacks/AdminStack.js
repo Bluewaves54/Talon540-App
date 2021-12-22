@@ -4,7 +4,6 @@ import CovidSheetsScreen from '../screens/AdminToolsScreens/CovidSheetsScreen'
 import ScoutingScreen from '../screens/AdminToolsScreens/ScoutingScreen'
 import SubgroupSigninScreen from '../screens/AdminToolsScreens/SubgroupSigninScreen'
 import { AppSettings } from '../settings.json'
-var globalColor = AppSettings.globalColor
 
 const Drawer = createDrawerNavigator(); 
 export default function AdminTools() {
@@ -13,7 +12,7 @@ export default function AdminTools() {
         screenOptions={{
           drawerPosition: "left",
           drawerStyle: {
-            backgroundColor: '#1f2129',
+            backgroundColor: AppSettings.globalGray,
           },
           headerTransparent: true,
           headerTitleStyle: {
@@ -21,10 +20,10 @@ export default function AdminTools() {
             fontWeight: 'bold',
           },
           headerStyle: {
-            backgroundColor: '#1f2129',
+            backgroundColor: AppSettings.globalGray,
           },
           drawerInactiveTintColor: 'white',
-          drawerActiveTintColor: globalColor,
+          drawerActiveTintColor: AppSettings.globalRed,
           labelStyle:{
             marginLeft:5
           }

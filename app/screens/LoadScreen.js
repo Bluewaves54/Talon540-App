@@ -11,7 +11,6 @@ export { id };
 
 let verified = false;
 let data
-let accountExists = null
 
 async function fetchData() {
   response = await fetch('https://talon540appbackend.herokuapp.com/fetchInformation/' + id,
@@ -27,7 +26,7 @@ async function fetchData() {
   verified = true;
 }
 
-export default function LoadScreen({ navigation, route }) {
+export default function LoadScreen({ navigation }) {
     useEffect(() => {
       async function fetchData() {
         response = await fetch('https://talon540appbackend.herokuapp.com/fetchInformation/' + id,

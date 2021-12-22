@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet, ScrollView, SafeAreaView, StatusBar } from 'react-native';
 import {subgroups} from '../LoginScreen'
+import { AppSettings } from '../../settings.json'
 
 function SubgroupSigninScreen({navigation}) {
     return (
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     },
     scrollView: {
         paddingTop: 10,
-        backgroundColor: '#1f2129',
+        backgroundColor: AppSettings.globalGray,
     },
     image: {
         alignItems: 'center',

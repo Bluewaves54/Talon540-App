@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Text, View, Button, Alert } from 'react-native';
-import developers from '../LoginScreen'
 import email from 'react-native-email'
 
 generateBugReport = () => {

@@ -13,7 +13,7 @@ import DeviceInfo from 'react-native-device-info';
 import RNRestart from 'react-native-restart';
 import { googlename, googleemail, googlepfpurl } from './GoogleSignInScreen';
 import { AppSettings } from '../settings.json'
-var globalColor = AppSettings.globalColor
+var globalRed = AppSettings.globalRed
 
 
 var id = DeviceInfo.getUniqueId();
@@ -54,6 +54,8 @@ const Leads = [
 
 ]
 
+export { subgroups, statuses, notifmethods, developers, Admins, Leads}
+
 class DropdownStyle {
     constructor(top) {
         this.top = top;
@@ -65,7 +67,7 @@ class DropdownStyle {
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = globalColor;
+        this.backgroundColor = globalRed;
     }
 }
 
@@ -196,7 +198,6 @@ const LoginScreen = ({ navigation, route }) =>  {
         </SafeAreaView>
     );
 }
-export { subgroups, developers, notifmethods, statuses }
 export default LoginScreen;
 
 const styles = StyleSheet.create({

@@ -2,8 +2,7 @@ import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ProfileScreen from '../screens/ProfileScreens/ProfileScreen';
 import ChangeInfoScreen from '../screens/ProfileScreens/ChangeInfoScreen';
-import AppSettings from '../settings.json'
-globalColor = AppSettings.globalColor;
+import { AppSettings } from '../settings.json'
 
 
 const Drawer = createDrawerNavigator(); 
@@ -13,7 +12,7 @@ const ProfileStack = () => {
             screenOptions={{
                 drawerPosition: "left",
                 drawerStyle: {
-                backgroundColor: '#1f2129',
+                backgroundColor: AppSettings.globalGray,
                 },
             headerTransparent: true,
             headerTitleStyle: {
@@ -21,7 +20,7 @@ const ProfileStack = () => {
               },
             
             drawerInactiveTintColor: 'white',
-            drawerActiveTintColor: globalColor,
+            drawerActiveTintColor: AppSettings.globalRed,
             labelStyle:{
                 marginLeft:5
             }
