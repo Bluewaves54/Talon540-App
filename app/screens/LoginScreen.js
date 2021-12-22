@@ -111,7 +111,7 @@ const LoginScreen = ({ navigation, route }) =>  {
         };
         const response = await fetch('https://talon540appbackend.herokuapp.com/createNewAccount', requestOptions);
         const json = await response.json()
-        console.log(json)
+        //console.log(json)
         if (Object.values(json)[0]) {
             RNRestart.Restart();
         } else {

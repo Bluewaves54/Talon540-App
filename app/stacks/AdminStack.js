@@ -19,7 +19,10 @@ export default function AdminTools() {
           headerTitleStyle: {
             color: 'white',
             fontWeight: 'bold',
-        },
+          },
+          headerStyle: {
+            backgroundColor: '#1f2129',
+          },
           drawerInactiveTintColor: 'white',
           drawerActiveTintColor: globalColor,
           labelStyle:{
