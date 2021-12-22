@@ -80,43 +80,6 @@ function ProfileScreen({navigation}) { //main profile screen
             <View style={{ alignItems: 'center', bottom: 180}}>
             <Text style={{ color: 'lightgray', fontSize: 12}}>Contact: {data.email}</Text>
             </View>
-            <View style={{alignText: 'center',justifyContent: 'center', alignItems: 'center',bottom: 0,}}>
-                <Text style={{fontWeight: 'bold', color: 'white'}}> How would you like to be notified when you sign in?</Text>
-            </View>
-            <View style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                position: 'static',
-                bottom: -5,
-            }}>
-                <SelectDropdown
-                    data={['Vibrate','Notification','Both',]}
-                    onSelect={async (selectedMethod) => {
-                        const requestOptions = {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json'
-                            },
-                            body: JSON.stringify({
-                                'deviceid': data.deviceID,
-                                'notifMethod': selectedMethod
-                            })
-                        }
-                        const response = await fetch('https://talon540appbackend.herokuapp.com/changeNotifMethod', requestOptions)
-                        const json = response.json()
-                        // RNRestart.Restart();
-                        // navigation.navigate('Settings')
-                    }}
-                    buttonTextAfterSelection={(selectedMethod) => { return selectedMethod }}
-                    rowTextForSelection={(item) => { return item }}
-                    defaultButtonText={data.notifmethod}
-                    buttonStyle={styles.notifyDropdown}
-                    dropdownStyle={{ borderRadius: 20 }}
-                />
-            </View>
-            <SafeAreaView style={styles.fatty}>
-            </SafeAreaView>
             <TouchableHighlight style={{left: 300, top: 220, width: 50}} onPress={() => navigation.jumpTo('Home', {screen: 'Report a Bug' })}>
                 <Ionicons name="bug" color={globalRed} size={40} />     
             </TouchableHighlight>
