@@ -12,7 +12,7 @@ import {
 import DeviceInfo from 'react-native-device-info';
 import RNRestart from 'react-native-restart';
 import { googlename, googleemail, googlepfpurl } from './GoogleSignInScreen';
-import { AppSettings } from './settings.json'
+import { AppSettings } from '../settings.json'
 var globalColor = AppSettings.globalColor
 
 
@@ -49,20 +49,8 @@ const developers = [
 ]
 const Admins = [
 
-<<<<<<< HEAD
-const admin = [
-    "Shraddha Anup",
-    "Earl H. Hurlburt, II",
-    "Jusmun Shokar"
-]
-
-const leads = [
-
-]
-=======
 ]
 const Leads = [
->>>>>>> 62ffed8ba8d39d6c45b722870dfa1f76d5983b23
 
 ]
 

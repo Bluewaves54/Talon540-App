@@ -20,7 +20,7 @@ import { data } from './LoadScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import bugReportScreen from './MainScreenScreens/BugReportScreen'
-import { AppSettings } from './settings.json'
+import { AppSettings } from '../settings.json'
 var globalColor = AppSettings.globalColor
 
 import {developers} from './LoginScreen'

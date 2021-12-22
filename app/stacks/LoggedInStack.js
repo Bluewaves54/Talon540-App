@@ -5,9 +5,9 @@ import MainScreen from '../screens/MainScreen';
 import ProfileStack from './ProfileStack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import AdminTools from '../screens/AdminToolsScreen';
+import AdminTools from '../stacks/AdminStack';
 import { data } from '../screens/LoadScreen'
-import { AppSettings } from '../screens/settings.json'
+import { AppSettings } from '../settings.json'
 var globalColor = AppSettings.globalColor
 
 

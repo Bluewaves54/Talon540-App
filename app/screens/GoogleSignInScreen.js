@@ -2,7 +2,7 @@ import React, { Component, Fragment, UseEffect } from "react";
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Image, ImageBackground, Alert} from 'react-native';
 import { Header, LearnMoreLinks, Colors, DebugInstructions, ReloadInstructions,} from 'react-native/Libraries/NewAppScreen';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
-import { AppSettings } from './settings.json'
+import { AppSettings } from '../settings.json'
 var globalColor = AppSettings.globalColor
 
 let googlename

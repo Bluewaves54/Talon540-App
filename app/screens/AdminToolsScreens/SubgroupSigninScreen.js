@@ -4,7 +4,7 @@ import {subgroups} from '../LoginScreen'
 
 function SubgroupSigninScreen({navigation}) {
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <ScrollView style={styles.scrollView}>
                 <Text style={{textAlign: 'center', color: 'white'}}>Hey Talon Admins and Leads!</Text>
                 <Text style={{textAlign: 'center', color: 'white'}}>Open the Drawer on the Right for stuff</Text>
@@ -13,7 +13,7 @@ function SubgroupSigninScreen({navigation}) {
                     source={require('../../assets/construction.gif')}
                 />
             </ScrollView>
-        </SafeAreaView>
+        </View>
       )
 }
 export default SubgroupSigninScreen
