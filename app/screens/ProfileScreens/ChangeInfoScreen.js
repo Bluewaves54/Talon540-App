@@ -5,6 +5,7 @@ import {
     Text,
     StyleSheet,
     Button,
+    Alert,
 } from 'react-native';
 import { subgroups, statuses, notifmethods, developers, Admins, Leads } from '../SignUpScreens/LoginScreen'
 import { AppSettings } from '../../settings.json'
@@ -87,7 +88,10 @@ function ChangeInfoScreen({ navigation }) {
             <View style={styles.nextButton}>
                <Button
                     title='Save Changes'
-                    onPress={() => saveDataAndNavigate({ navigation })}
+                    onPress={() => {
+                        saveDataAndNavigate({ navigation });
+                        Alert.alert("Your Data was Updated.")
+                    }}
                 /> 
             </View>
             
