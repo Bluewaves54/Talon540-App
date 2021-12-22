@@ -5,13 +5,14 @@ import {
     Text,
     StyleSheet,
     Button,
+    Alert,
 } from 'react-native';
 import { subgroups, statuses, notifmethods, developers, Admins, Leads } from '../LoginScreen'
 import { AppSettings } from '../../settings.json'
 import SelectDropdown from 'react-native-select-dropdown';
 
 import { data } from '../LoadScreen';
-console.log(data)
+//console.log(data)
 
 
 var subgroup = data.subgroup
@@ -22,7 +23,6 @@ var notifmethod = data.notifmethod
 
 function ChangeInfoScreen() {
     const saveData = async () => {
-        console.log('entered function')
         if (developers.includes(data.name)) {
             status = "Developer"
         }
@@ -32,7 +32,6 @@ function ChangeInfoScreen() {
         if (Leads.includes(data.name)) {
             status = "Lead"
         }
-        console.log('passed ifs')
         const requestOptions = {
             method: 'POST',
             headers: {
@@ -46,10 +45,8 @@ function ChangeInfoScreen() {
                 'status': status
             })
         }
-        console.log('defined requestOptions')
         const response = await fetch('https://talon540appbackend.herokuapp.com/updateInfo', requestOptions)
         const json = response.json()
-        console.log('finished function')
         // RNRestart.Restart();
         // navigation.navigate('Settings')
     }
@@ -89,7 +86,10 @@ function ChangeInfoScreen() {
             <View style={styles.nextButton}>
                <Button
                     title='Save Changes'
-                    onPress={() => saveData()}
+                    onPress={() => {
+                        saveData()
+                        Alert.alert("Your Data was Updated!")
+                    }}
                 /> 
             </View>
             
