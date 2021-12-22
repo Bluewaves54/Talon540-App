@@ -1,12 +1,10 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoggedInStack from './LoggedInStack';
 import LoginScreen from '../screens/LoginScreen';
 import GoogleSignInScreen from '../screens/GoogleSignInScreen';
 import LoadScreen from '../screens/LoadScreen';
 
-const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 const MainStack = () => {

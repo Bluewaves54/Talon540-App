@@ -1,15 +1,9 @@
 import React from 'react';
-import { Text, View, Image, Alert } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-import CovidSheetsScreen from './AdminToolsScreens/CovidSheetsScreen'
-import ScoutingScreen from './AdminToolsScreens/ScoutingScreen'
-import SubgroupSigninScreen from './AdminToolsScreens/SubgroupSigninScreen'
-import { AppSettings } from './settings.json'
-var globalColor = AppSettings.globalColor
-
-
-import { data } from '../screens/LoadScreen'
+import CovidSheetsScreen from '../screens/AdminToolsScreens/CovidSheetsScreen'
+import ScoutingScreen from '../screens/AdminToolsScreens/ScoutingScreen'
+import SubgroupSigninScreen from '../screens/AdminToolsScreens/SubgroupSigninScreen'
+import { AppSettings } from '../settings.json'
 
 const Drawer = createDrawerNavigator(); 
 export default function AdminTools() {
@@ -18,17 +12,18 @@ export default function AdminTools() {
         screenOptions={{
           drawerPosition: "left",
           drawerStyle: {
-            backgroundColor: '#1f2129',
+            backgroundColor: AppSettings.globalGray,
           },
+          headerTransparent: true,
           headerTitleStyle: {
             color: 'white',
             fontWeight: 'bold',
           },
           headerStyle: {
-            backgroundColor: '#1f2129',
+            backgroundColor: AppSettings.globalGray,
           },
           drawerInactiveTintColor: 'white',
-          drawerActiveTintColor: globalColor,
+          drawerActiveTintColor: AppSettings.globalRed,
           labelStyle:{
             marginLeft:5
           }
@@ -40,7 +35,3 @@ export default function AdminTools() {
       </Drawer.Navigator>
   )
 }
-//Drawer View
-    //Supgroup signin
-    //Scouting
-    //CovidSheets

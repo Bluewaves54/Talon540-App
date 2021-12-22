@@ -4,11 +4,6 @@ import {
     Text,
     View,
     StyleSheet,
-    Button,
-    ImageBackground,
-    Vibration,
-    Alert,
-    Platform,
     TouchableHighlight,
     StatusBar,
     ScrollView,
@@ -16,6 +11,7 @@ import {
     Linking,
 }
 from 'react-native';
+import { AppSettings } from '../../settings.json'
 
 function creditsScreen() {
     return (
@@ -67,7 +63,7 @@ const styles = StyleSheet.create({ //styles
     },
     scrollView: {
         paddingTop: 20,
-        backgroundColor: '#1f2129',
+        backgroundColor: AppSettings.globalGray,
     },
     cimage: {
         width: 75,

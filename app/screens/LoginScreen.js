@@ -12,8 +12,8 @@ import {
 import DeviceInfo from 'react-native-device-info';
 import RNRestart from 'react-native-restart';
 import { googlename, googleemail, googlepfpurl } from './GoogleSignInScreen';
-import { AppSettings } from './settings.json'
-var globalColor = AppSettings.globalColor
+import { AppSettings } from '../settings.json'
+var globalRed = AppSettings.globalRed
 
 
 var id = DeviceInfo.getUniqueId();
@@ -54,6 +54,8 @@ const Leads = [
 
 ]
 
+export { subgroups, statuses, notifmethods, developers, Admins, Leads}
+
 class DropdownStyle {
     constructor(top) {
         this.top = top;
@@ -65,7 +67,7 @@ class DropdownStyle {
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = globalColor;
+        this.backgroundColor = globalRed;
     }
 }
 
@@ -80,14 +82,14 @@ const UnfinishedFieldsAlert = () =>
 
 const LoginScreen = ({ navigation, route }) =>  {
     async function fetchDataAndNavigate() {
-        if(developers.includes(googlename)) {
+        if (developers.includes(googlename)) {
             status = "Developer"
         }
-        if(Admins.includes(googlename)) {
+        if (Admins.includes(googlename)) {
             status = "Admin"
         }
-        if(Leads.includes(googlename)) {
-            staus = "Lead"
+        if (Leads.includes(googlename)) {
+            status = "Lead"
         }
         const requestOptions = {
             method: 'POST',
@@ -108,7 +110,6 @@ const LoginScreen = ({ navigation, route }) =>  {
         };
         const response = await fetch('https://talon540appbackend.herokuapp.com/createNewAccount', requestOptions);
         const json = await response.json()
-        //console.log(json)
         if (Object.values(json)[0]) {
             RNRestart.Restart();
         } else {
@@ -176,7 +177,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                                 },
                                 {
                                     text: 'Its Correct',
-                                    onPress: () => { fetchDataAndNavigate() },
+                                    onPress: () => fetchDataAndNavigate(),
                                 },
                             ]
                         )
@@ -197,7 +198,6 @@ const LoginScreen = ({ navigation, route }) =>  {
         </SafeAreaView>
     );
 }
-export { subgroups, developers, notifmethods, statuses }
 export default LoginScreen;
 
 const styles = StyleSheet.create({

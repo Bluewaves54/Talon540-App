@@ -10,24 +10,9 @@ let id = DeviceInfo.getUniqueId()
 export { id };
 
 let verified = false;
-let data
-let accountExists = null
+let data = ''
 
-async function fetchData() {
-  response = await fetch('https://talon540appbackend.herokuapp.com/fetchInformation/' + id,
-    {
-      headers : { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-      }
-    }
-  )
-  json = await response.json()
-  //console.log('json', json)
-  verified = true;
-}
-
-export default function LoadScreen({ navigation, route }) {
+export default function LoadScreen({ navigation }) {
     useEffect(() => {
       async function fetchData() {
         response = await fetch('https://talon540appbackend.herokuapp.com/fetchInformation/' + id,

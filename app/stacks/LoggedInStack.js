@@ -1,14 +1,14 @@
 import React from 'react'
 import { Text, View, Alert } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MainScreen from '../screens/MainScreen';
+import MainScreenStack from '../stacks/MainScreenStack';
 import ProfileStack from './ProfileStack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import AdminTools from '../screens/AdminToolsScreen';
+import AdminTools from '../stacks/AdminStack';
 import { data } from '../screens/LoadScreen'
-import { AppSettings } from '../screens/settings.json'
-var globalColor = AppSettings.globalColor
+import { AppSettings } from '../settings.json'
+var globalRed = AppSettings.globalRed
 
 
 let adminbadgecount = 10
@@ -21,12 +21,12 @@ function AdminTabNavigator() {
         tabBarStyle: {
           backgroundColor: '#1f2129'
         },
-        tabBarActiveTintColor: globalColor,
+        tabBarActiveTintColor: globalRed,
         tabBarInactiveTintColor: 'gray',
       })}>
       <Tab.Screen 
         name="Home" 
-        component={MainScreen} 
+        component={MainScreenStack} 
         options={{ 
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-home" color={color} size={size} />
@@ -63,7 +63,7 @@ function NotAdminTabNavigator() {
         tabBarStyle: {
           backgroundColor: '#1f2129'
         },
-        tabBarActiveTintColor: globalColor,
+        tabBarActiveTintColor: globalRed,
         tabBarInactiveTintColor: 'gray',
       })}>
       <Tab.Screen 
