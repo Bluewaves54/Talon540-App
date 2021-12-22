@@ -1,7 +1,7 @@
 import React, { Component, Fragment, UseEffect } from "react";
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Image, ImageBackground, Alert} from 'react-native';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
-import { AppSettings } from '../settings.json'
+import { AppSettings } from '../../settings.json'
 var globalRed = AppSettings.globalRed
 
 let googlename
@@ -78,7 +78,7 @@ export default class GoogleSignInScreen extends Component {
                 flex: 1}}>
                 <ImageBackground
                 style={styles.background}
-                source={require('../assets/Talon540Logo.webp')}>
+                source={require('../../assets/Talon540Logo.webp')}>
                 <View style={styles.sectionContainer}>
                     <GoogleSigninButton
                         style={{ width: 192, height: 48 }}

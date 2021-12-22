@@ -12,7 +12,7 @@ import {
 import DeviceInfo from 'react-native-device-info';
 import RNRestart from 'react-native-restart';
 import { googlename, googleemail, googlepfpurl } from './GoogleSignInScreen';
-import { AppSettings } from '../settings.json'
+import { AppSettings } from '../../settings.json'
 var globalRed = AppSettings.globalRed
 
 
@@ -122,7 +122,7 @@ const LoginScreen = ({ navigation, route }) =>  {
             flex: 1}}>
             <ImageBackground
             style={styles.background}
-            source={require('../assets/Talon540Logo.webp')}>
+            source={require('../../assets/Talon540Logo.webp')}>
             <Text
             style={styles.signInText}
             >

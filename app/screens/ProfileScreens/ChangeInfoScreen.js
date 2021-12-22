@@ -6,7 +6,7 @@ import {
     StyleSheet,
     Button,
 } from 'react-native';
-import { subgroups, statuses, notifmethods, developers, Admins, Leads } from '../LoginScreen'
+import { subgroups, statuses, notifmethods, developers, Admins, Leads } from '../SignUpScreens/LoginScreen'
 import { AppSettings } from '../../settings.json'
 import SelectDropdown from 'react-native-select-dropdown';
 
