@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         paddingTop: StatusBar.currentHeight,
     },
     scrollView: {
-        paddingTop: 10,
+        paddingTop: 100,
         backgroundColor: AppSettings.globalGray,
     },
     image: {
