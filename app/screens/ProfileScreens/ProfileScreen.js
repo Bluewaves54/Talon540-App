@@ -82,7 +82,7 @@ function ProfileScreen({navigation}) { //main profile screen
             <View style={{ alignItems: 'center', bottom: 180}}>
             <Text style={{ color: 'lightgray', fontSize: 12}}>Contact: {data.email}</Text>
             </View>
-            <TouchableHighlight style={{left: 300, top: 220, width: 50}} onPress={() => navigation.jumpTo('Home', {screen: 'Report a Bug' })}>
+            <TouchableHighlight style={{left: 300, top: 245, width: 50}} onPress={() => navigation.jumpTo('Home', {screen: 'Report a Bug' })}>
                 <Ionicons name="bug" color={globalRed} size={40} />     
             </TouchableHighlight>
             <TouchableOpacity style={{left: 250,}} onPress={() => navigation.navigate('Update User Info')}>
