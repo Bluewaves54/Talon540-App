@@ -9,12 +9,22 @@ import {
     Vibration,
     Alert,
     Platform,
+    TouchableHighlight,
+    StatusBar,
+    ScrollView,
+    Image,
+    Linking,
 }
 from 'react-native';
 import { data } from './LoadScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import bugReportScreen from './MainScreenScreens/BugReportScreen'
+import { AppSettings } from './settings.json'
+var globalColor = AppSettings.globalColor
+
+import {developers} from './LoginScreen'
+import creditsScreen from './MainScreenScreens/CreditsScreen'
 
 //Notify user of signin or sign out with timestamp
 function NotifyUser(Location, Status) { //figure out notifications
@@ -104,7 +114,6 @@ function subgroupToolsScreen() {
         </View>
       )
 }
-
 function Hscreen() {
     return (
         <View style={styles.container}>
@@ -132,14 +141,15 @@ const MainScreen = ({ navigation, route }) => {
                     backgroundColor: '#1f2129',
                 },
             drawerInactiveTintColor: 'white',
-            drawerActiveTintColor: 'lightblue',
+            drawerActiveTintColor: globalColor,
             labelStyle:{
                 marginLeft:5
             }
         
         }}>
             <Drawer.Screen name="Home Screen" component={Hscreen}/>
-            <Drawer.Screen name="Subgroup Tools" component={subgroupToolsScreen}/>
+            <Drawer.Screen name= {data.subgroup+" Subgroup Chat"} component={subgroupToolsScreen}/>
+            <Drawer.Screen name={"Credits & Links"} component={creditsScreen}/>
             <Drawer.Screen name="Report a Bug" component={bugReportScreen}/>
         </Drawer.Navigator>
     )
@@ -159,6 +169,26 @@ const styles = StyleSheet.create({ //styles
         flex: 1,
         justifyContent: 'center',
     },
+    container: {
+        flex: 1,
+        paddingTop: StatusBar.currentHeight,
+    },
+    scrollView: {
+        paddingTop: 10,
+        backgroundColor: '#1f2129',
+    },
+    cimage: {
+        width: 75,
+        height: 75,
+        left: 20
+    },
+    ctext: {
+        color: 'white', 
+        fontWeight: 'bold',
+        width: 260,
+        fontSize: 15
+
+    }
 
 })
 

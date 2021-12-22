@@ -1,7 +1,9 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, UseEffect } from "react";
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Image, ImageBackground, Alert} from 'react-native';
 import { Header, LearnMoreLinks, Colors, DebugInstructions, ReloadInstructions,} from 'react-native/Libraries/NewAppScreen';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
+import { AppSettings } from './settings.json'
+var globalColor = AppSettings.globalColor
 
 let googlename
 let googlepfpurl
@@ -25,6 +27,7 @@ export default class GoogleSignInScreen extends Component {
       loggedIn: false
     }
   }
+  
   componentDidMount() {
     GoogleSignin.configure({
       scopes: ['profile', 'email'],
@@ -67,6 +70,7 @@ export default class GoogleSignInScreen extends Component {
       }
     }
   };
+  
 
   render() {
     return (
@@ -98,7 +102,7 @@ export default class GoogleSignInScreen extends Component {
                     </Text>
                     <Button onPress={() => {
                       if (this.state.userInfo.user.email.split('@')[1] != 'henricostudents.org') {
-                          return (invalidDomainAlert())
+                        if (this.state.userInfo.user.email.split('@')[1] != 'henrico.k12.va.us') return invalidDomainAlert()
                       }
                       googlename = this.state.userInfo.user.name;
                       googleemail = this.state.userInfo.user.email; //Add database column

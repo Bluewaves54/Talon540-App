@@ -3,7 +3,6 @@ import { Text, View, Button, Alert, TextInput } from 'react-native';
 import developers from '../LoginScreen'
 import MakeItRain from 'react-native-make-it-rain';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { sendEmail } from '../../functions/send-email'
 
 // function rightChoice() {
 //     return (

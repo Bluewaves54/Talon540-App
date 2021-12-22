@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		28E9331FD00BBB2353649BFC /* libPods-Talon540App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE88339E2569FDDD2E8C777 /* libPods-Talon540App.a */; };
-		310C7F8BC303E0498049024E /* libPods-Talon540App-Talon540AppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E18BBBA25C592FD7216D8D53 /* libPods-Talon540App-Talon540AppTests.a */; };
 		6C3FEAEC275C10BF00D4BF03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C3FEAEB275C10BF00D4BF03 /* GoogleService-Info.plist */; };
+		7E10B6B18CB9A9E121EDA68D /* Pods_Talon540AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180677840F933B542A65A249 /* Pods_Talon540AppTests.framework */; };
+		7FC07CE4D8D4F574FAF2A3F8 /* Pods_Talon540App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DDBA2983FD309EE017C94 /* Pods_Talon540App.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A61CF8302765FE190087399C /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = A61CF82F2765FE190087399C /* fonts */; };
 /* End PBXBuildFile section */
@@ -32,7 +32,6 @@
 		00E356EE1AD99517003FC87E /* Talon540AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Talon540AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* Talon540AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Talon540AppTests.m; sourceTree = "<group>"; };
-		0436BFDDFE0D613D96DB6ECE /* Pods-Talon540App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talon540App.release.xcconfig"; path = "Target Support Files/Pods-Talon540App/Pods-Talon540App.release.xcconfig"; sourceTree = "<group>"; };
 		131AD8E076E14DF7A64431EE /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Talon540App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talon540App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Talon540App/AppDelegate.h; sourceTree = "<group>"; };
@@ -40,27 +39,30 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Talon540App/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Talon540App/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Talon540App/main.m; sourceTree = "<group>"; };
+		16224E310F415CF37B643DC1 /* Pods-Talon540App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talon540App.release.xcconfig"; path = "Target Support Files/Pods-Talon540App/Pods-Talon540App.release.xcconfig"; sourceTree = "<group>"; };
+		180677840F933B542A65A249 /* Pods_Talon540AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Talon540AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		191DE35EC77E4CCC9286A835 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		1E83A06E12EC4C32A2E05D81 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		24821849589CDF27DDCC5E39 /* Pods-Talon540App-Talon540AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talon540App-Talon540AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Talon540App-Talon540AppTests/Pods-Talon540App-Talon540AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		284E84695DEE1BF4C118764D /* Pods-Talon540App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talon540App.debug.xcconfig"; path = "Target Support Files/Pods-Talon540App/Pods-Talon540App.debug.xcconfig"; sourceTree = "<group>"; };
+		28AC79BEEF5EFE31EDB04A6A /* Pods-Talon540AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talon540AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Talon540AppTests/Pods-Talon540AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D55B7B4ABFD40D9B0DA3CE4 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		491E3CE01A164756BD8CB561 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		4A8419E9289A2F25F2401AE0 /* Pods-Talon540AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talon540AppTests.release.xcconfig"; path = "Target Support Files/Pods-Talon540AppTests/Pods-Talon540AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		515C6EC9A71D46778C7207CE /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		547EEE6F3514421DB4D8F8EF /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		5AE88339E2569FDDD2E8C777 /* libPods-Talon540App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Talon540App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A5264935EC449609FC54A70 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		6C3FEAEB275C10BF00D4BF03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8055E90A1BE1076206AA5DCA /* Pods-Talon540App-Talon540AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talon540App-Talon540AppTests.release.xcconfig"; path = "Target Support Files/Pods-Talon540App-Talon540AppTests/Pods-Talon540App-Talon540AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Talon540App/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		887650A6E522B465A903676A /* Pods-Talon540App-Talon540AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talon540App-Talon540AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Talon540App-Talon540AppTests/Pods-Talon540App-Talon540AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DE9F569ABB04534BA277A99 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		97275B0082254F3685432B20 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		99ABBE37C9744CEA8EDA2BF8 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		9B6DDBA2983FD309EE017C94 /* Pods_Talon540App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Talon540App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C33955338D44B91981072DA /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
-		A21A783EE88868EA58EA044C /* Pods-Talon540App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talon540App.debug.xcconfig"; path = "Target Support Files/Pods-Talon540App/Pods-Talon540App.debug.xcconfig"; sourceTree = "<group>"; };
 		A5C9206BE0C448299C0FCDF0 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		A61CF82F2765FE190087399C /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		B1C108A42A59F054233405A2 /* Pods-Talon540App-Talon540AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talon540App-Talon540AppTests.release.xcconfig"; path = "Target Support Files/Pods-Talon540App-Talon540AppTests/Pods-Talon540App-Talon540AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C11FC0FDCE4C4B58B08D2A44 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		E18BBBA25C592FD7216D8D53 /* libPods-Talon540App-Talon540AppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Talon540App-Talon540AppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F96621760DA74869813DCFDC /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		FEB861233A5544668FC60188 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
@@ -71,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				310C7F8BC303E0498049024E /* libPods-Talon540App-Talon540AppTests.a in Frameworks */,
+				7E10B6B18CB9A9E121EDA68D /* Pods_Talon540AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28E9331FD00BBB2353649BFC /* libPods-Talon540App.a in Frameworks */,
+				7FC07CE4D8D4F574FAF2A3F8 /* Pods_Talon540App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,8 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5AE88339E2569FDDD2E8C777 /* libPods-Talon540App.a */,
-				E18BBBA25C592FD7216D8D53 /* libPods-Talon540App-Talon540AppTests.a */,
+				9B6DDBA2983FD309EE017C94 /* Pods_Talon540App.framework */,
+				180677840F933B542A65A249 /* Pods_Talon540AppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,10 +154,12 @@
 		5ADB812AC9B1675903E3B601 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A21A783EE88868EA58EA044C /* Pods-Talon540App.debug.xcconfig */,
-				0436BFDDFE0D613D96DB6ECE /* Pods-Talon540App.release.xcconfig */,
-				887650A6E522B465A903676A /* Pods-Talon540App-Talon540AppTests.debug.xcconfig */,
-				8055E90A1BE1076206AA5DCA /* Pods-Talon540App-Talon540AppTests.release.xcconfig */,
+				284E84695DEE1BF4C118764D /* Pods-Talon540App.debug.xcconfig */,
+				16224E310F415CF37B643DC1 /* Pods-Talon540App.release.xcconfig */,
+				24821849589CDF27DDCC5E39 /* Pods-Talon540App-Talon540AppTests.debug.xcconfig */,
+				B1C108A42A59F054233405A2 /* Pods-Talon540App-Talon540AppTests.release.xcconfig */,
+				28AC79BEEF5EFE31EDB04A6A /* Pods-Talon540AppTests.debug.xcconfig */,
+				4A8419E9289A2F25F2401AE0 /* Pods-Talon540AppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -201,12 +205,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "Talon540AppTests" */;
 			buildPhases = (
-				5257F655C79AF1E13F73E030 /* [CP] Check Pods Manifest.lock */,
+				61E39DAF44E0C4526BD4D96D /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				EEBD7B3A1414C656A60DFF2F /* [CP] Embed Pods Frameworks */,
-				0BEC285660642616B43EE1F9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,14 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Talon540App" */;
 			buildPhases = (
-				FBBA42C1E18FE39B1EA59077 /* [CP] Check Pods Manifest.lock */,
+				48A457445CA4CA1A4541B43C /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				276E61B050A3EE259A376288 /* [CP] Embed Pods Frameworks */,
-				87E4F15FF9BEFC33E259B603 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -312,97 +312,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		0BEC285660642616B43EE1F9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Talon540App-Talon540AppTests/Pods-Talon540App-Talon540AppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Talon540App-Talon540AppTests/Pods-Talon540App-Talon540AppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Talon540App-Talon540AppTests/Pods-Talon540App-Talon540AppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		276E61B050A3EE259A376288 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Talon540App/Pods-Talon540App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Talon540App/Pods-Talon540App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Talon540App/Pods-Talon540App-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5257F655C79AF1E13F73E030 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Talon540App-Talon540AppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		87E4F15FF9BEFC33E259B603 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Talon540App/Pods-Talon540App-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Talon540App/Pods-Talon540App-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Talon540App/Pods-Talon540App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EEBD7B3A1414C656A60DFF2F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Talon540App-Talon540AppTests/Pods-Talon540App-Talon540AppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Talon540App-Talon540AppTests/Pods-Talon540App-Talon540AppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Talon540App-Talon540AppTests/Pods-Talon540App-Talon540AppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FBBA42C1E18FE39B1EA59077 /* [CP] Check Pods Manifest.lock */ = {
+		48A457445CA4CA1A4541B43C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -418,6 +328,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Talon540App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61E39DAF44E0C4526BD4D96D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Talon540AppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -476,7 +408,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 887650A6E522B465A903676A /* Pods-Talon540App-Talon540AppTests.debug.xcconfig */;
+			baseConfigurationReference = 28AC79BEEF5EFE31EDB04A6A /* Pods-Talon540AppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,7 +437,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8055E90A1BE1076206AA5DCA /* Pods-Talon540App-Talon540AppTests.release.xcconfig */;
+			baseConfigurationReference = 4A8419E9289A2F25F2401AE0 /* Pods-Talon540AppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -531,7 +463,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A21A783EE88868EA58EA044C /* Pods-Talon540App.debug.xcconfig */;
+			baseConfigurationReference = 284E84695DEE1BF4C118764D /* Pods-Talon540App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -550,7 +482,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.SrimanTalon540App;
 				PRODUCT_NAME = Talon540App;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -560,7 +492,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0436BFDDFE0D613D96DB6ECE /* Pods-Talon540App.release.xcconfig */;
+			baseConfigurationReference = 16224E310F415CF37B643DC1 /* Pods-Talon540App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -578,7 +510,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.SrimanTalon540App;
 				PRODUCT_NAME = Talon540App;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -618,7 +550,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -684,7 +616,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
