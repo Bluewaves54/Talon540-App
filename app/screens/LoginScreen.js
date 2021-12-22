@@ -80,17 +80,14 @@ const UnfinishedFieldsAlert = () =>
 
 const LoginScreen = ({ navigation, route }) =>  {
     async function fetchDataAndNavigate() {
-        if(developers.includes(googlename)) {
+        if (developers.includes(googlename)) {
             status = "Developer"
         }
-        if(Admins.includes(googlename)) {
+        if (Admins.includes(googlename)) {
             status = "Admin"
         }
-        if(Leads.includes(googlename)) {
-            staus = "Lead"
-        }
-        if (admin.includes(googlename)) {
-            status = 'Admin'
+        if (Leads.includes(googlename)) {
+            status = "Lead"
         }
         const requestOptions = {
             method: 'POST',
@@ -111,7 +108,6 @@ const LoginScreen = ({ navigation, route }) =>  {
         };
         const response = await fetch('https://talon540appbackend.herokuapp.com/createNewAccount', requestOptions);
         const json = await response.json()
-        //console.log(json)
         if (Object.values(json)[0]) {
             RNRestart.Restart();
         } else {
@@ -179,7 +175,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                                 },
                                 {
                                     text: 'Its Correct',
-                                    onPress: () => { fetchDataAndNavigate() },
+                                    onPress: () => fetchDataAndNavigate(),
                                 },
                             ]
                         )
