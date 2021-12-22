@@ -8,11 +8,13 @@ import {
     View,
     TouchableHighlight,
     StyleSheet,
+    TouchableOpacity
 
 } from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 import { data } from '../LoadScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import { AppSettings } from '../../settings.json'
 var globalRed = AppSettings.globalRed
 
@@ -83,6 +85,11 @@ function ProfileScreen({navigation}) { //main profile screen
             <TouchableHighlight style={{left: 300, top: 220, width: 50}} onPress={() => navigation.jumpTo('Home', {screen: 'Report a Bug' })}>
                 <Ionicons name="bug" color={globalRed} size={40} />     
             </TouchableHighlight>
+            <TouchableOpacity style={{left: 250,}} onPress={() => navigation.navigate('Update User Info')}>
+                <Ionicons name="pencil" color={'white'} size={20} />
+                <Text style={{fontWeight: 'bold', color: 'white', left: -120, top: -15}}> Edit Information </Text>
+            </TouchableOpacity>
+
             <View style={styles.deleteButton}>
                 <Button
                     title={'Delete Account'}

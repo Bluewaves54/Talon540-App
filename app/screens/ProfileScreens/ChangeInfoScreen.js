@@ -20,9 +20,8 @@ var notifmethod = data.notifmethod
 
 
 
-function ChangeInfoScreen() {
-    const saveData = async () => {
-        console.log('entered function')
+function ChangeInfoScreen({ navigation }) {
+    const saveDataAndNavigate = async () => {
         if (developers.includes(data.name)) {
             status = "Developer"
         }
@@ -32,7 +31,6 @@ function ChangeInfoScreen() {
         if (Leads.includes(data.name)) {
             status = "Lead"
         }
-        console.log('passed ifs')
         const requestOptions = {
             method: 'POST',
             headers: {
@@ -41,15 +39,15 @@ function ChangeInfoScreen() {
             },
             body: JSON.stringify({
                 'deviceid': data.deviceID,
-                'notifMethod': notifmethod,
+                'notifmethod': notifmethod,
                 'subgroup': subgroup,
                 'status': status
             })
         }
-        console.log('defined requestOptions')
         const response = await fetch('https://talon540appbackend.herokuapp.com/updateInfo', requestOptions)
-        const json = response.json()
-        console.log('finished function')
+        const json = await response.json()
+        
+        navigation.navigate('Profile Screen')
         // RNRestart.Restart();
         // navigation.navigate('Settings')
     }
@@ -89,7 +87,7 @@ function ChangeInfoScreen() {
             <View style={styles.nextButton}>
                <Button
                     title='Save Changes'
-                    onPress={() => saveData()}
+                    onPress={() => saveDataAndNavigate({ navigation })}
                 /> 
             </View>
             
