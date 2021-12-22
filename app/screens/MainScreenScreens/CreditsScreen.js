@@ -56,9 +56,6 @@ export default creditsScreen
 const styles = StyleSheet.create({ //styles
     container: {
         flex: 1,
-    },
-    container: {
-        flex: 1,
         paddingTop: StatusBar.currentHeight,
     },
     scrollView: {

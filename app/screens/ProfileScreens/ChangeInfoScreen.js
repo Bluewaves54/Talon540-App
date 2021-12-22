@@ -10,6 +10,7 @@ import {
 import { subgroups, statuses, notifmethods, developers, Admins, Leads } from '../SignUpScreens/LoginScreen'
 import { AppSettings } from '../../settings.json'
 import SelectDropdown from 'react-native-select-dropdown';
+import RNRestart from 'react-native-restart'
 
 import { data } from '../LoadScreen';
 //console.log(data)
@@ -88,7 +89,7 @@ function ChangeInfoScreen({ navigation }) {
                     title='Save Changes'
                     onPress={() => {
                         saveDataAndNavigate({ navigation });
-                        Alert.alert("Your Data was Updated.")
+                        Alert.alert("Your Data was Updated.", 'Relaunch the app to see your changes');
                     }}
                 /> 
             </View>
