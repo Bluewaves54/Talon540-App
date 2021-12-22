@@ -33,7 +33,7 @@ const MainScreenStack = ({ navigation, route }) => {
         
         }}>
             <Drawer.Screen name="Home Screen" component={Hscreen}/>
-            <Drawer.Screen name= {data.subgroup+" Subgroup Chat"} component={subgroupToolsScreen}/>
+            <Drawer.Screen name= {data.subgroup + " Subgroup Chat"} component={subgroupToolsScreen}/>
             <Drawer.Screen name={"Credits & Links"} component={creditsScreen}/>
             <Drawer.Screen name="Report a Bug" component={bugReportScreen}/>
         </Drawer.Navigator>

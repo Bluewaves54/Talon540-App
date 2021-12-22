@@ -24,7 +24,6 @@ export default function LoadScreen({ navigation }) {
           }
         );
         const json = await response.json();
-        //console.log('json', json);
         verified = true;
         if (Object.values(json)[0] == id) {
           data = json;

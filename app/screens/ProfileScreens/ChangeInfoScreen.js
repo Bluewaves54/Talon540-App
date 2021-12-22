@@ -7,9 +7,10 @@ import {
     Button,
     Alert,
 } from 'react-native';
-import { subgroups, statuses, notifmethods, developers, Admins, Leads } from '../LoginScreen'
+import { subgroups, statuses, notifmethods, developers, Admins, Leads } from '../SignUpScreens/LoginScreen'
 import { AppSettings } from '../../settings.json'
 import SelectDropdown from 'react-native-select-dropdown';
+import RNRestart from 'react-native-restart'
 
 import { data } from '../LoadScreen';
 //console.log(data)
@@ -19,10 +20,8 @@ var subgroup = data.subgroup
 var status = data.status
 var notifmethod = data.notifmethod
 
-
-
-function ChangeInfoScreen() {
-    const saveData = async () => {
+function ChangeInfoScreen({ navigation }) {
+    const saveDataAndNavigate = async () => {
         if (developers.includes(data.name)) {
             status = "Developer"
         }
@@ -40,13 +39,15 @@ function ChangeInfoScreen() {
             },
             body: JSON.stringify({
                 'deviceid': data.deviceID,
-                'notifMethod': notifmethod,
+                'notifmethod': notifmethod,
                 'subgroup': subgroup,
                 'status': status
             })
         }
         const response = await fetch('https://talon540appbackend.herokuapp.com/updateInfo', requestOptions)
-        const json = response.json()
+        const json = await response.json()
+        
+        navigation.navigate('Profile Screen')
         // RNRestart.Restart();
         // navigation.navigate('Settings')
     }
@@ -87,8 +88,8 @@ function ChangeInfoScreen() {
                <Button
                     title='Save Changes'
                     onPress={() => {
-                        saveData()
-                        Alert.alert("Your Data was Updated!")
+                        saveDataAndNavigate({ navigation });
+                        Alert.alert("Your Data was Updated.", 'Relaunch the app to see your changes');
                     }}
                 /> 
             </View>

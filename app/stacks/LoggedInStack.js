@@ -68,7 +68,7 @@ function NotAdminTabNavigator() {
       })}>
       <Tab.Screen 
         name="Home" 
-        component={MainScreen} 
+        component={MainScreenStack} 
         options={{ 
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-home" color={color} size={size} />
