@@ -12,14 +12,12 @@ import { AppSettings } from '../../settings.json'
 import SelectDropdown from 'react-native-select-dropdown';
 
 import { data } from '../LoadScreen';
-console.log(data)
+//console.log(data)
 
 
 var subgroup = data.subgroup
 var status = data.status
 var notifmethod = data.notifmethod
-
-
 
 function ChangeInfoScreen({ navigation }) {
     const saveDataAndNavigate = async () => {
