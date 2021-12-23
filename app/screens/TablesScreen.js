@@ -17,7 +17,7 @@ async function logEntryAndFetchTable() {
         },
         body: JSON.stringify({
             'deviceid': data.deviceID,
-            'room': 'library'
+            'room': "H's room"
         })
     };
     if (!signedIn) {
