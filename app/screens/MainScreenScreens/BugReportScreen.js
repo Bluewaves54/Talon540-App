@@ -3,7 +3,7 @@ import { Text, View, Button, Alert } from 'react-native';
 import email from 'react-native-email'
 
 generateBugReport = () => {
-    const to = ['hcps-achantass@henricostudents.org'] // string or array of email addresses
+    const to = ['hcps-achantass@henricostudents.org', 'hcps-pala3@henricostudents.org'] // string or array of email addresses
     email(to, {
 
         subject: 'New Bug Report',

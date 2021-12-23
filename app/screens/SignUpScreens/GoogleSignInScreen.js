@@ -2,7 +2,6 @@ import React, { Component, Fragment, UseEffect } from "react";
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Image, ImageBackground, Alert} from 'react-native';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 import { AppSettings } from '../../settings.json'
-var globalRed = AppSettings.globalRed
 
 let googlename
 let googlepfpurl
@@ -30,7 +29,7 @@ export default class GoogleSignInScreen extends Component {
   componentDidMount() {
     GoogleSignin.configure({
       scopes: ['profile', 'email'],
-      webClientId: '295965277576-ld8k2htnhon67o6ih7a7e7f3l0c4t47m.apps.googleusercontent.com', 
+      webClientId: '379530556246-37cjigctdlojjgms19m2kqfcco1pb27d.apps.googleusercontent.com', 
       offlineAccess: true, 
       hostedDomain: 'henricostudents.org', 
       forceConsentPrompt: true,
@@ -74,7 +73,7 @@ export default class GoogleSignInScreen extends Component {
   render() {
     return (
             <SafeAreaView style={{
-                backgroundColor: '#1f2129',
+                backgroundColor: AppSettings.globalGray,
                 flex: 1}}>
                 <ImageBackground
                 style={styles.background}
