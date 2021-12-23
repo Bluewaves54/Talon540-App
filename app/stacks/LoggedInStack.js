@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { Text, View, Alert } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MainScreenStack from '../stacks/MainScreenStack';
 import ProfileStack from './ProfileStack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AdminTools from '../stacks/AdminStack';
-import { data } from '../screens/LoadScreen'
-import { AppSettings } from '../settings.json'
+import { data } from '../screens/LoadScreen';
+import { AppSettings } from '../settings.json';
+import TablesScreen from '../screens/TablesScreen';
+
 var globalRed = AppSettings.globalRed
 
 
@@ -24,6 +26,10 @@ function AdminTabNavigator() {
         tabBarActiveTintColor: globalRed,
         tabBarInactiveTintColor: 'gray',
       })}>
+      <Tab.Screen
+        name='Tables Screen'
+        component={TablesScreen}
+      />
       <Tab.Screen 
         name="Home" 
         component={MainScreenStack} 
