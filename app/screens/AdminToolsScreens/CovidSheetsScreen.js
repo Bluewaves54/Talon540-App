@@ -4,8 +4,10 @@ import { AppSettings } from '../../settings.json'
 import Clipboard from '@react-native-clipboard/clipboard';
 import { WebView } from 'react-native-webview';
 
-spreadsheetID = '12P--EB0GyQdKmmhb0GEiTHZLPaGGP1EfUwHppgkShr0'
-dayID = '49126839'
+
+let spreadsheetID = '12P--EB0GyQdKmmhb0GEiTHZLPaGGP1EfUwHppgkShr0'
+let dayID = '49126839'
+//get spreadsheet of the day
 
 export default class CovidSheetsScreen extends Component {
   render() {
