@@ -1,20 +1,41 @@
-import React from 'react';
-import { Text, View, Image } from 'react-native';
+import React, { Component, setStatem, useRef } from 'react';
+import { Text, View, Image, Button, Linking, StatusBar, SafeAreaView, Alert, TouchableHighlight } from 'react-native';
 import { AppSettings } from '../../settings.json'
+import Clipboard from '@react-native-clipboard/clipboard';
+import { WebView } from 'react-native-webview';
 
-function CovidSheetsScreen({navigation}) {
+spreadsheetID = '12P--EB0GyQdKmmhb0GEiTHZLPaGGP1EfUwHppgkShr0'
+dayID = '49126839'
+
+export default class CovidSheetsScreen extends Component {
+  render() {
     return (
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: AppSettings.globalGray
-          }}>
-          <Text style={{textAlign: 'center', color: 'white'}}>Hey Talon Admins and Leads!</Text>
-          <Text style={{textAlign: 'center', color: 'white'}}>Open the Drawer on the Right for stuff</Text>
-          <Image source={require('../../assets/construction.gif')}/>
-        </View>
-      )
+      <View style={{
+          backgroundColor: AppSettings.globalGray,
+          flex: 1,
+          paddingTop: 100}}>
+        <WebView
+          source={{ uri: "https://docs.google.com/spreadsheets/d/"+spreadsheetID+"/pubhtml?gid="+dayID }}
+          //source={{html: '<iframe width="100%" height="50%" src="https://www.youtube.com/embed/cqyziA30whE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'}}
+          renderError={(errorName) => <Error name={errorName} />}
+          onError={(syntheticEvent) => {
+            const { nativeEvent } = syntheticEvent;
+            console.warn('WebView error: ', nativeEvent);
+          }}
+          pullToRefreshEnabled={true}
+          ref={r => (this.webref = r)}
+        />
+        <Button
+          title='Click to Reload Page'
+          onPress={() => { 
+            this.webref.reload()
+        }}/>
+      </View>
+    );
+  }
 }
-export default CovidSheetsScreen
+
+
+<iframe 
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTwniYiYR6oW5hh3CFQTPNr2fpzh7SYFD16IHr2_gABqnWYcEGYe6J_mtdgMurzk36iZICNPC49s7tO/pubhtml?gid=49126839&amp;single=true&amp;widget=true&amp;headers=false">
+</iframe>

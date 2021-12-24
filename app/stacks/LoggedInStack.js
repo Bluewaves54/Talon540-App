@@ -8,7 +8,6 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AdminTools from '../stacks/AdminStack';
 import { data } from '../screens/LoadScreen';
 import { AppSettings } from '../settings.json';
-import TablesScreen from '../screens/TablesScreen';
 
 var globalRed = AppSettings.globalRed
 
@@ -26,10 +25,6 @@ function AdminTabNavigator() {
         tabBarActiveTintColor: globalRed,
         tabBarInactiveTintColor: 'gray',
       })}>
-      <Tab.Screen
-        name='Tables Screen'
-        component={TablesScreen}
-      />
       <Tab.Screen 
         name="Home" 
         component={MainScreenStack} 
