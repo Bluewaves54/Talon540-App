@@ -16,7 +16,9 @@ target 'Talon540App' do
 
 
   pod 'GoogleSignIn', '~> 6.0.0'
-
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 

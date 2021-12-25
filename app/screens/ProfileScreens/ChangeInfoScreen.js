@@ -45,8 +45,6 @@ function ChangeInfoScreen({ navigation }) {
             })
         }
         const response = await fetch('https://talon540appbackend.herokuapp.com/updateInfo', requestOptions)
-        const json = await response.json()
-
     }
     return (
         <SafeAreaView style={{backgroundColor: AppSettings.globalGray, flex:1, alignItems: 'center'}}>

@@ -1,6 +1,7 @@
 import React, { Component, Fragment, UseEffect } from "react";
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Image, ImageBackground, Alert} from 'react-native';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
 import { AppSettings } from '../../settings.json'
 
 let googlename
@@ -27,7 +28,7 @@ export default class GoogleSignInScreen extends Component {
       loggedIn: false
     }
   }
-  
+
   componentDidMount() {
     GoogleSignin.configure({
       scopes: ['profile', 'email'],
@@ -38,7 +39,7 @@ export default class GoogleSignInScreen extends Component {
     });
   }
 
-  _signIn = async () => {
+  signIn = async () => {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
@@ -71,7 +72,6 @@ export default class GoogleSignInScreen extends Component {
     }
   };
   
-
   render() {
     return (
             <SafeAreaView style={{
@@ -85,7 +85,7 @@ export default class GoogleSignInScreen extends Component {
                         style={{ width: 192, height: 48 }}
                         size={GoogleSigninButton.Size.Wide}
                         color={GoogleSigninButton.Color.Dark}
-                        onPress={this._signIn}
+                        onPress={this.signIn}
                         disabled={this.state.isSigninInProgress} />
                 </View>
                 <Text
