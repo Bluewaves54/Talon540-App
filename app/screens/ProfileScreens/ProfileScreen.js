@@ -123,7 +123,8 @@ const styles = StyleSheet.create({
         borderRadius: 150 / 2,
         overflow: "hidden",
         borderWidth: 3,
-        borderColor: "black"
+        borderColor: "black",
+        backgroundColor: 'white',
     },
     deleteButton: {
         flex: 1,

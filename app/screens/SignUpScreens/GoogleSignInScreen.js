@@ -16,7 +16,9 @@ const invalidDomainAlert = () => {
     ]
   )
 }
-
+const whitelist = [
+  'talon540demacc@gmail.com', //Apple test
+]
 export default class GoogleSignInScreen extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +33,7 @@ export default class GoogleSignInScreen extends Component {
       scopes: ['profile', 'email'],
       webClientId: '379530556246-37cjigctdlojjgms19m2kqfcco1pb27d.apps.googleusercontent.com', 
       offlineAccess: true, 
-      hostedDomain: 'henricostudents.org', 
+      //hostedDomain: 'henricostudents.org', 
       forceConsentPrompt: true,
     });
   }
@@ -100,11 +102,17 @@ export default class GoogleSignInScreen extends Component {
                     </Text>
                     <Button onPress={() => {
                       if (this.state.userInfo.user.email.split('@')[1] != 'henricostudents.org') {
-                        if (this.state.userInfo.user.email.split('@')[1] != 'henrico.k12.va.us') return invalidDomainAlert()
+                        if (this.state.userInfo.user.email.split('@')[1] != 'henrico.k12.va.us') {
+                          if (!whitelist.includes(this.state.userInfo.user.email)) return invalidDomainAlert()
+                        }
                       }
                       googlename = this.state.userInfo.user.name;
-                      googleemail = this.state.userInfo.user.email; //Add database column
-                      googlepfpurl = this.state.userInfo.user.photo.split('https://lh3.googleusercontent.com/a-/')[1];
+                      googleemail = this.state.userInfo.user.email
+                      if (!this.state.userInfo.user.photo) {
+                        googlepfpurl = 'https://scontent.fric1-2.fna.fbcdn.net/v/t1.6435-9/180978949_314228950059549_1005358403722529104_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=hWaUoD2qgF4AX_zO-2H&_nc_ht=scontent.fric1-2.fna&oh=00_AT-e6eQxdQy8O3iKxK7JNDLjtrJc1l9rvWwYMeTG7KEWEA&oe=61EDFC8E'
+                      } else {
+                        googlepfpurl = this.state.userInfo.user.photo.split('https://lh3.googleusercontent.com/a-/')[1];
+                      }
                       this.props.navigation.navigate('LoginScreen')
                       }} title='Next'/>
                   </View>
