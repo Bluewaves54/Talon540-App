@@ -20,6 +20,20 @@ const invalidDomainAlert = () => {
 const whitelist = [
   'talon540demacc@gmail.com', //Apple test
 ]
+
+GoogleSignin.configure({
+  scopes: ['profile', 'email'],
+  webClientId: '379530556246-37cjigctdlojjgms19m2kqfcco1pb27d.apps.googleusercontent.com', 
+  offlineAccess: true, 
+  //hostedDomain: 'henricostudents.org', 
+  forceConsentPrompt: true,
+});
+async function registerwithFirebase() {
+  const { idToken } = await GoogleSignin.signInSilently();
+  const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+  return auth().signInWithCredential(googleCredential);
+}
+
 export default class GoogleSignInScreen extends Component {
   constructor(props) {
     super(props);
@@ -29,31 +43,21 @@ export default class GoogleSignInScreen extends Component {
     }
   }
 
-  componentDidMount() {
-    GoogleSignin.configure({
-      scopes: ['profile', 'email'],
-      webClientId: '379530556246-37cjigctdlojjgms19m2kqfcco1pb27d.apps.googleusercontent.com', 
-      offlineAccess: true, 
-      //hostedDomain: 'henricostudents.org', 
-      forceConsentPrompt: true,
-    });
-  }
-
   signIn = async () => {
     try {
-      await GoogleSignin.hasPlayServices();
-      const userInfo = await GoogleSignin.signIn();
-      this.setState({ userInfo: userInfo, loggedIn: true });
+        await GoogleSignin.hasPlayServices();
+        const userInfo = await GoogleSignin.signIn();
+        this.setState({ userInfo: userInfo, loggedIn: true });
     } catch (error) {
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        return null
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        // operation (f.e. sign in) is in progress already
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        // play services not available or outdated
-      } else {
-        // some other error happened
-      }
+        if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+          return null
+        } else if (error.code === statusCodes.IN_PROGRESS) {
+          // operation (f.e. sign in) is in progress already
+        } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+          // play services not available or outdated
+        } else {
+          // some other error happened
+        }
     }
   };
 
@@ -113,6 +117,7 @@ export default class GoogleSignInScreen extends Component {
                       } else {
                         googlepfpurl = this.state.userInfo.user.photo.split('https://lh3.googleusercontent.com/a-/')[1];
                       }
+                      registerwithFirebase()
                       this.props.navigation.navigate('LoginScreen')
                       }} title='Next'/>
                   </View>
@@ -121,7 +126,7 @@ export default class GoogleSignInScreen extends Component {
             </SafeAreaView>
     );
   }
-}
+};
 
 export { googlename, googleemail, googlepfpurl }
 

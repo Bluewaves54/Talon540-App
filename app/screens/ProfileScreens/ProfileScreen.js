@@ -16,7 +16,8 @@ import { data } from '../LoadScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { AppSettings } from '../../settings.json'
-var globalRed = AppSettings.globalRed
+import auth from '@react-native-firebase/auth';
+
 
 var method = null
 var status = null
@@ -35,8 +36,7 @@ const ConfirmDeletionAlert = ({ navigation }) => {
             },
             {
                 text: 'Confirm',
-                onPress: async () => 
-                {
+                onPress: async () => {
                     const requestOptions = {
                     method: 'POST',
                     headers: {
@@ -49,8 +49,15 @@ const ConfirmDeletionAlert = ({ navigation }) => {
                 };
                 const response = await fetch('https://talon540appbackend.herokuapp.com/deleteAccount/', requestOptions)
                 const json = response.json()
+                //Delete user to Firebase
+                const user = auth().currentUser;
+                await user.delete().then(function() {
+                    console.log("User Deleted")
+                }, function(error) {
+                    console.error("Account Deletion Failed"+error)
+                });
                 navigation.navigate("GoogleSignInScreen")
-                } 
+                }
             },
         ]
     );
@@ -63,7 +70,7 @@ function ProfileScreen({navigation}) { //main profile screen
                 backgroundColor: '#1f2129',
             }}>
             <View style={styles.displayName}>
-            <Text style={{ color: globalRed, fontWeight: 'bold', fontSize: 32 }}>{data.name} </Text>
+            <Text style={{ color: AppSettings.globalRed, fontWeight: 'bold', fontSize: 32 }}>{data.name} </Text>
             </View>
             <View style={styles.displayPfp}>
             <Image
@@ -78,7 +85,7 @@ function ProfileScreen({navigation}) { //main profile screen
             <Text style={{ color: 'lightgray', fontSize: 12}}>Contact: {data.email}</Text>
             </View>
             <TouchableOpacity style={{left: 300, top: 245, width: 50}} onPress={() => navigation.jumpTo('Home', {screen: 'Report a Bug' })}>
-                <Ionicons name="bug" color={globalRed} size={40} />     
+                <Ionicons name="bug" color={AppSettings.globalRed} size={40} />     
             </TouchableOpacity>
             <TouchableOpacity style={{left: 250,}} onPress={() => navigation.navigate('Update User Info')}>
                 <Ionicons name="pencil" color={'white'} size={20} />
@@ -107,7 +114,7 @@ class DropdownStyle {
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = globalRed;
+        this.backgroundColor = AppSettings.globalRed;
     }
 }
 
