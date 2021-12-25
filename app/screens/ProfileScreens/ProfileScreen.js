@@ -24,37 +24,37 @@ var subgroup = null
 var notifmethod = null
 
 const ConfirmDeletionAlert = ({ navigation }) => {
-        Alert.alert(
-            'Confirm',
-            'Are you sure you want to delete your account?',
-            [
-                {
-                    text: 'Cancel',
-                    onPress: () => { return null },
-                    style: 'cancel'
-                },
-                {
-                    text: 'Confirm',
-                    onPress: async () => 
-                    {
-                        const requestOptions = {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            'deviceid': data.deviceID,
-                        })
-                    };
-                    const response = await fetch('https://talon540appbackend.herokuapp.com/deleteAccount/', requestOptions)
-                    const json = response.json()
-                    navigation.navigate("GoogleSignInScreen")
-                    } 
-                },
-            ]
-        );
-    }
+    Alert.alert(
+        'Confirm',
+        'Are you sure you want to delete your account?',
+        [
+            {
+                text: 'Cancel',
+                onPress: () => { return null },
+                style: 'cancel'
+            },
+            {
+                text: 'Confirm',
+                onPress: async () => 
+                {
+                    const requestOptions = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        'deviceid': data.deviceID,
+                    })
+                };
+                const response = await fetch('https://talon540appbackend.herokuapp.com/deleteAccount/', requestOptions)
+                const json = response.json()
+                navigation.navigate("GoogleSignInScreen")
+                } 
+            },
+        ]
+    );
+}
 function ProfileScreen({navigation}) { //main profile screen
     return (
         <SafeAreaView style={{
@@ -118,8 +118,7 @@ const styles = StyleSheet.create({
         borderRadius: 150 / 2,
         overflow: "hidden",
         borderWidth: 3,
-        borderColor: "black",
-        backgroundColor: 'white',
+        borderColor: "black"
     },
     deleteButton: {
         flex: 1,
