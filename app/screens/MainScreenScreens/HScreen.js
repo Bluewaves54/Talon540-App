@@ -92,7 +92,7 @@ async function TalonTagDetected(NFCDATA) {
         sheetURL = 'https://docs.google.com/spreadsheets/d/'+spreadsheet_key+'/edit#gid='+worksheet_key
         console.log(sheetURL)
     }
-    const nfcLocation = NFCDATA
+    const nfcLocation = NFCDATA //This will eventually become the parsed location from NFCDATA
 
     if (locations.includes(nfcLocation)) { //If suplied location is known, signIn
         //Sign In POST
