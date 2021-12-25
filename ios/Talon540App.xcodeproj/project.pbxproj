@@ -482,7 +482,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24821849589CDF27DDCC5E39 /* Pods-Talon540App-Talon540AppTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 68D722WL8N;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -511,7 +510,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B1C108A42A59F054233405A2 /* Pods-Talon540App-Talon540AppTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 68D722WL8N;
