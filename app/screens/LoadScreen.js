@@ -11,9 +11,10 @@ export { id };
 
 let verified = false;
 let data = ''
+let dailyURL
 
 export default function LoadScreen({ navigation }) {
-    useEffect(() => {
+  useEffect(() => {
       async function fetchData() {
         response = await fetch('https://talon540appbackend.herokuapp.com/fetchInformation/' + id,
           {
@@ -38,19 +39,40 @@ export default function LoadScreen({ navigation }) {
           return null;
         }
       }
+      async function getDailySheet() {
+          const getDate = new Date();
+          const date = getDate.getFullYear()+'-'+(getDate.getMonth()+1)+'-'+getDate.getDate()
+          const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                'date': date,
+            })
+          };
+          response = await fetch('https://talon540appbackend.herokuapp.com/returnSpreadsheetKey', requestOptions)
+          const JSONdailySheetResponse = await response.json()
+        
+          const spreadsheetID = JSONdailySheetResponse['spreadsheet_key']
+          const dayID = JSONdailySheetResponse['worksheet_key']
+        
+          dailyURL = "https://docs.google.com/spreadsheets/d/"+spreadsheetID+"/pubhtml?gid="+dayID
+      }
       if (!verified) {
         fetchData()
+        getDailySheet()
       } else {
         return;
       }
       
     }
-    )
+  )
   return null
-  
 };
 
-export { data }
+export { data, dailyURL }
 
 const styles = StyleSheet.create({
   container: {

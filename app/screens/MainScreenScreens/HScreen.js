@@ -1,16 +1,20 @@
 import React from 'react';
 import { 
     View,
+    Text,
     ImageBackground,
     StyleSheet,
     StatusBar,
     Vibration,
     Button,
-    SafeAreaView
+    SafeAreaView,
+    TouchableOpacity,
+    Alert
 } from 'react-native';
 
 import { data, id } from '../LoadScreen'
-
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { AppSettings } from '../../settings.json'
 let sheetURL = ''
 let spreadsheet_key = ''
 let worksheet_key = ''
@@ -128,13 +132,22 @@ function Hscreen() {
     return (
         <SafeAreaView style={styles.container}>
             <ImageBackground source={require('../../assets/JesusH.png')} resizeMode="cover" style={styles.image}>
-                <Button
-                    title='Sign in/out'
-                    color= "#f194ff"
-                    onPress={() => { 
-                        TalonTagDetected("main room"); //Instead of "main room" we would put NFC data to be parsed
+                <TouchableOpacity
+                    style={{
+                        width:105,
+                        height:105,
+                        left: 150,   
+                        borderRadius:50,
                     }}
-                /> 
+                    onPress={() => TalonTagDetected("main room") }>
+                    <Text style={{
+                        fontWeight: 'bold',
+                        fontSize: 25,
+                        textAlign: 'center',
+                    }}> 
+                    Simulate Login </Text>
+                    <FontAwesome name="sign-in" color={'black'} size={100} />
+                </TouchableOpacity>
             </ImageBackground>
         </SafeAreaView>
     );
@@ -157,6 +170,7 @@ const styles = StyleSheet.create({ //styles
     image: {
         flex: 1,
         justifyContent: 'center',
+        opacity: 1,
     },
     container: {
         flex: 1,
