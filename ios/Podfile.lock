@@ -769,6 +769,8 @@ PODS:
     - glog
   - react-native-netinfo (7.1.7):
     - React-Core
+  - react-native-nfc-manager (3.11.2):
+    - React
   - react-native-pager-view (5.4.9):
     - React-Core
   - react-native-restart (0.0.22):
@@ -846,6 +848,8 @@ PODS:
     - React-Core
   - RNCMaskedView (0.1.11):
     - React
+  - RNCPushNotificationIOS (1.10.1):
+    - React-Core
   - RNDeviceInfo (8.4.8):
     - React-Core
   - RNFBApp (14.1.0):
@@ -857,7 +861,7 @@ PODS:
     - RNFBApp
   - RNGestureHandler (2.1.0):
     - React-Core
-  - RNGoogleSignin (7.0.3):
+  - RNGoogleSignin (7.0.4):
     - GoogleSignIn (~> 6.0.0)
     - React-Core
   - RNReanimated (2.3.1):
@@ -945,6 +949,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
+  - react-native-nfc-manager (from `../node_modules/react-native-nfc-manager`)
   - react-native-pager-view (from `../node_modules/react-native-pager-view`)
   - react-native-restart (from `../node_modules/react-native-restart`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
@@ -963,6 +968,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCClipboard (from `../node_modules/@react-native-clipboard/clipboard`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
+  - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
@@ -1049,6 +1055,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
+  react-native-nfc-manager:
+    :path: "../node_modules/react-native-nfc-manager"
   react-native-pager-view:
     :path: "../node_modules/react-native-pager-view"
   react-native-restart:
@@ -1085,6 +1093,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-clipboard/clipboard"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
+  RNCPushNotificationIOS:
+    :path: "../node_modules/@react-native-community/push-notification-ios"
   RNDeviceInfo:
     :path: "../node_modules/react-native-device-info"
   RNFBApp:
@@ -1159,6 +1169,7 @@ SPEC CHECKSUMS:
   React-jsinspector: d0374f7509d407d2264168b6d0fad0b54e300b85
   React-logger: 933f80c97c633ee8965d609876848148e3fef438
   react-native-netinfo: 27f287f2d191693f3b9d01a4273137fcf91c3b5d
+  react-native-nfc-manager: f47786b7e0d959bf2a8a3633f78ba2a560024a17
   react-native-pager-view: 3ee7d4c7697fb3ef788346e834a60cca97ed8540
   react-native-restart: 733a51ad137f15b0f8dc34c4082e55af7da00979
   react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
@@ -1177,11 +1188,12 @@ SPEC CHECKSUMS:
   ReactCommon: 57b69f6383eafcbd7da625bfa6003810332313c4
   RNCClipboard: 99fc8ad669a376b756fbc8098ae2fd05c0ed0668
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
+  RNCPushNotificationIOS: 87b8d16d3ede4532745e05b03c42cff33a36cc45
   RNDeviceInfo: 0400a6d0c94186d1120c3cbd97b23abc022187a9
   RNFBApp: e884e9a2dcc5edfa73e2651ef6638df5e0672f89
   RNFBAuth: fd6cbf93302641dbe20045a44e64c1fa3d4eff02
   RNGestureHandler: e5c7cab5f214503dcefd6b2b0cefb050e1f51c4a
-  RNGoogleSignin: aa9bb821ffb396bc64b4b6befc60bf41e6ae625f
+  RNGoogleSignin: c4381751eefd73c552b923ba347a9bfc6f18771c
   RNReanimated: da3860204e5660c0dd66739936732197d359d753
   RNScreens: 522705f2e5c9d27efb17f24aceb2bf8335bc7b8e
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
