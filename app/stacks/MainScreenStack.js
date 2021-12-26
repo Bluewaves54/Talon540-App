@@ -2,7 +2,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import Hscreen from '../screens/MainScreenScreens/HScreen';
 import bugReportScreen from '../screens/MainScreenScreens/BugReportScreen';
 import creditsScreen from '../screens/MainScreenScreens/CreditsScreen';
-import subgroupToolsScreen from '../screens/MainScreenScreens/subgroupToolsScreen';
+import subgroupChatsScreen from '../screens/MainScreenScreens/SubgroupChatsScreen'
 import React from 'react';
 import { data } from '../screens/LoadScreen'
 import { AppSettings } from '../settings.json'
@@ -33,7 +33,7 @@ const MainScreenStack = ({ navigation, route }) => {
         
         }}>
             <Drawer.Screen name="Home Screen" component={Hscreen}/>
-            <Drawer.Screen name= {data.subgroup + " Subgroup Chat"} component={subgroupToolsScreen}/>
+            <Drawer.Screen name= {data.subgroup + " Subgroup Chat"} component={subgroupChatsScreen}/>
             <Drawer.Screen name={"Credits & Links"} component={creditsScreen}/>
             <Drawer.Screen name="Report a Bug" component={bugReportScreen}/>
         </Drawer.Navigator>

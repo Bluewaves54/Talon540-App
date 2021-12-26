@@ -13,37 +13,12 @@ import DeviceInfo from 'react-native-device-info';
 import RNRestart from 'react-native-restart';
 import { googlename, googleemail, googlepfpurl } from './GoogleSignInScreen';
 import { AppSettings } from '../../settings.json'
-var globalRed = AppSettings.globalRed
-
 
 var id = DeviceInfo.getUniqueId();
 var subgroup = null
 var status = null
 var notifmethod = null
 
-const subgroups = [
-    "Programming",
-    "Mechanical",
-    "Electrical",
-    "CAD",
-    "Financial",
-    "Strategy",
-    "Outreach",
-    "Public Relations",
-]
-
-const statuses = [
-    "Rookie",
-    "Veteran",
-]
-
-const notifmethods = [
-    'Vibration',
-    'Notification',
-    'Both',
-]
-
-export { subgroups, statuses, notifmethods }
 
 class DropdownStyle {
     constructor(top) {
@@ -56,7 +31,7 @@ class DropdownStyle {
         this.borderRadius = 20;
         this.padding = 10;
         this.position = 'absolute';
-        this.backgroundColor = globalRed;
+        this.backgroundColor = AppSettings.globalRed;
     }
 }
 
@@ -74,12 +49,18 @@ const LoginScreen = ({ navigation, route }) =>  {
         if (AppSettings.developers.includes(googlename)) {
             status = "Developer"
         }
-        if (AppSettings.Admins.includes(googlename)) {
+        if (AppSettings.RoboticsInfo.Admins.includes(googlename)) {
             status = "Admin"
+            subgroup = "Administrators"
         }
-        if (AppSettings.Leads.includes(googlename)) {
+        const l = []
+        AppSettings.RoboticsInfo.subgroups.forEach(subgroup => { 
+            l.push(AppSettings.RoboticsInfo.Leads[subgroup]['name'])
+        })
+        if (l.includes(googlename)) {
             status = "Lead"
         }
+        
         const requestOptions = {
             method: 'POST',
             headers: {
@@ -118,7 +99,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                 flex: 1,
             }}>
                 <SelectDropdown
-                    data={subgroups}
+                    data={AppSettings.RoboticsInfo.subgroups}
                     onSelect={(selectedSubgroup) => { subgroup = selectedSubgroup }}
                     buttonTextAfterSelection={(selectedSubgroup) => { return selectedSubgroup }}
                     rowTextForSelection={(item) => { return item }}
@@ -127,7 +108,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                     dropdownStyle={{ borderRadius: 20 }}
                 />
                 <SelectDropdown
-                    data={statuses}
+                    data={AppSettings.RoboticsInfo.statuses}
                     onSelect={(selectedStatus) => { status = selectedStatus }}
                     buttonTextAfterSelection={(selectedStatus) => { return selectedStatus }}
                     rowTextForSelection={(item) => { return item }}
@@ -136,7 +117,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                     dropdownStyle={{ borderRadius: 20 }}
                 />
                 <SelectDropdown
-                    data={notifmethods}
+                    data={AppSettings.RoboticsInfo.notifmethods}
                     onSelect={(SelectedNotifMethod) => { notifmethod = SelectedNotifMethod }}
                     buttonTextAfterSelection={(selectedNotifMethod) => { return selectedNotifMethod }}
                     rowTextForSelection={(item) => { return item }}

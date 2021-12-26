@@ -8,7 +8,7 @@ let googlename
 let googlepfpurl
 let googleemail
 
-const invalidDomainAlert = () => {
+async function invalidDomainAlert() {
   Alert.alert(
     "Invalid Domain",
     "Your email is not registered with HCPS.",
@@ -16,6 +16,11 @@ const invalidDomainAlert = () => {
       { text: "Cancel", onPress: () => { return null }, style: 'cancel'}
     ]
   )
+  await auth().currentUser.delete().then(function() {
+    console.log("User Deleted on "+new Date())
+  }, function(error) {
+    console.warn("Account Deletion Failed"+error)
+  });
 }
 
 GoogleSignin.configure({
@@ -45,6 +50,7 @@ export default class GoogleSignInScreen extends Component {
         await GoogleSignin.hasPlayServices();
         const userInfo = await GoogleSignin.signIn();
         this.setState({ userInfo: userInfo, loggedIn: true });
+        await registerwithFirebase()
     } catch (error) {
         if (error.code === statusCodes.SIGN_IN_CANCELLED) {
           return null
@@ -78,6 +84,8 @@ export default class GoogleSignInScreen extends Component {
                 style={styles.signInText}>
                     Verify your account with Google
                 </Text>
+
+                
               {!this.state.loggedIn && this.props.navigation.navigate('GoogleSignInScreen')}
               {this.state.loggedIn &&
                 
@@ -87,19 +95,18 @@ export default class GoogleSignInScreen extends Component {
                     
                     </Text>
                     <Button onPress={() => {
-                      if (this.state.userInfo.user.email.split('@')[1] != 'henricostudents.org') {
-                        if (this.state.userInfo.user.email.split('@')[1] != 'henrico.k12.va.us') {
-                          if (!AppSettings.email_whitelist.includes(this.state.userInfo.user.email)) return invalidDomainAlert()
+                      if (auth().currentUser.email.split('@')[1] != 'henricostudents.org') {
+                        if (auth().currentUser.email.split('@')[1] != 'henrico.k12.va.us') {
+                          if (!AppSettings.email_whitelist.includes(auth().currentUser.email)) return invalidDomainAlert()
                         }
                       }
-                      googlename = this.state.userInfo.user.name;
-                      googleemail = this.state.userInfo.user.email
-                      if (!this.state.userInfo.user.photo) {
+                      googlename = auth().currentUser.displayName
+                      googleemail = auth().currentUser.email
+                      if (!auth().currentUser.photoURL) {
                         googlepfpurl = 'https://scontent.fric1-2.fna.fbcdn.net/v/t1.6435-9/180978949_314228950059549_1005358403722529104_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=hWaUoD2qgF4AX_zO-2H&_nc_ht=scontent.fric1-2.fna&oh=00_AT-e6eQxdQy8O3iKxK7JNDLjtrJc1l9rvWwYMeTG7KEWEA&oe=61EDFC8E'
                       } else {
-                        googlepfpurl = this.state.userInfo.user.photo.split('https://lh3.googleusercontent.com/a-/')[1];
+                        googlepfpurl = auth().currentUser.photoURL.split('https://lh3.googleusercontent.com/a-/')[1];
                       }
-                      registerwithFirebase()
                       this.props.navigation.navigate('LoginScreen')
                       }} title='Next'/>
                   </View>

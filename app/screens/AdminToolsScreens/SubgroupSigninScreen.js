@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet, ScrollView, SafeAreaView, StatusBar } from 'react-native';
-import {subgroups} from '../LoginScreen'
 import { AppSettings } from '../../settings.json'
 
 function SubgroupSigninScreen({navigation}) {

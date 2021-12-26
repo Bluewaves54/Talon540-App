@@ -15,6 +15,7 @@ import {
 import { data, id } from '../LoadScreen'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { AppSettings } from '../../settings.json'
+let screenOPH = 1
 let sheetURL = ''
 let spreadsheet_key = ''
 let worksheet_key = ''
@@ -170,7 +171,7 @@ const styles = StyleSheet.create({ //styles
     image: {
         flex: 1,
         justifyContent: 'center',
-        opacity: 1,
+        opacity: screenOPH,
     },
     container: {
         flex: 1,

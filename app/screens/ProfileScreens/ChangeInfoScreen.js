@@ -7,14 +7,11 @@ import {
     Button,
     Alert,
 } from 'react-native';
-import { subgroups, statuses, notifmethods } from '../SignUpScreens/LoginScreen'
 import { AppSettings } from '../../settings.json'
 import SelectDropdown from 'react-native-select-dropdown';
 import RNRestart from 'react-native-restart'
 
 import { data } from '../LoadScreen';
-//console.log(data)
-
 
 var subgroup = data.subgroup
 var status = data.status
@@ -22,13 +19,18 @@ var notifmethod = data.notifmethod
 
 function ChangeInfoScreen({ navigation }) {
     const saveDataAndNavigate = async () => {
-        if (AppSettings.developers.includes(data.name)) {
+        if (AppSettings.developers.includes(googlename)) {
             status = "Developer"
         }
-        if (AppSettings.Admins.includes(data.name)) {
+        if (AppSettings.RoboticsInfo.Admins.includes(googlename)) {
             status = "Admin"
+            subgroup = "Administrators"
         }
-        if (AppSettings.Leads.includes(data.name)) {
+        const l = []
+        AppSettings.RoboticsInfo.subgroups.forEach(subgroup => { 
+            l.push(AppSettings.RoboticsInfo.Leads[subgroup]['name'])
+        })
+        if (l.includes(googlename)) {
             status = "Lead"
         }
         const requestOptions = {
@@ -53,7 +55,7 @@ function ChangeInfoScreen({ navigation }) {
             </View>
             
             <SelectDropdown
-                data={subgroups}
+                data={AppSettings.RoboticsInfo.subgroups}
                 onSelect={(selectedSubgroup) => { subgroup = selectedSubgroup }}
                 buttonTextAfterSelection={(selectedSubgroup) => { return selectedSubgroup }}
                 rowTextForSelection={(item) => { return item }}
@@ -62,7 +64,7 @@ function ChangeInfoScreen({ navigation }) {
                 dropdownStyle={{ borderRadius: 20 }}
             />
             <SelectDropdown
-                data={statuses}
+                data={AppSettings.RoboticsInfo.statuses}
                 onSelect={(selectedStatus) => { status = selectedStatus }}
                 buttonTextAfterSelection={(selectedStatus) => { return selectedStatus }}
                 rowTextForSelection={(item) => { return item }}
@@ -71,7 +73,7 @@ function ChangeInfoScreen({ navigation }) {
                 dropdownStyle={{ borderRadius: 20 }}
             />
             <SelectDropdown
-                data={notifmethods}
+                data={AppSettings.RoboticsInfo.notifmethods}
                 onSelect={(SelectedNotifMethod) => { notifmethod = SelectedNotifMethod }}
                 buttonTextAfterSelection={(selectedNotifMethod) => { return selectedNotifMethod }}
                 rowTextForSelection={(item) => { return item }}

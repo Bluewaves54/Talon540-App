@@ -19,7 +19,7 @@ import { AppSettings } from '../../settings.json'
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 
-async function registerwithFirebase() {
+async function registerwithFirebase() { //Resignin User to Avoid ToS break
     const { idToken } = await GoogleSignin.signInSilently();
     const googleCredential = auth.GoogleAuthProvider.credential(idToken);
     return auth().signInWithCredential(googleCredential);
@@ -59,7 +59,7 @@ const ConfirmDeletionAlert = ({ navigation }) => {
                 const user = auth().currentUser;
                 await registerwithFirebase()
                 await user.delete().then(function() {
-                    console.log("User Deleted")
+                    console.log("User Deleted on "+new Date())
                 }, function(error) {
                     console.warn("Account Deletion Failed"+error)
                 });
