@@ -17,7 +17,13 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { AppSettings } from '../../settings.json'
 import auth from '@react-native-firebase/auth';
+import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 
+async function registerwithFirebase() {
+    const { idToken } = await GoogleSignin.signInSilently();
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    return auth().signInWithCredential(googleCredential);
+}
 
 var method = null
 var status = null
@@ -51,10 +57,11 @@ const ConfirmDeletionAlert = ({ navigation }) => {
                 const json = response.json()
                 //Delete user to Firebase
                 const user = auth().currentUser;
+                await registerwithFirebase()
                 await user.delete().then(function() {
                     console.log("User Deleted")
                 }, function(error) {
-                    console.error("Account Deletion Failed"+error)
+                    console.warn("Account Deletion Failed"+error)
                 });
                 navigation.navigate("GoogleSignInScreen")
                 }

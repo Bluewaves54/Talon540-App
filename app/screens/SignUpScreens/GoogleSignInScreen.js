@@ -57,21 +57,6 @@ export default class GoogleSignInScreen extends Component {
         }
     }
   };
-
-  getCurrentUserInfo = async () => {
-    try {
-      const userInfo = await GoogleSignin.signInSilently();
-      this.setState({ userInfo });
-    } catch (error) {
-      if (error.code === statusCodes.SIGN_IN_REQUIRED) {
-        // user has not signed in yet
-        this.setState({ loggedIn: false });
-      } else {
-        // some other error
-        this.setState({ loggedIn: false });
-      }
-    }
-  };
   
   render() {
     return (
