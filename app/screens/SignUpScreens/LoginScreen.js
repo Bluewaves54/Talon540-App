@@ -43,18 +43,7 @@ const notifmethods = [
     'Both',
 ]
 
-const developers = [
-    "Sriman Achanta",
-    "Ayush Pal"
-]
-const Admins = [
-
-]
-const Leads = [
-
-]
-
-export { subgroups, statuses, notifmethods, developers, Admins, Leads}
+export { subgroups, statuses, notifmethods }
 
 class DropdownStyle {
     constructor(top) {
@@ -82,13 +71,13 @@ const UnfinishedFieldsAlert = () =>
 
 const LoginScreen = ({ navigation, route }) =>  {
     async function fetchDataAndNavigate() {
-        if (developers.includes(googlename)) {
+        if (AppSettings.developers.includes(googlename)) {
             status = "Developer"
         }
-        if (Admins.includes(googlename)) {
+        if (AppSettings.Admins.includes(googlename)) {
             status = "Admin"
         }
-        if (Leads.includes(googlename)) {
+        if (AppSettings.Leads.includes(googlename)) {
             status = "Lead"
         }
         const requestOptions = {

@@ -17,9 +17,6 @@ const invalidDomainAlert = () => {
     ]
   )
 }
-const whitelist = [
-  'talon540demacc@gmail.com', //Apple test
-]
 
 GoogleSignin.configure({
   scopes: ['profile', 'email'],
@@ -107,7 +104,7 @@ export default class GoogleSignInScreen extends Component {
                     <Button onPress={() => {
                       if (this.state.userInfo.user.email.split('@')[1] != 'henricostudents.org') {
                         if (this.state.userInfo.user.email.split('@')[1] != 'henrico.k12.va.us') {
-                          if (!whitelist.includes(this.state.userInfo.user.email)) return invalidDomainAlert()
+                          if (!AppSettings.email_whitelist.includes(this.state.userInfo.user.email)) return invalidDomainAlert()
                         }
                       }
                       googlename = this.state.userInfo.user.name;

@@ -7,7 +7,7 @@ import {
     Button,
     Alert,
 } from 'react-native';
-import { subgroups, statuses, notifmethods, developers, Admins, Leads } from '../SignUpScreens/LoginScreen'
+import { subgroups, statuses, notifmethods } from '../SignUpScreens/LoginScreen'
 import { AppSettings } from '../../settings.json'
 import SelectDropdown from 'react-native-select-dropdown';
 import RNRestart from 'react-native-restart'
@@ -22,13 +22,13 @@ var notifmethod = data.notifmethod
 
 function ChangeInfoScreen({ navigation }) {
     const saveDataAndNavigate = async () => {
-        if (developers.includes(data.name)) {
+        if (AppSettings.developers.includes(data.name)) {
             status = "Developer"
         }
-        if (Admins.includes(data.name)) {
+        if (AppSettings.Admins.includes(data.name)) {
             status = "Admin"
         }
-        if (Leads.includes(data.name)) {
+        if (AppSettings.Leads.includes(data.name)) {
             status = "Lead"
         }
         const requestOptions = {
