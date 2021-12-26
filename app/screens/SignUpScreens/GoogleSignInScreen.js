@@ -2,7 +2,7 @@ import React, { Component, Fragment, UseEffect } from "react";
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Image, ImageBackground, Alert} from 'react-native';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
-import { AppSettings } from '../../settings.json'
+import { AppSettings, RoboticsInfo } from '../../settings.json'
 
 let googlename
 let googlepfpurl

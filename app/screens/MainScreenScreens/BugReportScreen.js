@@ -2,10 +2,8 @@ import React from 'react';
 import { Text, View, Button, Alert } from 'react-native';
 import email from 'react-native-email'
 
-generateBugReport = () => {
-    const to = ['hcps-achantass@henricostudents.org', 'hcps-pala3@henricostudents.org'] // string or array of email addresses
-    email(to, {
-
+function generateBugReport() {
+    email(['hcps-achantass@henricostudents.org', 'hcps-pala3@henricostudents.org'], {
         subject: 'New Bug Report',
         body: 'Hey, I found a bug in your app. (Please include things such as screenshots and ample description)'
     }).catch(console.error)

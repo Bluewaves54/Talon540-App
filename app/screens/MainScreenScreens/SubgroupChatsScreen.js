@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat'
 import { data, dailyURL } from '../LoadScreen'
-import { AppSettings } from '../../settings.json'
+import { AppSettings, RoboticsInfo } from '../../settings.json'
 
 async function fetchOldMessages() {
   //Fetch old messages from firebase

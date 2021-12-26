@@ -4,7 +4,7 @@ import CovidSheetsScreen from '../screens/AdminToolsScreens/CovidSheetsScreen'
 import ScoutingScreen from '../screens/AdminToolsScreens/ScoutingScreen'
 import SubgroupSigninScreen from '../screens/AdminToolsScreens/SubgroupSigninScreen'
 import CodeTestScreen from '../screens/AdminToolsScreens/CodeTestScreen'
-import { AppSettings } from '../settings.json'
+import { AppSettings, RoboticsInfo } from '../settings.json'
 
 const Drawer = createDrawerNavigator(); 
 export default function AdminTools() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet, ScrollView, SafeAreaView, StatusBar } from 'react-native';
-import { AppSettings } from '../../settings.json'
+import { AppSettings, RoboticsInfo } from '../../settings.json'
 
 function SubgroupSigninScreen({navigation}) {
     return (

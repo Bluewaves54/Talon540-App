@@ -15,7 +15,7 @@ import SelectDropdown from 'react-native-select-dropdown';
 import { data } from '../LoadScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { AppSettings } from '../../settings.json'
+import { AppSettings, RoboticsInfo } from '../../settings.json'
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 

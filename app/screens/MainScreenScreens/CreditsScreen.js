@@ -11,7 +11,7 @@ import {
     Linking,
 }
 from 'react-native';
-import { AppSettings } from '../../settings.json'
+import { AppSettings, RoboticsInfo } from '../../settings.json'
 
 function creditsScreen() {
     return (

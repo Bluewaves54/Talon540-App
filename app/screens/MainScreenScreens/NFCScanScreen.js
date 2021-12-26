@@ -14,7 +14,7 @@ import {
 
 import { data, id } from '../LoadScreen'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { AppSettings } from '../../settings.json'
+import { AppSettings, RoboticsInfo } from '../../settings.json'
 let screenOPH = 1
 let sheetURL = ''
 let spreadsheet_key = ''
@@ -129,7 +129,7 @@ async function TalonTagDetected(NFCDATA) {
     }
 
 }
-function Hscreen() {
+function NFCScanScreen() {
     return (
         <SafeAreaView style={styles.container}>
             <ImageBackground source={require('../../assets/JesusH.png')} resizeMode="cover" style={styles.image}>
@@ -196,4 +196,4 @@ const styles = StyleSheet.create({ //styles
 
 })
 
-export default Hscreen
+export default NFCScanScreen

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
-import Settings from '../../settings.json'
+import { AppSettings, RoboticsInfo } from '../../settings.json'
 import { data } from '../LoadScreen'
 
 const HelloWorldApp = () => {

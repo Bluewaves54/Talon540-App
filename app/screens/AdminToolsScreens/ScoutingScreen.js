@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
-import { AppSettings } from '../../settings.json'
+import { AppSettings, RoboticsInfo } from '../../settings.json'
 
 function ScoutingScreen({navigation}) {
     return (

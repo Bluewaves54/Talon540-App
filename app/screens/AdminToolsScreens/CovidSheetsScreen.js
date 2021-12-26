@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Image, Button, Linking, StatusBar, SafeAreaView, Alert, TouchableHighlight } from 'react-native';
-import { AppSettings } from '../../settings.json'
+import { AppSettings, RoboticsInfo } from '../../settings.json'
 import Clipboard from '@react-native-clipboard/clipboard';
 import { WebView } from 'react-native-webview';
 import { dailyURL, data } from '../LoadScreen'

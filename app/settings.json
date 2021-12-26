@@ -6,81 +6,81 @@
             "Sriman Achanta",
             "Ayush Pal"
         ],
-        "RoboticsInfo": {
-            "statuses": [
-                "Rookie",
-                "Veteran"
-            ],
-            "notifmethods": [
-                "Vibration",
-                "Notification",
-                "Both"
-            ],
-            "subgroups": [
-                "Programming",
-                "Mechanical",
-                "Electrical",
-                "CAD",
-                "Financial",
-                "Strategy",
-                "Outreach",
-                "Public Relations"
-            ],
-            "Admins": {
-                "TeamCaptain": {
-                    "name": "Jusmun Shokar",
-                    "email": "hcps-shokarjk@henricostudents.org"
-                },
-                "ProjectManager": {
-                    "name": "Shraddha Anup",
-                    "email": "hcps-anups@henricostudents.org"
-                },
-                "LeadMentor": {
-                    "name": "Earl H. Hurlburt, II",
-                    "email": "ehhurlburt@henrico.k12.va.us"
-                },
-                "coLeadMentor": {
-                    "name": "Samii Muse",
-                    "email": "samuse@henrico.k12.va.us"
-                }
-            },
-            "Leads": {
-                "Programming": {
-                    "name": "Chirayu Nimonkar",
-                    "email": "hcps-nimonkacs@henricostudents.org"
-                },
-                "Mechanical": {
-                    "name": "Ojas Joshi",
-                    "email": "hcps-joshior@henricostudents.org"
-                }, 
-                "Electrical": {
-                    "name": "Vaibhav Maru",
-                    "email": "hcps-maruv@henricostudents.org"
-                }, 
-                "CAD": {
-                    "name": "Zaid Contractor",
-                    "email": "hcps-contrazz1@henricostudents.org"
-                }, 
-                "Financial": {
-                    "name": "Avirat Raj",
-                    "email": "hcps-raja@henricostudents.org"
-                }, 
-                "Strategy": {
-                    "name": "Edward Zhang",
-                    "email": "hcps-zhangey1@henricostudents.org"
-                },
-                "Outreach": {
-                    "name": "Grayson Jacey",
-                    "email": "hcps-jaceygw@henricostudents.org"
-                },  
-                "Public Relations": {
-                    "name": "Aadi Jain",
-                    "email": "hcps-jainap1@henricostudents.org"
-                }
-            }
-        },
         "email_whitelist": [
             "talon540demacc@gmail.com" //Apple Demo Google Account
         ]
+    },
+    "RoboticsInfo": {
+        "statuses": [
+            "Rookie",
+            "Veteran"
+        ],
+        "notifmethods": [
+            "Vibration",
+            "Notification",
+            "Both"
+        ],
+        "subgroups": [
+            "Programming",
+            "Mechanical",
+            "Electrical",
+            "CAD",
+            "Financial",
+            "Strategy",
+            "Outreach",
+            "Public Relations"
+        ],
+        "Admins": {
+            "TeamCaptain": {
+                "name": "Jusmun Shokar",
+                "email": "hcps-shokarjk@henricostudents.org"
+            },
+            "ProjectManager": {
+                "name": "Shraddha Anup",
+                "email": "hcps-anups@henricostudents.org"
+            },
+            "LeadMentor": {
+                "name": "Earl H. Hurlburt, II",
+                "email": "ehhurlburt@henrico.k12.va.us"
+            },
+            "coLeadMentor": {
+                "name": "Samii Muse",
+                "email": "samuse@henrico.k12.va.us"
+            }
+        },
+        "Leads": {
+            "Programming": {
+                "name": "Chirayu Nimonkar",
+                "email": "hcps-nimonkacs@henricostudents.org"
+            },
+            "Mechanical": {
+                "name": "Ojas Joshi",
+                "email": "hcps-joshior@henricostudents.org"
+            }, 
+            "Electrical": {
+                "name": "Vaibhav Maru",
+                "email": "hcps-maruv@henricostudents.org"
+            }, 
+            "CAD": {
+                "name": "Zaid Contractor",
+                "email": "hcps-contrazz1@henricostudents.org"
+            }, 
+            "Financial": {
+                "name": "Avirat Raj",
+                "email": "hcps-raja@henricostudents.org"
+            }, 
+            "Strategy": {
+                "name": "Edward Zhang",
+                "email": "hcps-zhangey1@henricostudents.org"
+            },
+            "Outreach": {
+                "name": "Grayson Jacey",
+                "email": "hcps-jaceygw@henricostudents.org"
+            },  
+            "Public Relations": {
+                "name": "Aadi Jain",
+                "email": "hcps-jainap1@henricostudents.org"
+            }
+        }
     }
 }

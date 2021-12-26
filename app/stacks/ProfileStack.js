@@ -2,7 +2,7 @@ import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ProfileScreen from '../screens/ProfileScreens/ProfileScreen';
 import ChangeInfoScreen from '../screens/ProfileScreens/ChangeInfoScreen';
-import { AppSettings } from '../settings.json'
+import { AppSettings, RoboticsInfo } from '../settings.json'
 
 
 const Drawer = createDrawerNavigator(); 

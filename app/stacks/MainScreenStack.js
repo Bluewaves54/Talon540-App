@@ -1,11 +1,11 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import Hscreen from '../screens/MainScreenScreens/HScreen';
+import NFCScanScreen from '../screens/MainScreenScreens/NFCScanScreen';
 import bugReportScreen from '../screens/MainScreenScreens/BugReportScreen';
 import creditsScreen from '../screens/MainScreenScreens/CreditsScreen';
 import subgroupChatsScreen from '../screens/MainScreenScreens/SubgroupChatsScreen'
 import React from 'react';
 import { data } from '../screens/LoadScreen'
-import { AppSettings } from '../settings.json'
+import { AppSettings, RoboticsInfo } from '../settings.json'
 
 const Drawer = createDrawerNavigator(); 
 const MainScreenStack = ({ navigation, route }) => {
@@ -32,7 +32,7 @@ const MainScreenStack = ({ navigation, route }) => {
             }
         
         }}>
-            <Drawer.Screen name="Home Screen" component={Hscreen}/>
+            <Drawer.Screen name="Home Screen" component={NFCScanScreen}/>
             <Drawer.Screen name= {data.subgroup + " Subgroup Chat"} component={subgroupChatsScreen}/>
             <Drawer.Screen name={"Credits & Links"} component={creditsScreen}/>
             <Drawer.Screen name="Report a Bug" component={bugReportScreen}/>

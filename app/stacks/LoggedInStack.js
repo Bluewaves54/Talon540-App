@@ -7,7 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AdminTools from '../stacks/AdminStack';
 import { data } from '../screens/LoadScreen';
-import { AppSettings } from '../settings.json';
+import { AppSettings, RoboticsInfo } from '../settings.json';
 
 var globalRed = AppSettings.globalRed
 

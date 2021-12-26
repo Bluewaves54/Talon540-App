@@ -12,7 +12,7 @@ import {
 import DeviceInfo from 'react-native-device-info';
 import RNRestart from 'react-native-restart';
 import { googlename, googleemail, googlepfpurl } from './GoogleSignInScreen';
-import { AppSettings } from '../../settings.json'
+import { AppSettings, RoboticsInfo } from '../../settings.json'
 
 var id = DeviceInfo.getUniqueId();
 var subgroup = null
@@ -49,13 +49,13 @@ const LoginScreen = ({ navigation, route }) =>  {
         if (AppSettings.developers.includes(googlename)) {
             status = "Developer"
         }
-        if (AppSettings.RoboticsInfo.Admins.includes(googlename)) {
-            status = "Admin"
-            subgroup = "Administrators"
-        }
+        // if (RoboticsInfo.Admins.includes(googlename)) {
+        //     status = "Admin"
+        //     subgroup = "Administrators"
+        // }
         const l = []
-        AppSettings.RoboticsInfo.subgroups.forEach(subgroup => { 
-            l.push(AppSettings.RoboticsInfo.Leads[subgroup]['name'])
+        RoboticsInfo.subgroups.forEach(subgroup => { 
+            l.push(RoboticsInfo.Leads[subgroup]['name'])
         })
         if (l.includes(googlename)) {
             status = "Lead"
@@ -99,7 +99,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                 flex: 1,
             }}>
                 <SelectDropdown
-                    data={AppSettings.RoboticsInfo.subgroups}
+                    data={RoboticsInfo.subgroups}
                     onSelect={(selectedSubgroup) => { subgroup = selectedSubgroup }}
                     buttonTextAfterSelection={(selectedSubgroup) => { return selectedSubgroup }}
                     rowTextForSelection={(item) => { return item }}
@@ -108,7 +108,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                     dropdownStyle={{ borderRadius: 20 }}
                 />
                 <SelectDropdown
-                    data={AppSettings.RoboticsInfo.statuses}
+                    data={RoboticsInfo.statuses}
                     onSelect={(selectedStatus) => { status = selectedStatus }}
                     buttonTextAfterSelection={(selectedStatus) => { return selectedStatus }}
                     rowTextForSelection={(item) => { return item }}
@@ -117,7 +117,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                     dropdownStyle={{ borderRadius: 20 }}
                 />
                 <SelectDropdown
-                    data={AppSettings.RoboticsInfo.notifmethods}
+                    data={RoboticsInfo.notifmethods}
                     onSelect={(SelectedNotifMethod) => { notifmethod = SelectedNotifMethod }}
                     buttonTextAfterSelection={(selectedNotifMethod) => { return selectedNotifMethod }}
                     rowTextForSelection={(item) => { return item }}
