@@ -8,6 +8,14 @@ let googlename
 let googlepfpurl
 let googleemail
 
+GoogleSignin.configure({
+  scopes: ['profile', 'email'],
+  webClientId: '379530556246-37cjigctdlojjgms19m2kqfcco1pb27d.apps.googleusercontent.com', 
+  offlineAccess: true, 
+  //hostedDomain: 'henricostudents.org', 
+  forceConsentPrompt: true,
+});
+
 async function invalidDomainAlert() {
   Alert.alert(
     "Invalid Domain",
@@ -23,13 +31,6 @@ async function invalidDomainAlert() {
   });
 }
 
-GoogleSignin.configure({
-  scopes: ['profile', 'email'],
-  webClientId: '379530556246-37cjigctdlojjgms19m2kqfcco1pb27d.apps.googleusercontent.com', 
-  offlineAccess: true, 
-  //hostedDomain: 'henricostudents.org', 
-  forceConsentPrompt: true,
-});
 async function registerwithFirebase() {
   const { idToken } = await GoogleSignin.signInSilently();
   const googleCredential = auth.GoogleAuthProvider.credential(idToken);
@@ -86,7 +87,7 @@ export default class GoogleSignInScreen extends Component {
                 </Text>
 
                 
-              {!this.state.loggedIn && this.props.navigation.navigate('GoogleSignInScreen')}
+              {/* {!this.state.loggedIn && this.props.navigation.navigate('GoogleSignInScreen')} */}
               {this.state.loggedIn &&
                 
                   <View style={styles.nextButton}>
@@ -97,7 +98,11 @@ export default class GoogleSignInScreen extends Component {
                     <Button onPress={() => {
                       if (auth().currentUser.email.split('@')[1] != 'henricostudents.org') {
                         if (auth().currentUser.email.split('@')[1] != 'henrico.k12.va.us') {
-                          if (!AppSettings.email_whitelist.includes(auth().currentUser.email)) return invalidDomainAlert()
+                          if (!AppSettings.email_whitelist.includes(auth().currentUser.email)) {
+                            invalidDomainAlert()
+                            this.setState({ loggedIn: false });
+                            return
+                          }
                         }
                       }
                       googlename = auth().currentUser.displayName
