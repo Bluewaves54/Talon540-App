@@ -100,7 +100,7 @@ export default class GoogleSignInScreen extends Component {
                         if (auth().currentUser.email.split('@')[1] != 'henrico.k12.va.us') {
                           if (!AppSettings.email_whitelist.includes(auth().currentUser.email)) {
                             invalidDomainAlert()
-                            this.setState({ loggedIn: false });
+                            this.setState({ loggedIn: false }); //Hide button
                             return
                           }
                         }
