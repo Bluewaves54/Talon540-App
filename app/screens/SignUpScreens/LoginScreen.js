@@ -13,6 +13,7 @@ import DeviceInfo from 'react-native-device-info';
 import RNRestart from 'react-native-restart';
 import { googlename, googleemail, googlepfpurl } from './GoogleSignInScreen';
 import { AppSettings, RoboticsInfo } from '../../settings.json'
+import auth from '@react-native-firebase/auth';
 
 var id = DeviceInfo.getUniqueId();
 var subgroup = null
@@ -75,6 +76,7 @@ const LoginScreen = ({ navigation, route }) =>  {
                 'notifmethod': notifmethod,
                 'pfp': googlepfpurl,
                 'email': googleemail,
+                //'firebaseUID': auth().currentUser.uid,
 
             })
         };
