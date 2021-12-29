@@ -72,7 +72,7 @@ export default class GoogleSignInScreen extends Component {
                 flex: 1}}>
                 <ImageBackground
                 style={styles.background}
-                source={require('../../assets/Talon540Logo.webp')}>
+                source={require('../../assets/540Logo.png')}>
                 <View style={styles.sectionContainer}>
                     <GoogleSigninButton
                         style={{ width: 192, height: 48 }}

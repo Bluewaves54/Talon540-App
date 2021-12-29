@@ -47,7 +47,7 @@ function AdminTabNavigator() {
         name="Admin" 
         component={AdminTools}
         options={{ 
-          tabBarBadge: adminbadgecount,
+          // tabBarBadge: adminbadgecount,
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="empire" color={color} size={size} />
           ),

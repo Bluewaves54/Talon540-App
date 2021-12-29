@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, Button, Alert } from 'react-native';
 import email from 'react-native-email'
+import AppSettings from '../../settings.json'
 
 function generateBugReport() {
     email(['hcps-achantass@henricostudents.org', 'hcps-pala3@henricostudents.org'], {
@@ -15,11 +16,11 @@ function bugReportScreen() {
           style={{
                 flex: 1,
                 justifyContent: "center",
-                backgroundColor: 'white',
-            alignItems: "center"
+                backgroundColor: '#1f2129',
+            alignItems: "center",
           }}>
-          <Text>Found any Bugs?</Text>
-          <Text>Email them to: {'Ayush Pal and Sriman Achanta'}</Text>
+          <Text style={{color: 'white'}}>Found any Bugs?</Text>
+          <Text style={{color: 'white'}}>Email them to: {'Ayush Pal and Sriman Achanta'}</Text>
           <Button 
             title={"Click to generate a bug report"}
             onPress={() => {

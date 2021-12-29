@@ -90,7 +90,7 @@ const LoginScreen = ({ navigation, route }) =>  {
             flex: 1}}>
             <ImageBackground
             style={styles.background}
-            source={require('../../assets/Talon540Logo.webp')}>
+            source={require('../../assets/540Logo.png')}>
             <Text
             style={styles.signInText}
             >
