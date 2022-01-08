@@ -65,7 +65,7 @@ async function NotifyUser(Location) { //figure out notifications
             Vibration.vibrate(500);
         } else if (Platform.OS === "ios") {
             state = true;
-            Vibration.vibrate([150,150,150],state);
+            Vibration.vibrate([10, 10],state);
             setTimeout(function(){ Vibration.cancel(); }, 1600);;
         };
     };

@@ -23,6 +23,8 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<false/>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array>
